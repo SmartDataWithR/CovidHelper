@@ -1,10 +1,133 @@
 {% extends '_base.html' %}
+
 {% load static %}
 
-{% block title %}Home page{% endblock title %}
 
 {% block content %}
-<h1>Home page</h1>
-<img src="{% static 'images/falconx.png' %}" class="img-fluid" alt="FalconX launch"/>
+
+<!-- Start Home Section -->
+<div id="home">
+
+    <!-- Start Landing Page Image -->
+    <div class="landing">
+        <div class="home-wrap">
+            <div class="home-inner"></div>
+        </div>
+    </div>
+    <!-- End Landing Page Image -->
+
+    <!-- Start Landing Page Caption -->
+    <div class="caption text-center text-light text-uppercase">
+
+        <h1 class="os-animation" data-animation="fadeInUp" data-delay=".6s"><span
+                class="text-hero">Nachbarn helfen Nachbarn</span></h1>
+        <h3 class="os-animation" data-animation="fadeInUp" data-delay="0.8s">Du bietest Hilfe oder suchst hilfe, suche in deiner direkten Umgebung</h3>
+        <div class="input-group d-flex justify-content-center">
+            <input type="text" class="btn btn-outline-light btn-lg rounded-0 os-animation" name="search-field" id="search-field"
+            placeholder="Postleitzahl" title="search for postleitzahl" data-animation="fadeInUp"
+            data-delay="1s">
+            <span class="input-group-btn">
+                <a href="#search" class="btn btn-outline-light btn-lg rounded-0 os-animation" data-animation="fadeInUp"
+                data-delay="1s">Suchen</a>
+            </span>
+        </div>    
+    </div>
+    <!-- End Landing Page Caption -->
+
+    <!-- Start Bouncing Down Arrow -->
+    <!-- <a href="#features" class="down-arrow text-center">
+        <div class="arrow d-none d-md-block">
+            <i class="fas fa-angle-down"></i>
+        </div>
+    </a> -->
+    <!-- End Bouncing Down Arrow -->
+
+</div>
+<!-- End Home Section -->
+
+
+<!-- Search Result Section -->
+<div id="search" class="offset">
+
+    <div class=" container mx-auto">
+        <!-- <div class="os-animation" data-animation="fadeInUp"> -->
+            <div id="seller-carousel" class="owl-carousel owl-theme">
+
+                <div class="seller card" style="width: 16rem;">
+                    
+                    <div class="card-body">
+                        <svg class="bd-placeholder-img card-img-top" xmlns="http://www.w3.org/2000/svg"  
+                        focusable="false" role="img" aria-label="Placeholder: Image cap">
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                        </svg>
+                        <div class="card-body">
+                            <h4 class="font-weight-bold">John Lee</h4>
+                            <h5 class="text-seller">CEO</h5>
+                            <p class="py-auto my-auto">John is an entrepreneur with almost 20 years of experience.</p>
+                        </div>
+                    </div>
+
+                </div> <!-- End Card -->
+
+                <div class="card" style="width: 16rem;">
+                    
+                    <div class="card-body">
+                        <svg class="bd-placeholder-img card-img-top" xmlns="http://www.w3.org/2000/svg"  
+                        focusable="false" role="img" aria-label="Placeholder: Image cap">
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                        </svg>
+                        <div class="card-body">
+                            <h4 class="font-weight-bold">John Lee</h4>
+                            <h5 class="text-seller">CEO</h5>
+                            <p class="py-auto my-auto">John is an entrepreneur with almost 20 years of experience.</p>
+                        </div>
+                    </div>
+
+                </div> <!-- End Card -->
+
+                <div class="card" style="width: 16rem;">
+                    
+                    <div class="card-body">
+                        <svg class="bd-placeholder-img card-img-top" xmlns="http://www.w3.org/2000/svg"  
+                        focusable="false" role="img" aria-label="Placeholder: Image cap">
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                        </svg>
+                        <div class="card-body">
+                            <h4 class="font-weight-bold">John Lee</h4>
+                            <h5 class="text-seller">CEO</h5>
+                            <p class="py-auto my-auto">John is an entrepreneur with almost 20 years of experience.</p>
+                        </div>
+                    </div>
+
+                </div> <!-- End Card -->
+
+                <div class="card" style="width: 16rem;">
+                    
+                    <div class="card-body">
+                        <svg class="bd-placeholder-img card-img-top" xmlns="http://www.w3.org/2000/svg"  
+                        focusable="false" role="img" aria-label="Placeholder: Image cap">
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                        </svg>
+                        <div class="card-body">
+                            <h4 class="font-weight-bold">John Lee</h4>
+                            <h5 class="text-seller">CEO</h5>
+                            <p class="py-auto my-auto">John is an entrepreneur with almost 20 years of experience.</p>
+                        </div>
+                    </div>
+
+                </div> <!-- End Card -->
+
+            </div> <!-- End Team Carousel -->
+            <!-- </div> End Animation  -->
+
+        <div class="google-map container">
+            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&815&sspn=8.047465,13.666992&ie=UTF8&hq=&hnear=15+Springfield+Way,+Hythe+CT21+5SH,+United+Kingdom&t=m&z=14&ll=51.077429,1.121722&output=embed"></iframe>
+        </div>
+        
+    </div><!-- End Container -->
+
+</div>
+<!-- End Search Result Section -->
+
 {% endblock content %}
 

@@ -20,8 +20,8 @@ class CustomUser(AbstractUser):
     skype = models.CharField(max_length=100, blank=True)
     linkedin = models.CharField(max_length=100, blank=True)
     profile_image = models.ImageField(upload_to='profile_image', blank=True)
-    registered_on = models.DateField(max_length=100, default=datetime.now().strftime('%d.%m.%Y'), blank=True)  # sets the value whenever created
-    last_login = models.CharField(max_length=100, default=datetime.now().strftime('%d.%m.%Y'), blank=True)  # updates whenever last accessed
+    registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
+    last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
     slogan = models.CharField(max_length=100, blank=True)
     description = models.CharField(max_length=100, blank=True)
 
