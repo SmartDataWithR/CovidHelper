@@ -162,3 +162,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+# Email setup for Password Reset
+EMAIL_HOST = 'posteo.de'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'bert.gollnick@posteo.net'
+EMAIL_HOST_PASSWORD = 'hierMussEinGültigesPasswortRein'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Bert Gollnick <gollnick.bert@posteo.net>'
