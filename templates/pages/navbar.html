@@ -16,7 +16,6 @@
 					<a href="#features" class="nav-link">Features</a>
 				</li>
 				{% if user.is_authenticated %}
-                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ user.email }}
@@ -26,11 +25,9 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'update' id=user.id %}">Update Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>
-                                
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>   
                             </div>
                         </li>
-                    </ul>
                     {% else %}
                     <li class="nav-item">     
                         <a href="{% url 'account_login' %}" class="nav-link">Log in</a>
