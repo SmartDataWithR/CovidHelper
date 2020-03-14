@@ -8,7 +8,8 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('pages.urls')),
-    path('update/<int:id>', views.updateUser),
+    path('update/<int:id>', views.updateUser, name='update'),
+    path('update/', views.updateUser, name='update'),
 ]
 
 if settings.DEBUG:

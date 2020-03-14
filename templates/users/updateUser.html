@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends '_base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% load static %}
 
-<body>
+{% block title %} Update Your Profile {% endblock title %}
+{% block content %}
+<h1>Update your profile</h1>
+<div id="updateUser">
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Update">
     </form>
-</body>
-
-</html>
+</div>
+{% endblock content %}

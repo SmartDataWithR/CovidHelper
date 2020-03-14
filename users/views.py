@@ -7,7 +7,7 @@ from django.db import transaction
 # Create your views here.
 @login_required
 @transaction.atomic
-def updateUser(request, id):
+def updateUser(request, id=2):
     user = CustomUser.objects.get(id=id)
     form = CustomUserChangeForm(instance=user)
     if request.method == 'POST':
