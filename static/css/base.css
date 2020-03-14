@@ -58,7 +58,7 @@ html, body {
 }
 .navbar.solid,
 .navbar.solid-toggle {
-  background: rgba(0, 0, 0, .7)!important;
+  background: rgba(0, 0, 0, .7);
   transition: background-color 1s ease;
 }
 
