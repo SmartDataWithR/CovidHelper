@@ -40,6 +40,7 @@ html, body {
   letter-spacing: .1rem;
   font-size: .9rem;
   transition: background-color .5s ease;
+  box-shadow: 0rem 0rem .3rem rgb(82, 82, 82);
 }
 .navbar-nav li {
   padding-right: .8rem;
@@ -95,7 +96,7 @@ button, a, a.btn, input
 .home-inner {
   background-image: url('../images/shopping.jpg');
   position: fixed;
-  height: 50%;
+  height: 60%;
   width: 100%;
   background-size: cover;
   background-position: center center;
@@ -103,14 +104,15 @@ button, a, a.btn, input
   transform: translateZ(0);
   will-change: transform;
   display: table;
-  opacity: 1;
+  opacity: .8;
 }
+
 
 /*-- Landing Page Caption --*/
 .caption {
   z-index: 1;
   position: absolute;
-  top: 12%;
+  top: 25%;
   width: 100%;
   max-width: 100%;
 }
@@ -118,21 +120,21 @@ button, a, a.btn, input
   font-weight: 200;
   font-size: 4.5rem;
   letter-spacing: .3rem;
-  text-shadow: .1rem .1rem .8rem black;
+  /* text-shadow: .1rem .1rem .2rem black; */
   padding-bottom: 1rem;
 }
 .caption .text-hero {
   font-weight: 200;
   font-size: 4.5rem;
   letter-spacing: .3rem;
-  text-shadow: .1rem .1rem .8rem black;
+  /* text-shadow: .1rem .1rem .8rem black; */
   padding-bottom: 1rem;
-  color: rgb(215, 214, 214);
+  color: rgb(255, 255, 255);
 }
 .caption h3 {
   font-weight: 100;
   font-size: 2.5rem;
-  text-shadow: .1rem .1rem .5rem black;
+  /* text-shadow: .1rem .1rem .5rem black; */
   padding-bottom: 2rem;
 }
 .caption .btn-lg {
@@ -142,6 +144,9 @@ button, a, a.btn, input
 }
 .caption input {
   background-color: rgb(250, 250, 250);
+}
+.caption .jumbotron {
+  color: #7abecc;
 }
 
 /*-- Bouncing Down Arrow --*/
