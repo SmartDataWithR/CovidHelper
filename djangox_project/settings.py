@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    'social_django',  # social login
+    'sslserver',
+
     # Third-party
     'allauth',
     'allauth.account',
@@ -59,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',  # for social login
 ]
 
 ROOT_URLCONF = 'djangox_project.urls'
@@ -74,6 +78,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <-- social login
+                'social_django.context_processors.login_redirect', # <-- social login
             ],
         },
     },
@@ -147,13 +153,26 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Django-Allauth Config
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = '/auth/login/google-oauth2/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
+    'social_core.backends.google.GoogleOAuth2',  # social login google
+    'social_core.backends.linkedin.LinkedinOAuth2',  # social login linkedin
+    'social_core.backends.facebook.FacebookOAuth2',  # social login facebook
 )
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '215994151855-5brft0h4nvskg1phhn14efm5trbc400t.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'WR5GkBdj5XYRxtUf5I3hoUF8'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '783drpra70l0wd'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'lczXH4Izz3tWFmGw'
+SOCIAL_AUTH_FACEBOOK_KEY = '262423998093125'        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f177779e7366c9c9cdecea9007971b72'  # App Secret
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 SITE_ID = 1
 

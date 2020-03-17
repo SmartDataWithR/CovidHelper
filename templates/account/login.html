@@ -10,11 +10,17 @@
   <h2>Log in</h2>
   <br>
   <div class="svg d-flex justify-content-center">
-    <img src="{% static "images/006-facebook.svg" %}" max-width="70" height="70">
-    <img src="{% static "images/009-suche.svg" %}" max-width="70" height="70">
-    <img src="{% static "images/007-linkedin.svg" %}" max-width="70" height="70"> 
+    <a href="{% url 'social:begin' 'facebook' %}">
+      <img src="{% static "images/006-facebook.svg" %}" max-width="70" height="70">
+    </a>
+    <a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
+      <img src="{% static "images/009-suche.svg" %}" max-width="70" height="70">
+    </a>
+    <a class="btn btn-primary" href="{% url 'social:begin' 'linkedin-oauth2' %}">
+      <img src="{% static "images/007-linkedin.svg" %}" max-width="70" height="70">
+    </a>
   </div>
-<br><br>
+  <br><br>
   <form method="post">
     {% csrf_token %}
     {{ form|crispy }}
