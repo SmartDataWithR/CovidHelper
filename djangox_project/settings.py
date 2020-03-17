@@ -166,12 +166,12 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',  # social login facebook
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '215994151855-5brft0h4nvskg1phhn14efm5trbc400t.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'WR5GkBdj5XYRxtUf5I3hoUF8'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '783drpra70l0wd'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'lczXH4Izz3tWFmGw'
-SOCIAL_AUTH_FACEBOOK_KEY = '262423998093125'        # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'f177779e7366c9c9cdecea9007971b72'  # App Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'critical_content'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'critical_content'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = 'critical_content'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'critical_content'
+SOCIAL_AUTH_FACEBOOK_KEY = 'critical_content'        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'critical_content'  # App Secret
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 SITE_ID = 1
