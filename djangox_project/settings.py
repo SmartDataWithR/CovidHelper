@@ -59,7 +59,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'social_django',  # social login
-    'sslserver',
     'django_google_maps',
 
     # Third-party
@@ -186,14 +185,14 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',  # social login facebook
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY')
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET')
-SOCIAL_AUTH_FACEBOOK_KEY = get_env_variable('SOCIAL_AUTH_FACEBOOK_KEY')        # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = get_env_variable('SOCIAL_AUTH_FACEBOOK_SECRET')  # App Secret
-GOOGLE_MAPS_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY')
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET')
+# SOCIAL_AUTH_FACEBOOK_KEY = get_env_variable('SOCIAL_AUTH_FACEBOOK_KEY')        # App ID
+# SOCIAL_AUTH_FACEBOOK_SECRET = get_env_variable('SOCIAL_AUTH_FACEBOOK_SECRET')  # App Secret
+# GOOGLE_MAPS_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
+# SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 
 SITE_ID = 1

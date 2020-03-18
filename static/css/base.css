@@ -170,7 +170,8 @@ button, a, a.btn, input
 
 
 /*-- Seller/Search --*/
-.google-map {
+map {
+ height: 100%;
  margin-left: auto;
  margin-right: auto;
 
