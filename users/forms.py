@@ -13,4 +13,4 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ('first_name', 'username', 'street', 'city_name', 'zip_code', 'tel_private', 'tel_mobile', 'web', 'skype', 'linkedin',  'slogan', 'description', 'last_login', 'longitude', 'latitude')#, 'group_membership', ),'registered_on',
+        fields = ('first_name', 'username', 'group_membership', 'help_type', 'street', 'city_name', 'zip_code', 'tel_private', 'tel_mobile', 'web', 'skype', 'linkedin',  'slogan', 'description', 'last_login', 'longitude', 'latitude')#, 'group_membership', ),'registered_on',

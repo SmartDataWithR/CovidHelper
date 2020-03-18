@@ -7,7 +7,16 @@ class CustomUser(AbstractUser):
         (0, 'helper'),
         (1, 'taker')
     )
+
+    HELP_GROUPS = (
+        (0, 'Food'),
+        (1, 'Medical Aid'),
+        (2, 'Online-Teaching of Students'),
+        (3, 'Child Care')
+    )
+
     group_membership = models.CharField(max_length=1, choices=GROUPS, default=1)
+    help_type = models.CharField(max_length=1, choices=HELP_GROUPS, default=1)
     street = models.CharField(max_length=100, blank=True)
     city_name = models.CharField(max_length=100, blank=True)
     zip_code = models.IntegerField(blank=True, default=0)
