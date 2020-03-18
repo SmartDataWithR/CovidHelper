@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'social_django',  # social login
     'sslserver',
+    #'leaflet',
 
     # Third-party
     'allauth',
