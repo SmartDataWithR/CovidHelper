@@ -1,10 +1,22 @@
 from django.views.generic import TemplateView
 from ipware import get_client_ip
 from django.shortcuts import render
+from .forms import SearchForm
+import geopy
 
+def index(request):
+    search = request.POST.get('search-field')
+    locator = geopy.Nominatim(user_agent="myGeocoder")
+    context = {}
+    if search != None:
+        location = locator.geocode(search)
+        
+        context = {'longitude': location.longitude, 'latitude': location.latitude}
+    
+    return render(request, 'pages/home.html', context)
+    
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
-
 
 class AboutPageView(TemplateView):
     template_name = 'pages/about.html'
@@ -20,3 +32,10 @@ def ip(request):
             ipv = "Private"
     print(ip, ipv)
     return render(request, 'pages/home.html')
+
+def searchLocation(request):
+    form = SearchForm(request)
+    print(form)
+    if request.method=='POST':
+        form = SearchForm(request.POST)
+    return render(request, 'pages/home.html', {'form': form})

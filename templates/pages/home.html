@@ -26,13 +26,19 @@
             <!-- <h3 class="os-animation" data-animation="fadeInUp" data-delay="0.8s">Du bietest Hilfe oder suchst hilfe, suche in deiner direkten Umgebung</h3> -->
         </div>
         <div class="input-group d-flex justify-content-center">
-            <input type="text" class="btn btn-outline-light btn-lg rounded-0 os-animation" name="search-field"
-                id="search-field" placeholder="Zip Code / City" title="search for postleitzahl"
-                data-animation="fadeInUp" data-delay="1s">
-            <span class="input-group-btn">
-                <a href="#search" class="btn btn-outline-light btn-lg rounded-0 os-animation" data-animation="fadeInUp"
-                    data-delay="1s">Search</a>
-            </span>
+            <form class="form" method="post">
+                {% csrf_token %}
+                <input type="text" class="btn btn-outline-light btn-lg rounded-0 os-animation" name="search-field"
+                    id="search-field" placeholder="Zip Code / City" title="search for postleitzahl"
+                    data-animation="fadeInUp" data-delay="1s">
+                <span class="input-group-btn">
+                    <button class="btn btn-lg btn-success" type="submit" id="search_button"><i class="fas fa-search"></i> Search</button>
+
+                    <!-- <a href="#search" class="btn btn-outline-light btn-lg rounded-0 os-animation"
+                        data-animation="fadeInUp" data-delay="1s">Search</a> -->
+
+                </span>
+            </form>
         </div>
         <div class="jumbotron jumbotron-fluid mt-4">
             <div class="container">
@@ -130,15 +136,16 @@
             <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                 src="https://www.google.com/maps/embed/v1/search?q=Apotheken%2C%20Krankenh%C3%A4user%2C%20Superm%C3%A4rkte%20near%20me&key=AIzaSyC-WZL8RFieD7YVvqk3lJjAPcWhpI8C0vs"></iframe>
         </div> End Container -->
-        
+
         <div class="map container mt-4 mb-4">
-          {% include 'pages/map.html' %}
-        </div>   
-      
+            {% include 'pages/map.html' %}
+        </div>
+        
 
     </div>
 
     
+
 
     <!-- End Search Result Section -->
 
