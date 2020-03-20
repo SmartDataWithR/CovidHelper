@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
+from django_google_maps import fields as map_fields
 
 class CustomUser(AbstractUser):
     GROUPS = (
@@ -32,7 +32,6 @@ class CustomUser(AbstractUser):
     last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
     slogan = models.CharField(max_length=100, blank=True)
     description = models.CharField(max_length=100, blank=True)
-
 
 
     def __str__(self):
