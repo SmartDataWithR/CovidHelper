@@ -13,6 +13,10 @@ crossorigin=""></script>
 <div id="mapid" style="width: 100%; height: 400px;"></div>
 
 <script>
+
+  // icons
+  
+
   var center_lon = "{{ longitude }}"
   var center_lat = "{{ latitude }}"
   if (isNaN(parseFloat(center_lon))) {
@@ -39,7 +43,13 @@ crossorigin=""></script>
   }).addTo(mymap);
 
    var group_membership = '{{ group_membership }}'
-   
+   var slogan = '{{ slogan }}'
+   slogan = slogan.replace('[', '').replace(']','').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[0-9]/g, '').replace(/[;]/g,'').split(',')
+   var description = '{{ description }}'
+   description = description.replace('[', '').replace(']','').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[0-9]/g, '').replace(/[;]/g,'').split(',')
+   var tel_mobile = '{{ tel_mobile }}'
+   tel_mobile = tel_mobile.replace('[', '').replace(']','').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[;]/g,'').split(',')
+
    var longitudes = '{{ longitudes }}'
    var latitudes = '{{ latitudes }}'
    longitudes = longitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
@@ -48,12 +58,13 @@ crossorigin=""></script>
    for (i=0; i< (longitudes.length-1); i++) {
      lon_i = parseFloat(longitudes[i])
      lat_i = parseFloat(latitudes[i])
-     console.log(lon_i, lat_i)
-     L.marker([lat_i, lon_i]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+     slogan_i = slogan[i]
+     description_i = description[i]
+     tel_mobile_i = tel_mobile[i].substring(3)
+     tel_mobile_i = tel_mobile_i.substring(0,tel_mobile_i.length-2)
+     
+     L.marker([lat_i, lon_i]).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><b>Tel. Mobile: </b>"+tel_mobile_i).openPopup();
    }
-   
-   
-  //console.log(group_membership)
   //L.marker([53.554434, 9.994125]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
    /* var marker = L.marker([53.554434, 9.994125]).addTo(mymap);
 
