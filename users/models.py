@@ -4,15 +4,16 @@ from django_google_maps import fields as map_fields
 
 class CustomUser(AbstractUser):
     GROUPS = (
-        ('0', 'helper'),
-        ('1', 'taker')
+        ('0', 'I want to help'),
+        ('1', 'I need help')
     )
 
     HELP_GROUPS = (
-        ('0', 'Food'),
+        ('0', 'Delivering Food/Supplies'),
         ('1', 'Medical Aid'),
         ('2', 'Online-Teaching of Students'),
-        ('3', 'Child Care')
+        ('3', 'Child Care'),
+        ('4', 'Physical Work'),
     )
 
     group_membership = models.CharField(max_length=1, choices=GROUPS, default=1)

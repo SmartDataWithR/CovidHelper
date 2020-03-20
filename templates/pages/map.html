@@ -13,9 +13,21 @@ crossorigin=""></script>
 <div id="mapid" style="width: 100%; height: 400px;"></div>
 
 <script>
-
   // icons
-  
+  var greenIcon = L.icon({
+    iconUrl: '/static/images/pin_green.svg',
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
+  console.log(greenIcon)
+
+  var redIcon = L.icon({
+    iconUrl: '/static/images/pin_red.svg',
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
 
   var center_lon = "{{ longitude }}"
   var center_lat = "{{ latitude }}"
@@ -43,6 +55,9 @@ crossorigin=""></script>
   }).addTo(mymap);
 
    var group_membership = '{{ group_membership }}'
+   
+   group_membership = group_membership.replace('[', '').replace(']','').split(',')
+   
    var slogan = '{{ slogan }}'
    slogan = slogan.replace('[', '').replace(']','').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[0-9]/g, '').replace(/[;]/g,'').split(',')
    var description = '{{ description }}'
@@ -62,8 +77,17 @@ crossorigin=""></script>
      description_i = description[i]
      tel_mobile_i = tel_mobile[i].substring(3)
      tel_mobile_i = tel_mobile_i.substring(0,tel_mobile_i.length-2)
-     
-     L.marker([lat_i, lon_i]).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><b>Tel. Mobile: </b>"+tel_mobile_i).openPopup();
+     var icon;
+     console.log(group_membership[i])
+     if (group_membership[i] == 0) {
+      icon = greenIcon;
+    }
+    if (group_membership[i] == 1) {
+      icon = redIcon;
+    } 
+    
+
+     L.marker([lat_i, lon_i], {icon: icon}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><b>Tel. Mobile: </b>"+tel_mobile_i).openPopup();
    }
   //L.marker([53.554434, 9.994125]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
    /* var marker = L.marker([53.554434, 9.994125]).addTo(mymap);
