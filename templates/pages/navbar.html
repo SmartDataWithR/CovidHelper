@@ -21,8 +21,8 @@
                                 {{ user.email }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                                <a class="dropdown-item" href="{% url 'account_change_password' %}">Change password</a>
-                                <div class="dropdown-divider"></div>
+                                <!-- <a class="dropdown-item" href="{% url 'account_change_password' %}">Change password</a>
+                                <div class="dropdown-divider"></div> -->
                                 <a class="dropdown-item" href="{% url 'update' id=user.id %}">Update Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>   

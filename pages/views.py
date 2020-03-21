@@ -1,6 +1,9 @@
 from django.views.generic import TemplateView
 from ipware import get_client_ip
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 from .forms import SearchForm
 from users.models import CustomUser
 import geopy
@@ -61,3 +64,19 @@ def searchLocation(request):
     if request.method=='POST':
         form = SearchForm(request.POST)
     return render(request, 'pages/home.html', {'form': form})
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('change_password')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'account/password_set.html', {
+        'form': form
+    })
