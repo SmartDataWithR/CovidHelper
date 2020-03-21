@@ -24,4 +24,4 @@ class CustomUserChangeForm(UserChangeForm):
         
         # model.objects.filter(pk=8).update(longitude = location.longitude)
         # model.objects.filter(pk=8).update(latitude = location.latitude)
-        fields = ('id','first_name','last_name', 'username', 'group_membership', 'help_type', 'street', 'city_name', 'zip_code', 'tel_private', 'tel_mobile', 'web', 'skype', 'linkedin',  'slogan', 'description', 'last_login', 'longitude', 'latitude')#, 'group_membership', ),'registered_on',
+        fields = ('id', 'username', 'group_membership', 'street', 'city_name', 'zip_code', 'slogan', 'description', 'longitude', 'latitude')#, 'group_membership', ),'registered_on',
