@@ -2,8 +2,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth import logout
 from django.urls import path, include
-from users import views
 from django.conf.urls import url
+
+from users import views
+from communication.views import mailme
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,6 +16,7 @@ urlpatterns = [
     path('update/', views.updateUser, name='update'),
     path('', include('social_django.urls', namespace='social')),
     path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
+    path('mailme/<user_to>/', mailme),
 ]
 
 if settings.DEBUG:

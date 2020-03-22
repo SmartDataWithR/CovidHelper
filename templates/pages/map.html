@@ -59,27 +59,35 @@ crossorigin=""></script>
    
    var slogan = '{{ slogan }}'
    slogan = slogan.replace('[', '').replace(']','').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[0-9]/g, '').replace(/[;]/g,'').split(',')
+   
    var description = '{{ description }}'
    description = description.replace('[', '').replace(']','').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[0-9]/g, '').replace(/[;]/g,'').split(',')
    
+  var ids = '{{ id }}'
+  ids = ids.replace('[', '').replace(']','').split(',')
    var longitudes = '{{ longitudes }}'
    var latitudes = '{{ latitudes }}'
    longitudes = longitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
    latitudes = latitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
+   
+   // iterate through all filtered results
    var i;
-   for (i=0; i< (longitudes.length-1); i++) {
+   for (i=0; i< longitudes.length-1; i++) {
      lon_i = parseFloat(longitudes[i])
      lat_i = parseFloat(latitudes[i])
      slogan_i = slogan[i]
+     slogan_i = slogan_i.slice(2, -1);
      description_i = description[i]
+     description_i = description_i.slice(2, -1);
+     id_i = ids[i].substring(1)
+     console.log(id_i)
      var icon;
-     
      if (group_membership[i] == 0) {
       icon = greenIcon;
-      L.marker([lat_i, lon_i], {icon: icon}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>").openPopup();
+      L.marker([lat_i, lon_i], {icon: icon}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>").openPopup();
     }
     if (group_membership[i] == 1) {
-      L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><button type='button'>Mail me </button>").openPopup();
+      L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>").openPopup();
     } 
     
 

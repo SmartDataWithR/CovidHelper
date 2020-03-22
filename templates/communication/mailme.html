@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %}People help each other.{% endblock %}
+{% block content %}
+<h1>Contact each other</h1>
+<p>Sender: {{ sender }}</p>
+<p>Recipient: {{ recipient }} </p>
+<p>Subject: {{ subject }}</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+</form>
+
+{{ user_to }}
+{% endblock content %}
