@@ -5,7 +5,7 @@ from django.urls import path, include
 from django.conf.urls import url
 
 from users import views
-from communication.views import mailme
+from communication.views import mailme, successView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -17,6 +17,7 @@ urlpatterns = [
     path('', include('social_django.urls', namespace='social')),
     path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     path('mailme/<user_to>/', mailme),
+    path('success/', successView, name='success'),
 ]
 
 if settings.DEBUG:

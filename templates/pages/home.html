@@ -2,8 +2,8 @@
 
 {% load static %}
 
-
 {% block content %}
+
 
 <!-- Start Home Section -->
 <div id="home">
@@ -16,37 +16,45 @@
     </div>
     <!-- End Landing Page Image -->
 
-    <!-- Start Landing Page Caption -->
-    <div class="caption text-center text-light text-uppercase">
-        <div class="mx-auto">
-            <h1 class="os-animation" data-animation="fadeInUp" data-delay=".6s"><span class="text-hero">Together against
-                    the virus</span></h1>
-            <!-- <h3 class="os-animation" data-animation="fadeInUp" data-delay="0.8s">Du bietest Hilfe oder suchst hilfe, suche in deiner direkten Umgebung</h3> -->
+    <!-- Start Caption -->   
+    <div class="caption">
+        <div class="container">
+            <h1 class="text-hero">stand together</h1>
+            <h3>Do you need help or want to help during the global Covid 19 crisis? Just enter your city or zip code in the search field below and get in touch with your neighborhood.</h3>
         </div>
-        <div class="input-group d-flex justify-content-center">
-            <form class="form" method="post">
-                {% csrf_token %}
-                <input type="text" class="btn btn-outline-light btn-lg rounded-0 os-animation" name="search-field"
-                    id="search-field" placeholder="Zip Code / City" title="search for postleitzahl"
-                    data-animation="fadeInUp" data-delay="1s">
-                <span class="input-group-btn">
-                    <button class="btn btn-lg btn-success" type="submit" id="search_button"><i class="fas fa-search"></i> Search</button>
 
-                    <!-- <a href="#search" class="btn btn-outline-light btn-lg rounded-0 os-animation"
-                        data-animation="fadeInUp" data-delay="1s">Search</a> -->
-
-                </span>
-            </form>
-        </div>
-        <div class="jumbotron jumbotron-fluid mt-4">
-            <div class="container">
-                <h1 class="display-5">Information Section</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
-                </p>
-            </div>
-        </div>
+        <!-- Start Skills Section -->
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-9 col-lg-12 col-xl-11">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <img src="{% static 'images/005-laptop.svg' %}" alt="">
+                            <p class="text-uppercase font-weight-bold py-1">Sign up</p>
+                            <p>Sign up and fill out your profile. This is necessary to be able to use our offer.</p>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <img src="{% static 'images/platzhalter.svg' %}" alt="">
+                            <p class="text-uppercase font-weight-bold py-1">Check out</p>
+                            <p>Enter your city or postal code and see if any of your neighbors need help or offer help.</p>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <img src="{% static 'images/010-plaudern.svg' %}" alt="">
+                            <p class="text-uppercase font-weight-bold py-1">Chat</p>
+                            <p>Starts a conversation via email with each other. Exchange information, e.g. email, shopping list or similar. </p>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <img src="{% static 'images/lebensmittelgeschaeft.svg' %}" alt="">
+                            <p class="text-uppercase font-weight-bold py-1">Goal</p>
+                            <p>Target reached. You helped a neighbor and made a friend for better times.</p>
+                        </div>
+                    </div> <!-- End Row -->
+                </div> <!-- End Column -->
+            </div> <!-- End Row Justify Content -->
+        </div> <!-- End Container -->
+    
     </div>
-    <!-- End Landing Page Caption -->
+    <!-- End Caption -->
 
     <!-- Start Bouncing Down Arrow -->
     <a href="#search" class="down-arrow text-center">
@@ -55,98 +63,50 @@
         </div>
     </a>
     <!-- End Bouncing Down Arrow -->
-
+<hr>
 </div>
 <!-- End Home Section -->
 
 
-<!-- Search Result Section -->
+<!-- Start Search Map Section -->
 <div id="search" class="offset">
-
-    <div class=" container mx-auto mt-4">
-        <!-- <div class="os-animation" data-animation="fadeInUp"> -->
-        <!-- <div id="seller-carousel" class="owl-carousel owl-theme">
-
-            <div class="seller card" style="width: 16rem;">
-
-                <div class="card-body">
-                    <svg class="card-img-top rounded-0" xmlns="http://www.w3.org/2000/svg" focusable="false" role="img">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h4 class="font-weight-bold">John Lee</h4>
-                        <h5 class="text-seller">CEO</h5>
-                        <p class="py-auto my-auto">John is an entrepreneur with almost 20 years of experience.</p>
-                    </div>
-                </div>
-
-            </div> <!-- End Card -->
-
-            <!--<div class="seller card" style="width: 16rem;">
-
-                <div class="card-body">
-                    <svg class="card-img-top rounded-0" xmlns="http://www.w3.org/2000/svg" focusable="false" role="img">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h4 class="font-weight-bold">John Lee</h4>
-                        <h5 class="text-seller">CEO</h5>
-                        <p class="py-auto my-auto">Peter is an entrepreneur with almost 20 years of experience.</p>
-                    </div>
-                </div>
-
-            </div> <!-- End Card 
-
-            <div class="seller card" style="width: 16rem;">
-
-                <div class="card-body">
-                    <svg class="card-img-top rounded-0" xmlns="http://www.w3.org/2000/svg" focusable="false" role="img">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h4 class="font-weight-bold">John Lee</h4>
-                        <h5 class="text-seller">CEO</h5>
-                        <p class="py-auto my-auto">John is an entrepreneur with almost 20 years of experience.</p>
-                    </div>
-                </div>
-
-            </div> <!-- End Card 
-
-            <div class="seller card" style="width: 16rem;">
-
-                <div class="card-body">
-                    <svg class="card-img-top rounded-0" xmlns="http://www.w3.org/2000/svg" focusable="false" role="img">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                    </svg>
-                    <div class="card-body">
-                        <h4 class="font-weight-bold">John Lee</h4>
-                        <h5 class="text-seller">CEO</h5>
-                        <p class="py-auto my-auto">John is an entrepreneur with almost 20 years of experience.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div> -->
-        <!-- </div> End Animation  -->
-
-        <!-- <div class="google-map container mt-4">
-            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                src="https://www.google.com/maps/embed/v1/search?q=Apotheken%2C%20Krankenh%C3%A4user%2C%20Superm%C3%A4rkte%20near%20me&key=AIzaSyC-WZL8RFieD7YVvqk3lJjAPcWhpI8C0vs"></iframe>
-        </div> End Container -->
-
-        <div class="map container mt-4 mb-4">
-            {% include 'pages/map.html' %}
+    <div class="search">
+        <div class="container">   
         </div>
-        
+        <h3>Enter City or Zip Code</h3>
+        <div class="container mx-auto mt-4">
+            <!-- Start Input Group -->
+            <div class="input-group d-flex justify-content-center">
+                <form class="form" method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City" aria-label="Zip Code / City" aria-describedby="button-addon2" name="search-field">
+                        <div class="input-group-append">
+                        <button class="btn btn-outline-secondary rounded-0" type="submit" id="search_button"><i class="fas fa-search"></i> Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- End Input Group -->
 
+            <!-- Start Map -->
+            <div class="map container mt-4 mb-4">
+                {% include 'pages/map.html' %}
+            </div>
+            <!-- End Map -->
+        </div>
+        <!-- End Container -->
     </div>
+</div>
+<!-- End Search Result Section -->
 
-    
+<!-- Top Scroll -->
+<a href="#home" class="top-scroll">
+    <i class="fa fa-angle-up"></i>
+</a>
+<!-- End of Top Scroll -->
 
 
-    <!-- End Search Result Section -->
+{% include 'pages/footer.html' %}
 
-    {% include 'pages/footer.html' %}
-
-    {% endblock content %}
+{% endblock content %}

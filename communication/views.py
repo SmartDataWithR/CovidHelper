@@ -13,7 +13,7 @@ def mailme(request, user_to):
     
     subject = "Re: " + df.iloc[0,1]
     recipient = df.iloc[0, 2]    
-
+    from_email = 'gollnick.bert@gmail.com' #request.user
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -22,18 +22,12 @@ def mailme(request, user_to):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
+                send_mail(subject, message, from_email, [recipient])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
-    context = {'form': form, 'subject': subject, 'sender': request.user, 'recipient': recipient}
+    context = {'form': form, 'subject': subject, 'sender': from_email, 'recipient': from_email}
     return render(request, "communication/mailme.html", context)
-
-
-
-    form = ContactForm()
-    context = {'user_to': user_to} 
-    return render(request, 'communication/mailme.html', context)
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')

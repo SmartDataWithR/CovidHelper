@@ -25,7 +25,7 @@
 }
 
 
-/*============= IF BOOTSTRAP FIXED NAVBAR IS JUMPING ON SCROLL =============*
+/*============= IF BOOTSTRAP FIXED NAVBAR IS JUMPING ON SCROLL =============*/
 .fixed-top  {
 	-webkit-backface-visibility: hidden;
 }
