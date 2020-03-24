@@ -185,15 +185,15 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',  # social login facebook
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY')
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET')
-SOCIAL_AUTH_FACEBOOK_KEY = get_env_variable('SOCIAL_AUTH_FACEBOOK_KEY')        # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = get_env_variable('SOCIAL_AUTH_FACEBOOK_SECRET')  # App Secret
-GOOGLE_MAPS_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
-DJANGOCMS_GOOGLEMAP_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY')
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = get_env_variable('SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET')
+# SOCIAL_AUTH_FACEBOOK_KEY = get_env_variable('SOCIAL_AUTH_FACEBOOK_KEY')        # App ID
+# SOCIAL_AUTH_FACEBOOK_SECRET = get_env_variable('SOCIAL_AUTH_FACEBOOK_SECRET')  # App Secret
+# GOOGLE_MAPS_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
+# DJANGOCMS_GOOGLEMAP_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
+# SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 SITE_ID = 1
 
@@ -205,10 +205,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 # Email setup for Password Reset
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'gollnick.bert@gmail.com'
-EMAIL_HOST_PASSWORD = get_env_variable('GOLLNICK.BERT_GMAIL.COM')
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Bert Gollnick <bert.gollnick@posteo.net>'
+# EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'gollnick.bert@gmail.com'
+# EMAIL_HOST_PASSWORD = get_env_variable('GOLLNICK.BERT_GMAIL.COM')
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'Bert Gollnick <bert.gollnick@posteo.net>'
