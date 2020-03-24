@@ -84,3 +84,15 @@ def change_password(request):
     return render(request, 'account/password_set.html', {
         'form': form
     })
+
+def privacy(request):
+    return render(request, 'pages/privacy.html')
+
+def imprint(request):
+    return render(request, 'pages/imprint.html')
+
+def terms(request):
+    return render(request, 'pages/terms_conditions.html')
+
+def cookie_policy(request):
+    return render(request, 'pages/cookie_policy.html')

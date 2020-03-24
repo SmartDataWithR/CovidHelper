@@ -96,16 +96,11 @@ console.log(contact_link)
       L.marker([lat_i, lon_i], {icon: icon}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>" + contact_link).openPopup();
     }
     if (group_membership[i] == 1) {
-<<<<<<< HEAD
       L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>" + contact_link).openPopup();
     } 
     
 
      
-=======
-      L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>").openPopup();
-    }  
->>>>>>> Branch2
    }
   //L.marker([53.554434, 9.994125]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
    /* var marker = L.marker([53.554434, 9.994125]).addTo(mymap);
