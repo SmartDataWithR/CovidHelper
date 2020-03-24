@@ -63,7 +63,9 @@
         </div>
     </a>
     <!-- End Bouncing Down Arrow -->
-<hr>
+    <div class="container">
+        <hr>
+    </div>      
 </div>
 <!-- End Home Section -->
 
@@ -72,9 +74,8 @@
 <div id="search" class="offset">
     <div class="search">
         <div class="container">   
-        </div>
         <h3>Enter City or Zip Code</h3>
-        <div class="container mx-auto mt-4">
+        <div class="mt-4">
             <!-- Start Input Group -->
             <div class="input-group d-flex justify-content-center">
                 <form class="form" method="post">
@@ -90,9 +91,10 @@
             <!-- End Input Group -->
 
             <!-- Start Map -->
-            <div class="map container mt-4 mb-4">
+            <div class="container">
                 {% include 'pages/map.html' %}
             </div>
+            
             <!-- End Map -->
         </div>
         <!-- End Container -->

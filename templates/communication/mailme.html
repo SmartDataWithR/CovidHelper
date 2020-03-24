@@ -1,34 +1,35 @@
-{% extends '_base.html' %}
-
+{% extends '_base-accounts-users.html' %}
 {% load static %}
 
-{% block title %}People help each other.{% endblock %}
-{% block content %}
-<h1>Contact each other</h1>
-<form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-    <label for="subject">Subject: </label>
-    <input class="form-control" id="subject" type="text" name="subject" size="50" value="{{ subject }}">
-    </div>
-    <div class="form-group">
-      <label for="message">Your message: </label>
-      <textarea class="form-control" name="message" cols="50" rows="10">
-Hello,
+<div class="container">
+    {% block title %}People help each other.{% endblock %}
+    {% block content %}
+    <h1>Contact each other</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+        <label for="subject">Subject: </label>
+        <input class="form-control" id="subject" type="text" name="subject" size="50" value="{{ subject }}">
+        </div>
+        <div class="form-group">
+          <label for="message">Your message: </label>
+          <textarea class="form-control" name="message" cols="50" rows="10">
+  Hello,
 
-I read your mail on covidhero.com.
-Please respond to me via my email: {{ sender }}
+  I read your mail on covidhero.com.
+  Please respond to me via my email: {{ sender }}
 
-Best regards.
-</textarea>
-<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-<small id="messageHelp" class="form-text text-muted">Please modify the default-message.</small>
-    </div>
-    <div class="form-actions">
-      <button class="btn btn-primary" type="submit">Send Email</button>
-    </div>
-     </div>
-</form>
+  Best regards.
+  </textarea>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <small id="messageHelp" class="form-text text-muted">Please modify the default-message.</small>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Send Email</button>
+      </div>
+      </div>
+  </form>
 
-{{ user_to }}
-{% endblock content %}
+  {{ user_to }}
+  {% endblock content %}
+</div>

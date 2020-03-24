@@ -45,6 +45,7 @@ html, body {
 }
 .navbar-nav li {
   padding-right: .8rem;
+  padding-top: .8rem;
 }
 .navbar-nav .nav-link {
   color: white;
@@ -171,23 +172,43 @@ h3 {
 img {
   width: 6rem;
 }
-
-/*-- Footer --*/
-.footer {
-  z-index: auto;
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #505050;
-  color: white;
-  opacity: 0.8;
+#mapid {
+    position: relative;
+    width: 100%;
+    height: 450px;
 }
+
+  /*============= Footer SECTION =============*/
+
+.footer {
+  color: #2e2e2e;
+  font-weight: 200;
+  font-size: .9rem;
+  opacity: 0.9;
+}
+a.right {
+  color: #2e2e2e;
+  font-weight: 300;
+  padding-right: 6rem;
+}
+a.right:hover {
+  color: #242424;
+}
+a.left {
+  color: #2e2e2e;
+  font-weight: 300;;
+}
+a.left:hover {
+  color: #242424;
+}
+
+
+
 
 /*============= TOP SCROLL =============*/
 a.top-scroll {
-  right: 1.2rem;
-  bottom: 1.2rem;
+  left: 2rem;
+  bottom: 3rem;
   position: fixed;
   opacity: .5;
   z-index: 1000;
