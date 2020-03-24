@@ -15,6 +15,7 @@ import json
 def index(request):
     search = request.POST.get('search-field')
     locator = geopy.Nominatim(user_agent="myGeocoder")
+    gotodiv = False
     context = {}
     if search != None:
         location = locator.geocode(search)
@@ -36,8 +37,10 @@ def index(request):
         longitudes = df_filt['longitude'].values.tolist()
         latitudes = df_filt['latitude'].values.tolist()
         ids = df_filt['id'].values.tolist()
+        gotodiv = 'search'
+        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv}
         
-        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description}
+        
     
     return render(request, 'pages/home.html', context)
     
@@ -81,3 +84,15 @@ def change_password(request):
     return render(request, 'account/password_set.html', {
         'form': form
     })
+
+def privacy(request):
+    return render(request, 'pages/privacy.html')
+
+def imprint(request):
+    return render(request, 'pages/imprint.html')
+
+def terms(request):
+    return render(request, 'pages/terms_conditions.html')
+
+def cookie_policy(request):
+    return render(request, 'pages/cookie_policy.html')

@@ -52,7 +52,6 @@ crossorigin=""></script>
   }).addTo(mymap);
 
    var group_membership = '{{ group_membership }}'
-   
    group_membership = group_membership.replace('[', '').replace(']','').split(',')
    
    var slogan = '{{ slogan }}'
@@ -63,12 +62,17 @@ crossorigin=""></script>
    
   var ids = '{{ id }}'
   ids = ids.replace('[', '').replace(']','').split(',')
+   
    var longitudes = '{{ longitudes }}'
-   var latitudes = '{{ latitudes }}'
    longitudes = longitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
+
+   var latitudes = '{{ latitudes }}'
    latitudes = latitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
    
-   // iterate through all filtered results
+   var is_authenticated = '{{ user.is_authenticated }}'
+   console.log(is_authenticated)
+  var contact_link
+  // iterate through all filtered results
    var i;
    for (i=0; i< longitudes.length-1; i++) {
      lon_i = parseFloat(longitudes[i])
@@ -78,15 +82,25 @@ crossorigin=""></script>
      description_i = description[i]
      description_i = description_i.slice(2, -1);
      id_i = ids[i].substring(1)
-     console.log(id_i)
+     if (is_authenticated == 'True') {
+       
+    contact_link = "<br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>"
+}
+if (is_authenticated == 'False') {
+    contact_link = "<br><b>Please register to contact the user.</b>"
+}
+console.log(contact_link)
      var icon;
      if (group_membership[i] == 0) {
       icon = greenIcon;
-      L.marker([lat_i, lon_i], {icon: icon}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>").openPopup();
+      L.marker([lat_i, lon_i], {icon: icon}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>" + contact_link).openPopup();
     }
     if (group_membership[i] == 1) {
-      L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i><br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>").openPopup();
-    }  
+      L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>" + contact_link).openPopup();
+    } 
+    
+
+     
    }
   //L.marker([53.554434, 9.994125]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
    /* var marker = L.marker([53.554434, 9.994125]).addTo(mymap);

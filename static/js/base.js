@@ -12,7 +12,6 @@
 // }
 // }
 
-
 /*========== ADD SOLID CLASS TO NAVBAR WHEN TOGGLED ==========*/
 $('.navbar-toggler').click(function () { //when navbar-toggler is clicked
     if ($(window).scrollTop() <= 300) { //if window scrolled 300px or less from top
