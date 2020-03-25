@@ -97,14 +97,17 @@ crossorigin=""></script>
   var contact_link
   // iterate through all filtered results
    var i;
-   for (i=0; i< longitudes.length-1; i++) {
+   
+   for (i=0; i< longitudes.length; i++) {
+
      lon_i = parseFloat(longitudes[i])
      lat_i = parseFloat(latitudes[i])
-     slogan_i = slogan[i]
-     slogan_i = slogan_i.slice(2, -1);
-     description_i = description[i]
-     description_i = description_i.slice(2, -1);
-     id_i = ids[i].substring(1)
+     slogan_i = slogan[i].replace('x','').slice(0, -1);
+     //slogan_i = slogan_i.slice(1, -1);
+     description_i = description[i].replace('x','').slice(0, -1);
+     //description_i = description_i.slice(1, -1);
+     id_i = ids[i].replace(/ /g,'')
+
      
      // show contact link or not
      if (is_authenticated == 'True') {

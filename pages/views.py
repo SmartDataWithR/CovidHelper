@@ -25,10 +25,10 @@ def index(request):
         
         df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description', 'map_show_location'] # 
         df['distance'] = [geodesic((location.longitude, location.latitude), (x, y)).miles for x,y in zip(df['longitude'], df['latitude'])]
-        
+        print(df)
         # filter for distance max 0km (12.4miles)
         df_filt = df[df['distance'] < 12.4]
-
+        print(df_filt)
     
         # pass the data to the template
         group_membership = df_filt['group_membership'].values.tolist()

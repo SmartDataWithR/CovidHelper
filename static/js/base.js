@@ -21,7 +21,7 @@ $('.navbar-toggler').click(function () { //when navbar-toggler is clicked
 
 
 /*========== CLOSE MOBILE MENU ON CLICK & SMOOTH SCROLL TO LINK a[href^="#"] ==========*/
-$(document).on('click', 'a[href^="#"]', function (event) {
+/* $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
     $('.navbar-toggler').addClass('collapsed');
     $('#navbarResponsive').removeClass('show');
@@ -33,7 +33,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
     $('html, body').animate({
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 1000);
-});
+}); */
 
 /*========== BOUNCING DOWN ARROW ==========*/
 $(document).ready(function () {
