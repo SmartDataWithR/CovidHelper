@@ -21,12 +21,15 @@ def index(request):
         location = locator.geocode(search)
         # for u in CustomUser.objects.raw('SELECT * FROM users_customuser'):
         #     print(u.longitude)
-        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.description] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
+        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.description, u.map_show_location] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
         
-        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description'] # 
+        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description', 'map_show_location'] # 
         df['distance'] = [geodesic((location.longitude, location.latitude), (x, y)).miles for x,y in zip(df['longitude'], df['latitude'])]
-        df_filt = df[df.distance < 400]
         
+        # filter for distance max 0km (12.4miles)
+        df_filt = df[df['distance'] < 12.4]
+
+    
         # pass the data to the template
         group_membership = df_filt['group_membership'].values.tolist()
         group_membership = [int(x) for x in group_membership]
@@ -37,8 +40,12 @@ def index(request):
         longitudes = df_filt['longitude'].values.tolist()
         latitudes = df_filt['latitude'].values.tolist()
         ids = df_filt['id'].values.tolist()
+        map_show_location = df_filt['map_show_location'].values.tolist()
+        map_show_location = [int(x) for x in map_show_location]
+        print(map_show_location)
+
         gotodiv = 'search'
-        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv}
+        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv, 'map_show_location':map_show_location}
         
         
     

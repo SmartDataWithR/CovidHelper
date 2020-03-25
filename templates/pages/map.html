@@ -14,6 +14,7 @@ crossorigin=""></script>
   // icons
   var greenIcon = L.icon({
     iconUrl: '/static/images/pin_green.svg',
+    shadowUrl: '',
     iconSize:     [38, 95], // size of the icon
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
@@ -21,11 +22,29 @@ crossorigin=""></script>
   
   var redIcon = L.icon({
     iconUrl: '/static/images/pin_red.svg',
+    shadowUrl: '',
     iconSize:     [38, 95], // size of the icon
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
 
+  var greenQuestion = L.icon({
+    iconUrl: '/static/images/question_green.svg',
+    shadowUrl: '',
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
+  
+  var redQuestion = L.icon({
+    iconUrl: '/static/images/question_red.svg',
+    shadowUrl: '',
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
+
+  // get locations and convert it to floats
   var center_lon = "{{ longitude }}"
   var center_lat = "{{ latitude }}"
   if (isNaN(parseFloat(center_lon))) {
@@ -40,6 +59,7 @@ crossorigin=""></script>
   center_lat = parseFloat(center_lat)
  }
 
+  // prepare the map
   var mymap = L.map('mapid').setView([center_lat, center_lon], 10);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGVocGhpbGIiLCJhIjoiY2s3emFtN2M4MDNwajNxb2ducGNuNWk4byJ9.MxBMpm6g_oaptJPqgqmG7g', {
@@ -51,6 +71,7 @@ crossorigin=""></script>
     accessToken: 'pk.eyJ1IjoidGVocGhpbGIiLCJhIjoiY2s3emFtN2M4MDNwajNxb2ducGNuNWk4byJ9.MxBMpm6g_oaptJPqgqmG7g'
   }).addTo(mymap);
 
+  // get further information to plot
    var group_membership = '{{ group_membership }}'
    group_membership = group_membership.replace('[', '').replace(']','').split(',')
    
@@ -69,8 +90,10 @@ crossorigin=""></script>
    var latitudes = '{{ latitudes }}'
    latitudes = latitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
    
+   var map_show_location = '{{ map_show_location }}'
+   map_show_location = map_show_location.replace('[', '').replace(']','').replace(/ /g,'').split(',')
+
    var is_authenticated = '{{ user.is_authenticated }}'
-   console.log(is_authenticated)
   var contact_link
   // iterate through all filtered results
    var i;
@@ -82,22 +105,40 @@ crossorigin=""></script>
      description_i = description[i]
      description_i = description_i.slice(2, -1);
      id_i = ids[i].substring(1)
+     
+     // show contact link or not
      if (is_authenticated == 'True') {
-       
-    contact_link = "<br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>"
-}
-if (is_authenticated == 'False') {
-    contact_link = "<br><b>Please register to contact the user.</b>"
-}
-console.log(contact_link)
-     var icon;
-     if (group_membership[i] == 0) {
-      icon = greenIcon;
+       contact_link = "<br><a href='http://127.0.0.1:8000/mailme/"+ id_i + "'>Mail me</a>"
+     }
+     if (is_authenticated == 'False') {
+       contact_link = "<br><b>Please register to contact the user.</b>"
+     }
+
+    // select the right icon
+  
+    // provide help & rough location --> red question mark
+    if (group_membership[i] == 0 && map_show_location[i] == '0') {
+       var icon = greenQuestion;
+     }
+     // provide help & exact location --> red marker
+    if (group_membership[i] == 0 && map_show_location[i] == '1') {
+      var icon = greenIcon;
+     }
+     // need help & rough location --> green question mark
+     if (group_membership[i] == 1 && map_show_location[i] == '0') {
+      var icon = redQuestion;
+     }
+     // need help & exact location --> green marker
+     if (group_membership[i] == 1 && map_show_location[i] == '1') {
+      var icon = redIcon;
+     } 
+     //var icon = greenQuestion
+
       L.marker([lat_i, lon_i], {icon: icon}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>" + contact_link).openPopup();
-    }
-    if (group_membership[i] == 1) {
+    
+    /* if (group_membership[i] == 1) {
       L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>" + contact_link).openPopup();
-    } 
+    }  */
     
 
      

@@ -5,7 +5,8 @@ from django_google_maps import fields as map_fields
 class CustomUser(AbstractUser):
     GROUPS = (
         ('0', 'I want to help'),
-        ('1', 'I need help')
+        ('1', 'I need help'),
+        ('2', 'Inactive (invisible to others)')
     )
 
     HELP_GROUPS = (
@@ -16,7 +17,13 @@ class CustomUser(AbstractUser):
         ('4', 'Physical Work'),
     )
 
-    group_membership = models.CharField(max_length=1, choices=GROUPS, default=1)
+    MAP_VIEW = (
+        ('0', 'rough'),
+        ('1', 'exact')
+    )
+
+    group_membership = models.CharField(max_length=1, choices=GROUPS, default=2)
+    map_show_location = models.CharField(max_length=1, choices=MAP_VIEW, default=0)
     #help_type = models.CharField(max_length=1, choices=HELP_GROUPS, default=1)
     street = models.CharField(max_length=100, blank=True)
     city_name = models.CharField(max_length=100, blank=True)
