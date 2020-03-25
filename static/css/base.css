@@ -178,6 +178,27 @@ img {
     height: 450px;
 }
 
+/*============= TEAM SECTION =============*/
+
+#team-carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.team img {
+  border-radius: 50%;
+  transition: transform .3s ease;
+}
+.team img:hover {
+  transform: scale(.95);
+}
+blockquote .svg-inline--fa {
+  margin: 1rem;
+  color: rgb(70, 70, 70);
+}
+.team-hr {
+  border-top: .1rem solid rgb(70, 70, 70);
+}
+
   /*============= Footer SECTION =============*/
 
 .footer {
@@ -201,9 +222,6 @@ a.left {
 a.left:hover {
   color: #242424;
 }
-
-
-
 
 /*============= TOP SCROLL =============*/
 a.top-scroll {
@@ -239,7 +257,7 @@ a.top-scroll:hover {
     padding-top: 2rem;
     padding-bottom: 3.5rem;
  }
- .clients img {
+ .team img {
     max-width: 50%;
     margin: 0 auto;
  }

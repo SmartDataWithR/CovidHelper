@@ -87,9 +87,9 @@ $(document).ready(function () {
 });
 
 
-/*========== CLIENTS CAROUSEL ==========*/
+/*========== TEAM CAROUSEL ==========*/
 $(document).ready(function(){ //when document(DOM) loads completely
-    $('#seller-carousel').owlCarousel({ //owlCarousel settings
+    $('#team-carousel').owlCarousel({ //owlCarousel settings
         autoplay: true, //set to false to turn off autoplay and only use nav
         autoplayHoverPause: true, //set to false to prevent pausing on hover
         loop: true, //set to false to stop carousel after all slides shown
