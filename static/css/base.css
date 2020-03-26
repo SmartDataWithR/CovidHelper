@@ -1,22 +1,16 @@
-/*============= RESETS =============*/
-
-/*-- iPhone X Remove Gutters --*/
-html {
-  padding: env(safe-area-inset);
-}
-/*-- Prevent Horizontal Scrolling & Font Style --*/
 html, body {
   overflow-x: hidden;
   font-family: 'Roboto', ;
+  /* font-family: 'Oswald', sans-serif; */
   color: #505962;
 }
 
 /*--- Nav Scrolling Offset --*/
 .offset:before {
   content: "";
-  height: 4rem;
+  height: 5rem;
   display: block;
-  margin-top: -4rem;
+  margin-top: -5rem;
 }
 
 /*--- Extra Bootstrap Column Padding --*/
@@ -25,6 +19,9 @@ html, body {
 }
 
 /*============= NAVIGATION =============*/
+/* .navbar-brand img {
+  width: 2rem;
+} */
 .navbar-brand {
   height: 2rem;
   color: rgb(250, 250, 250);
@@ -35,7 +32,7 @@ html, body {
 }
 .navbar {
   padding: .7rem 1rem;
-  text-transform: uppercase;
+  
   font-weight: 300;
   letter-spacing: .1rem;
   font-size: .9rem;
@@ -61,8 +58,11 @@ html, body {
 }
 .navbar.solid,
 .navbar.solid-toggle {
-  background: #505050;
+  background: rgb(70, 70, 70);
   transition: background-color 1s ease;
+}
+.navbar img {
+  width: 6rem;
 }
 
 /*============= LANDING PAGE =============*/
@@ -84,7 +84,7 @@ html, body {
   left: 0;
 }
 .home-inner {
-  background-color: rgb(254, 254, 254);
+  background-color: rgb(244, 244, 244);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -102,7 +102,7 @@ html, body {
 .caption {
   z-index: auto;
   position: relative;
-  padding-top: 4rem;
+  padding-top: 8rem;
   width: 100%;
   max-width: 100%;
 }
@@ -122,7 +122,7 @@ html, body {
   font-size: 2rem;
   /* text-shadow: .1rem .1rem .5rem black; */
   padding-top: 3rem;
-  padding-bottom: 4.5rem;
+  padding-bottom: 4rem;
   color: rgb(60, 60, 60);
 }
 .caption h4 {
@@ -133,6 +133,35 @@ html, body {
   padding-bottom: 2rem;
   color: rgb(70, 70, 70);
 }
+.caption img {
+  width: 4rem;
+}
+.jumbotron {
+  background-color: rgb(184, 222, 222);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* .card-text {
+  font-size: 1.2rem;
+} */
+/* .card {
+  padding-top: 0.5rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  padding-bottom: 0.5rem;
+} */
+/* .card {
+  border-radius: 0;
+  text-align: center;
+  margin: 0.1rem;
+  box-shadow: 0 0 .2rem rgba(0, 0, 0, .075);
+  transition: transform .1s ease;
+  background-color: #f4f4f4;
+}
+.card:hover {
+  transform: scale(.99);
+} */
 
 /*-- Bouncing Down Arrow --*/
 .arrow {
@@ -169,22 +198,22 @@ h3 {
   padding-top: 1rem;
   color: rgb(60, 60, 60);
 }
-img {
-  width: 6rem;
-}
 #mapid {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 500px;
 }
 
 /*============= TEAM SECTION =============*/
 
 #team-carousel {
+  z-index: auto;
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 .team img {
+  width: 4rem;
   border-radius: 50%;
   transition: transform .3s ease;
 }
@@ -242,7 +271,6 @@ a.top-scroll:hover {
   height: 1.7rem;
 }
 
-
 /*============= MEDIA QUERIES =============*/
 
 /* Devices under 992px (lg) */
@@ -258,69 +286,12 @@ a.top-scroll:hover {
     padding-bottom: 3.5rem;
  }
  .team img {
-    max-width: 50%;
+    max-width: 40%;
     margin: 0 auto;
+ }
+ .navbar img {
+  width: 5rem;
  }
 }
 
 /* Devices under 768px (md) */
-@media (max-width: 767.98px) {
- .caption .text-hero {
-    font-size: 3.3rem;
-    letter-spacing: .15rem;
-    padding-bottom: .5rem;
- }
- .caption h3 {
-    font-size: 1.5rem;
-    padding-top: 1.8rem;
-    padding-bottom: 3rem;
- }
- #features h1 {
-    font-size: 2rem;
- }
- .fixed-dark {
-    background-image: url('')
- }
- .fixed-light {
-    background-image: url('')
- }
- .footer {
-    background: url('') no-repeat;
- }
- .top-scroll {
-    display: none!important;
- }
-}
-
-/* Devices under 576px (sm) */
-@media (max-width: 575.98px) {
- .caption .text-hero {
-    font-size: 2.7rem;
-    letter-spacing: .1rem;
-    padding-bottom: .4rem;
- }
- .caption h3 {
-    font-size: 1.2rem;
-    padding-bottom: 1rem;
- }
-}
-
-
-/*============ BOOTSTRAP BREAK POINTS:
-
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-
-=============*/

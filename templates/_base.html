@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include 'pages/head.html' %}
+{% include 'pages/head.html' %}
 
-<body>
+<body data-spy="scroll" data-target="#navbarResponsive">
   
-  {% include 'pages/navbar.html' %}
+{% include 'pages/navbar.html' %}
 
-  {% block content %}
+{% block content %}
       
-  {% endblock content %}
+{% endblock content %}
 
-  {% include 'pages/scripts.html' %}
+{% include 'pages/scripts.html' %}
   
 </body>
 </html>
