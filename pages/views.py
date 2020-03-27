@@ -25,10 +25,10 @@ def index(request):
         
         df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description', 'map_show_location'] # 
         df['distance'] = [geodesic((location.longitude, location.latitude), (x, y)).miles for x,y in zip(df['longitude'], df['latitude'])]
-        print(df)
+        
         # filter for distance max 0km (12.4miles)
         df_filt = df[df['distance'] < 12.4]
-        print(df_filt)
+        
     
         # pass the data to the template
         group_membership = df_filt['group_membership'].values.tolist()
@@ -42,10 +42,11 @@ def index(request):
         ids = df_filt['id'].values.tolist()
         map_show_location = df_filt['map_show_location'].values.tolist()
         map_show_location = [int(x) for x in map_show_location]
-        print(map_show_location)
+        rname = list(range(0, len(ids)))
+        template_table = list(zip(rname, ids, slogan, description))
 
         gotodiv = 'search'
-        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv, 'map_show_location':map_show_location}
+        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv, 'map_show_location':map_show_location, 'template_table':template_table}
         
         
     
