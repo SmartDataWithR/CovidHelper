@@ -86,25 +86,47 @@
 
   var ids = '{{ id }}'
   ids = ids.replace('[', '').replace(']', '').split(',')
-
+  // Longitudes
   var longitudes = '{{ longitudes }}'
   longitudes = longitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
-
+  var sum = 0;
+  for(var i=0; i<longitudes.length;i++) {
+    longitudes[i] = parseFloat(longitudes[i]);
+    sum += longitudes[i]
+  }
+  var long_mean = sum / longitudes.length;
+  
+  
+  // Latitudes
   var latitudes = '{{ latitudes }}'
   latitudes = latitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
+  var sum = 0;
+  for(var i=0; i<latitudes.length;i++) {
+    latitudes[i] = parseFloat(latitudes[i]);
+    sum += latitudes[i]
+  }
+  
+  var lat_mean = sum / latitudes.length;
+  var longitude_center = '{{ longitude }}'
+  var latitude_center = '{{ latitude }}'
+  longitude_center = parseFloat(longitude_center)
+  latitude_center = parseFloat(latitude_center)
+  
 
   var map_show_location = '{{ map_show_location }}'
   map_show_location = map_show_location.replace('[', '').replace(']', '').replace(/ /g, '').split(',')
 
   var is_authenticated = '{{ user.is_authenticated }}'
   var contact_link
-  // iterate through all filtered results
+  
+  // Create a center circle
+  L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
+
+  // iterate through all filtered results  
   var i;
-
   for (i = 0; i < longitudes.length; i++) {
-
-    lon_i = parseFloat(longitudes[i])
-    lat_i = parseFloat(latitudes[i])
+    lon_i = longitudes[i]
+    lat_i = latitudes[i]
     slogan_i = slogan[i].replace('x', '')
     //slogan_i = slogan_i.slice(1, -1);
     description_i = description[i].replace('x', '')
@@ -143,15 +165,10 @@
     L.marker([lat_i, lon_i], {
       icon: icon
     }).addTo(mymap).bindPopup("<b><font color='red'><center>" + i + " </center></font><br>" + slogan_i +
-      "</b><br><i>" + description_i + "</i>" + contact_link).openPopup();
-
-    /* if (group_membership[i] == 1) {
-      L.circle([lat_i, lon_i], {color: 'red', fillColor: 'red', fillOpacity: 0.2, radius: 2000}).addTo(mymap).bindPopup("<b>"+slogan_i+"</b><br><i>"+description_i+"</i>" + contact_link).openPopup();
-    }  */
-
-
+      "</b><br><i>" + description_i + "</i>" + contact_link, {closeOnClick: false, autoClose: true}).openPopup();
 
   }
+  
   //L.marker([53.554434, 9.994125]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
   /* var marker = L.marker([53.554434, 9.994125]).addTo(mymap);
 
@@ -174,7 +191,7 @@
     }
     mymap.on('click', onMapClick); */
 </script>
-<div class="container">
+<div class="container results-table">
   <table class="table">
     <tr>
       <th>Result</th>
