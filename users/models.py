@@ -22,10 +22,10 @@ class CustomUser(AbstractUser):
         ('1', 'exact')
     )
 
-    group_membership = models.CharField(max_length=1, choices=GROUPS, default=2)
-    map_show_location = models.CharField(max_length=1, choices=MAP_VIEW, default=0)
+    group_membership = models.CharField(max_length=1, choices=GROUPS, default=2, help_text='Do you want or need help? Or you can set your status to inactive.')
+    map_show_location = models.CharField(max_length=1, choices=MAP_VIEW, default=0, help_text='if you choose exact - your location will be shown exactly; if you do not want to expose your exact location choose rough')
     #help_type = models.CharField(max_length=1, choices=HELP_GROUPS, default=1)
-    street = models.CharField(max_length=100, blank=True)
+    street = models.CharField(max_length=100, blank=True, help_text='Add your street for exact location')
     city_name = models.CharField(max_length=100, blank=True)
     zip_code = models.IntegerField(blank=True, default=0)
     longitude = models.FloatField(default=42, blank=True, null=True)
@@ -38,8 +38,8 @@ class CustomUser(AbstractUser):
     #profile_image = models.ImageField(upload_to='profile_image', blank=True)
     #registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
     #last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
-    slogan = models.CharField(max_length=100, blank=True)
-    description = models.CharField(max_length=100, blank=True)
+    slogan = models.CharField(max_length=100, blank=True, help_text = 'The headline of your post (will be shown on map)')
+    description = models.CharField(max_length=100, blank=True, help_text='The detailed description of your post (will be shown on map)')
 
 
     def __str__(self):
