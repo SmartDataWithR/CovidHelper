@@ -194,23 +194,3 @@ L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green
     }
     mymap.on('click', onMapClick); */
 </script>
-<div class="container results-table">
-  <table class="table">
-    <tr>
-      <th>Result</th>
-      <th>Slogan</th>
-      <th>Description</th>
-      <th>Contact</th>
-    </tr>
-    {% for item in template_table %}
-    <tr>
-      <td>{{ item.0 }}</td>
-      <td>{{ item.2 }}</td>
-      <td>{{ item.3 }}</td>
-      <td><button type="button" class="btn btn-secondary rounded-0"
-          onclick="location.href='http://127.0.0.1:8000/mailme/{{item.1 }}'">Mail me</button></td>
-    </tr>
-    {% endfor %}
-
-  </table>
-</div>

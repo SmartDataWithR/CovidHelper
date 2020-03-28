@@ -228,4 +228,11 @@ $(document).ready(function() {
     });
 });
 
-
+/*========== Data Table ==========*/
+$(document).ready(function() {
+    $("#table").DataTable({
+      scrollY: "50vh",
+      scrollCollapse: true,
+      paging: false
+    });
+  });
