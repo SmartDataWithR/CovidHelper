@@ -8,78 +8,60 @@
 <!-- Start Home Section -->
 <div id="home">
 
-    <!-- Start Landing Page Image -->
-    <div class="landing">
-        <div class="home-wrap">
-            <div class="home-inner"></div>
-        </div>
-    </div>
-    <!-- End Landing Page Image -->
 
     <!-- Start Caption -->   
     <div class="caption">
-        <div class="container">
+        <!-- <div class="container">
             <h1 class="text-hero"> Stand Together</h1>
             <h3>Getting and providing help during global Covid-19 crisis? That's possible. <br>Just search for your city and get in touch with your neighbor.</h3>
-        </div>
-
+        </div> -->
+  
         <!-- Start Explaination Section -->
+        <div class="container-fluid">
+            <div class="jumbotron jumbotron-fluid ">
+                <h1 class="display-3 text-hero"> Stand Together</h1>
+                <h3 class="lead">Getting and providing help during global Covid-19 crisis? That's possible. <br>Just
+                    search for your city and get in touch with your neighbor.</h3>
+            </div>       
+        </div>
         <div class="container">
-            <div class="jumbotron rounded-0">
                 <div class="row justify-content-center text-center">
                     <div class="col-md-9 col-lg-12 col-xl-11">
                         <div class="row">
                             <div class="col-md-6 col-lg-3">
+                                <a href="{% url 'account_signup' %}">
                                 <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">Sign up</p>
-                                <p>Sign up and fill out your profile</p>
+                                <p class="card-text">Sign up and fill out your profile. filling out the profile is
+                                    unfortunately essential otherwise you'll be not able to use our offer.</p></a>
                             </div>
-                            <!-- <div class="card col-md-6 col-lg-3 rounded-0" style="width: 16rem;">
-                                <img src="{% static 'images/005-laptop.svg' %}" class="mx-auto" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Sign up and fill out your profile. filling out the profile is unfortunately essential otherwise you'll be not able to use our offer.</p>
-                                </div>
-                            </div>
-                            <div class="card col-md-6 col-lg-3 rounded-0" style="width: 16rem;">
-                                <img src="{% static 'images/platzhalter.svg' %}" class="mx-auto" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Enter your city or postal code and see if any of your neighbors need help or offer help.</p>
-                                </div>
-                            </div>
-                            <div class="card col-md-6 col-lg-3 rounded-0" style="width: 16rem;">
-                                <img src="{% static 'images/010-plaudern.svg' %}" class="mx-auto" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Start a conversation via email with each other. Exchange information, e.g. email, shopping list or similar.</p>
-                                </div>
-                            </div>
-                            <div class="card col-md-6 col-lg-3 rounded-0" style="width: 16rem;">
-                                <img src="{% static 'images/lebensmittelgeschaeft.svg' %}" class="mx-auto" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Target reached. You helped a neighbor and made a friend for better times.</p>
-                                </div>
-                            </div> -->
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/platzhalter.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">Check out</p>
-                                <p>Search in your city for people who need or provide help</p>
+                                <p class="card-text">Enter your city or postal code and see if any of your neighbors need help or offer help.</p>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/010-plaudern.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">Chat</p>
-                                <p>Get in contact via email</p>
+                                <p class="card-text">Start a conversation via email with each other. Exchange information, e.g. email, shopping list or similar.</p>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/lebensmittelgeschaeft.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">Goal</p>
-                                <p>Congratulations. You made a difference</p>
+                                <p class="card-text">Target reached. You helped a neighbor and made a friend for better times.</p>
                             </div>
                         </div> <!-- End Row -->
                     </div> <!-- End Column -->
                 </div> <!-- End Row Justify Content -->
-
-            </div> <!-- End Jumbotron -->
+                </div>
+                <!-- Start Bouncing Down Arrow -->
+                <a href="#search" class="down-arrow text-center">
+                    <div class="arrow d-none d-md-block">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </a>
+                <!-- End Bouncing Down Arrow -->
         </div> <!-- End Container -->
-    
     </div>
     <!-- End Caption -->
 
@@ -92,102 +74,132 @@
 
 <!-- Start Search Map Section -->
 <div id="search" class="offset">
-    <div class="search">
+    <div class="search justify-content-center text-center">
         <div class="container">   
-        <h3>Enter City or Zip Code</h3>
-        <div class="mt-4">
-            <!-- Start Input Group -->
-            <div class="input-group d-flex justify-content-center">
-                <form class="form" method="post">
-                    {% csrf_token %}
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City" aria-label="Zip Code / City" aria-describedby="button-addon2" name="search-field">
-                        <div class="input-group-append">
-                        <button class="btn btn-outline-secondary rounded-0" type="submit" id="search_button"><i class="fas fa-search"></i> Search</button>
-                        {% if gotodiv %}
-                        <script> window.location.hash = '#{{gotodiv}}'; </script>
-                        {% endif %}
+            <h3>Enter City or Zip Code</h3>
+            <div class="mt-4">
+                <!-- Start Input Group -->
+                <div class="input-group d-flex justify-content-center">
+                    <form class="form" method="post">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City" aria-label="Zip Code / City" aria-describedby="button-addon2" name="search-field">
+                            <div class="input-group-append">
+                                <button class="btn btn btn-outline-primary" type="submit" id="search_button"><i
+                                        class="fas fa-search"></i> Search</button>
+                                {% if gotodiv %}
+                                <script> window.location.hash = '#{{gotodiv}}'; </script>
+                                {% endif %}
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-            <!-- End Input Group -->
+                    </form>
+                </div>
+                <!-- End Input Group -->
 
-            <!-- Start Map -->
-            <div class="container">
-                {% include 'pages/map.html' %}
+                <!-- Start Map -->
+                <div class="container">
+                    {% include 'pages/map.html' %}
+                </div>
+                <!-- End Map -->
+
+                <!-- Data Table -->
+                <div class="container">
+                    <table id="table" class="display  table" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Result</th>
+                            <th>Slogan</th>
+                            <th>Description</th>
+                            <th>Contact</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in template_table %}
+                            <tr>
+                                <td>{{ item.0 }}</td>
+                                <td>{{ item.2 }}</td>
+                                <td>{{ item.3 }}</td>
+                                <td><button type="button" class="btn btn-outline-primary"
+                                        onclick="location.href='http://127.0.0.1:8000/mailme/{{item.1 }}'"><i
+                                            class="far fa-envelope"></i>
+                                    </button></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody> 
+                    </table>
+                </div>
+                <!-- End Data Table -->
             </div>
             
-            <!-- End Map -->
         </div>
         <!-- End Container -->
+        
     </div>
 </div>
 <!-- End Search Result Section -->
 
 
 <!-- Start Team Section -->
-<div class="container">
-    <hr>
-</div>
+
 <div id="team" class="offset">
+    <div class="team">
+        <hr>
+        <div class="row py-12">
+            <div class="col-12">
+                <h2 class="text-center">Supporter</h2>
+            </div>
 
-    <div class="row py-3">
+            <div class="col-12 px-xl-5">
+                <div id="team-carousel" class="owl-carousel owl-theme">
 
-        <div class="col-12">
-            <h3 class="heading">Our Team</h3>
-        </div>
-
-        <div class="col-12 px-xl-5">
-            <div id="team-carousel" class="owl-carousel owl-theme">
-
-                <div class="row team px-3 px-md-4">
-                    <div class="col-lg-4 my-auto">
-                        <img src="{% static 'images/bert.png' %}" alt="">
+                    <div class="row team px-3 px-md-4">
+                        <div class="col-lg-4 my-auto">
+                            <img src="{% static 'images/bert.png' %}" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="text-justify">
+                                <i class="fas fa-quote-left"></i>
+                                I am a Data Scientist and want to develop tools that make a difference and improve our lifes.
+                                <hr class="clients-hr">
+                                <cite>&#8212; Bert, Developer (Hamburg, Germany)</cite>
+                            </blockquote>
+                        </div>
                     </div>
-                    <div class="col-lg-8">
-                        <blockquote class="text-justify">
-                            <i class="fas fa-quote-left"></i>
-                            I am a Data Scientist and want to develop tools that make a difference and improve our lifes.
-                            <hr class="clients-hr">
-                            <cite>&#8212; Bert, Developer (Hamburg, Germany)</cite>
-                        </blockquote>
-                    </div>
-                </div>
 
-                <div class="row team px-3 px-md-4">
-                    <div class="col-lg-4 my-auto">
-                        <img src="{% static 'images/gunnar.jpg' %}" alt="">
+                    <div class="row team px-3 px-md-4">
+                        <div class="col-lg-4 my-auto">
+                            <img src="{% static 'images/gunnar.jpg' %}" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="text-justify">
+                                <i class="fas fa-quote-left"></i>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. In minus ab doloribus aliquid. Quibusdam, eos dignissimos sint iure illo quam labore excepturi ut doloremque maxime ducimus. Voluptates inventore fugiat aliquam!
+                                <hr class="clients-hr">
+                                <cite>&#8212; Gunnar,  Aspiring Developer (Hamburg, Germany)</cite>
+                            </blockquote>
+                        </div>
                     </div>
-                    <div class="col-lg-8">
-                        <blockquote class="text-justify">
-                            <i class="fas fa-quote-left"></i>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. In minus ab doloribus aliquid. Quibusdam, eos dignissimos sint iure illo quam labore excepturi ut doloremque maxime ducimus. Voluptates inventore fugiat aliquam!
-                            <hr class="clients-hr">
-                            <cite>&#8212; Gunnar,  Aspiring Developer (Hamburg, Germany)</cite>
-                        </blockquote>
+
+                    <div class="row team px-3 px-md-4">
+                        <div class="col-lg-4 my-auto">
+                            <img src="{% static 'images/Vinay.jpg' %}" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="text-justify">
+                                <i class="fas fa-quote-left"></i>
+                                Working in power industry, analyzing machines. Want to utilize technology for the betterment of society. Be good, Do good
+                                <hr class="clients-hr">
+                                <cite>&#8212; Vinay, Technologist (Bengaluru, India)</cite>
+                            </blockquote>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row team px-3 px-md-4">
-                    <div class="col-lg-4 my-auto">
-                        <img src="{% static 'images/Vinay.jpg' %}" alt="">
-                    </div>
-                    <div class="col-lg-8">
-                        <blockquote class="text-justify">
-                            <i class="fas fa-quote-left"></i>
-                            Working in power industry, analyzing machines. Want to utilize technology for the betterment of society. Be good, Do good
-                            <hr class="clients-hr">
-                            <cite>&#8212; Vinay, Technologist (Bengaluru, India)</cite>
-                        </blockquote>
-                    </div>
-                </div>
+                </div> <!-- End Carousel -->
+            </div> <!-- End Column -->
 
-            </div> <!-- End Carousel -->
-        </div> <!-- End Column -->
-
-    </div> <!-- End Row -->
-
+        </div> <!-- End Row -->
+        <hr>
+    </div>
 </div>
 <!-- End of Clients Section -->
 

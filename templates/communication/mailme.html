@@ -1,39 +1,42 @@
 {% extends '_base-accounts-users.html' %}
 {% load static %}
 
-
-
-  
-{% block title %}People help each other.{% endblock %}
 {% block content %}
 
-<div class="container">
-    <h1 align="center">Contact each other</h1>
-    
-    <form method="post">
-        {% csrf_token %}
-        
-        <div class="form-group">
-          <label for="subject">Subject: </label>
-          <input class="form-control" id="subject" type="text" name="subject" size="50" value="{{ subject }}">
-        </div>
-        <div class="form-group">
-          <label for="message"> Your message: </label>
-          <textarea class="form-control" name="message" cols="50" rows="10">
+<div class="caption">
+  <div class="container">
+      <h2 align="center">Get in tough</h2>
+      
+      <form method="post">
+          {% csrf_token %}
+          
+          <div class="form-group">
+            <label for="subject">Subject: </label>
+            <input class="form-control" id="subject" type="text" name="subject" size="50" value="{{ subject }}">
+          </div>
+           <div class="form-group">
+              <label for="message"> Your message: </label>
+              <textarea class="form-control" name="message" cols="50" rows="10">
 Hello,
 
 I read your mail on covidhero.com.
 Please respond to me via my email: {{ sender }}
 
 Best regards.
-          </textarea>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          <small id="messageHelp" class="form-text text-muted">Please modify the default-message.</small>
-        </div>
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Send Email</button>
-        </div>
-    </form>
+              </textarea>
+              <div class=" text-center">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small id="messageHelp" class="form-text text-muted">Please modify the default-message.</small>
+            </div>
+            <br>
+              <div class=" justify-content-center text-center">
+                <div class="form-actions">
+                  <button class="btn btn-outline-primary" type="submit">Send Email</button>
+                </div>
+              </div>
+          </div>
+      </form>
+</div>
 </div>
 
 {{ user_to }}
