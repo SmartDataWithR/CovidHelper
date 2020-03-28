@@ -109,9 +109,10 @@
   var lat_mean = sum / latitudes.length;
   var longitude_center = '{{ longitude }}'
   var latitude_center = '{{ latitude }}'
-  longitude_center = parseFloat(longitude_center)
-  latitude_center = parseFloat(latitude_center)
   
+  longitude_center = parseFloat(longitude_center.replace(',', '.'))
+  latitude_center = parseFloat(latitude_center.replace(',', '.'))
+  console.log(longitude_center)
 
   var map_show_location = '{{ map_show_location }}'
   map_show_location = map_show_location.replace('[', '').replace(']', '').replace(/ /g, '').split(',')
@@ -119,9 +120,7 @@
   var is_authenticated = '{{ user.is_authenticated }}'
   var contact_link
   
-  // Create a center circle
-  L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
-
+  
   // iterate through all filtered results  
   var i;
   for (i = 0; i < longitudes.length; i++) {
@@ -168,7 +167,11 @@
       "</b><br><i>" + description_i + "</i>" + contact_link, {closeOnClick: false, autoClose: true}).openPopup();
 
   }
-  
+  // Create a center circle
+  console.log(longitude_center)
+  console.log(latitude_center)
+L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
+
   //L.marker([53.554434, 9.994125]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
   /* var marker = L.marker([53.554434, 9.994125]).addTo(mymap);
 
