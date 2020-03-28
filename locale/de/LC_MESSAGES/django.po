@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-28 07:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\account\email\password_reset_key_message.txt:2
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"We've received a request to reset your password. If you didn't make this "
+"request, you can safely ignore this email. Otherwise, click the button below "
+"to reset your password."
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.txt:8
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.txt:10
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+
+#: .\templates\account\password_set.html:16
+msgid "Set Password"
+msgstr ""
+
+#: .\templates\pages\footer.html:12
+msgid "Imprint"
+msgstr "Impressum"
+
+#: .\templates\pages\footer.html:13
+msgid "Privacy Policy"
+msgstr "Datenschutzrichtlinie"
+
+#: .\templates\pages\footer.html:14
+msgid "Cookie Policy"
+msgstr "Cookie-Richtlinie"
+
+#: .\templates\pages\footer.html:15
+msgid "Terms&Conditions"
+msgstr "AGB"
+
+#: .\templates\pages\home.html:22
+msgid "Stand Together"
+msgstr "Haltet Zusammen"
+
+#: .\templates\pages\home.html:23
+msgid "Getting and providing help"
+msgstr "Du benötigst Hilfe oder willst Hilfe leisten"
+
+#: .\templates\pages\home.html:24
+msgid "during global Covid19 crisis"
+msgstr "während der Covid-19 Krise"
+
+#: .\templates\pages\home.html:25
+msgid "That is possible."
+msgstr "Das ist möglich."
+
+#: .\templates\pages\home.html:26
+msgid "Just search for your city and get in touch with your neighbor."
+msgstr "Suche einfach nach deiner Stadt und sprich deine Nachbarn an."
+
+#: .\templates\pages\home.html:37 .\templates\pages\navbar.html:41
+msgid "Sign up"
+msgstr "Melde dich an"
+
+#: .\templates\pages\home.html:38
+msgid "Sign up and fill out your profile"
+msgstr "Melde dich an und pflege dein Profil"
+
+#: .\templates\pages\home.html:66
+msgid "Check out"
+msgstr "Suche und finde"
+
+#: .\templates\pages\home.html:67
+msgid "Search in your city for people who need or provide help"
+msgstr "Suche in deiner Stadt nach Menschen, die Hilfe benötigen oder leisten"
+
+#: .\templates\pages\home.html:71
+msgid "Chat"
+msgstr "Tauscht euch aus"
+
+#: .\templates\pages\home.html:72
+msgid "Get in contact via email"
+msgstr "Startet den Kontakt mittels Email"
+
+#: .\templates\pages\home.html:76
+msgid "Goal"
+msgstr "Ziel"
+
+#: .\templates\pages\home.html:77
+msgid "Congratulations. You made a difference"
+msgstr ""
+
+#: .\templates\pages\home.html:100
+msgid "Enter City or Zip Code"
+msgstr "Gib deine Stadt oder PLZ ein"
+
+#: .\templates\pages\home.html:107
+msgid "Zip Code / City"
+msgstr "PLZ / Stadt"
+
+#: .\templates\pages\home.html:111
+msgid "Search"
+msgstr "Suche"
+
+#: .\templates\pages\home.html:144
+msgid "Our Team"
+msgstr "Unser Team"
+
+#: .\templates\pages\home.html:157
+msgid ""
+"I am a Data Scientist and want to develop tools that make a difference and "
+"improve our lifes."
+msgstr ""
+"Ich bin ein Data Scientist und möchte Tools entwickeln, die einen "
+"Unterschied machen und das Leben verbessern."
+
+#: .\templates\pages\home.html:159
+msgid "Bert, Developer (Hamburg, Germany)"
+msgstr "Bert, Entwickler (Hamburg, Germany)"
+
+#: .\templates\pages\home.html:175
+msgid "Gunnar, Aspiring Developer (Hamburg, Germany)"
+msgstr "Gunnar, Angehender Entwickler (Hamburg, Germany)"
+
+#: .\templates\pages\home.html:190
+msgid "Vinay, Technologist (Bengaluru, India)"
+msgstr "Vinay, Entwickler (Bengaluru, Indien)"
+
+#: .\templates\pages\navbar.html:24
+msgid "Update Profile"
+msgstr "Profil pflegen"
+
+#: .\templates\pages\navbar.html:26
+msgid "Log out"
+msgstr "Ausloggen"
+
+#: .\templates\pages\navbar.html:32
+msgid "Map"
+msgstr "Karte"
+
+#: .\templates\pages\navbar.html:35
+msgid "that's us"
+msgstr "Das sind wir"
+
+#: .\templates\pages\navbar.html:38
+msgid "Log in"
+msgstr "Einloggen"

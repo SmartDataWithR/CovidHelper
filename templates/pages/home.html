@@ -1,7 +1,7 @@
 {% extends '_base.html' %}
 
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 
 
@@ -16,11 +16,14 @@
     </div>
     <!-- End Landing Page Image -->
 
-    <!-- Start Caption -->   
+    <!-- Start Caption -->
     <div class="caption">
         <div class="container">
-            <h1 class="text-hero"> Stand Together</h1>
-            <h3>Getting and providing help during global Covid-19 crisis? That's possible. <br>Just search for your city and get in touch with your neighbor.</h3>
+            <h1 class="text-hero">{% trans "Stand Together" %}</h1>
+            <h3>{% trans "Getting and providing help" %} 
+                {% trans "during global Covid19 crisis" %}? 
+                <br>{% trans "That is possible." %}
+                <br>{% trans "Just search for your city and get in touch with your neighbor." %}</h3>
         </div>
 
         <!-- Start Explaination Section -->
@@ -31,8 +34,8 @@
                         <div class="row">
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/005-laptop.svg' %}" alt="">
-                                <p class="text-uppercase font-weight-bold py-1">Sign up</p>
-                                <p>Sign up and fill out your profile</p>
+                                <p class="text-uppercase font-weight-bold py-1">{% trans "Sign up" %}</p>
+                                <p>{% trans "Sign up and fill out your profile" %}</p>
                             </div>
                             <!-- <div class="card col-md-6 col-lg-3 rounded-0" style="width: 16rem;">
                                 <img src="{% static 'images/005-laptop.svg' %}" class="mx-auto" alt="...">
@@ -60,18 +63,18 @@
                             </div> -->
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/platzhalter.svg' %}" alt="">
-                                <p class="text-uppercase font-weight-bold py-1">Check out</p>
-                                <p>Search in your city for people who need or provide help</p>
+                                <p class="text-uppercase font-weight-bold py-1">{% trans "Check out" %}</p>
+                                <p>{% trans "Search in your city for people who need or provide help" %}</p>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/010-plaudern.svg' %}" alt="">
-                                <p class="text-uppercase font-weight-bold py-1">Chat</p>
-                                <p>Get in contact via email</p>
+                                <p class="text-uppercase font-weight-bold py-1">{% trans "Chat" %}</p>
+                                <p>{% trans "Get in contact via email" %}</p>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/lebensmittelgeschaeft.svg' %}" alt="">
-                                <p class="text-uppercase font-weight-bold py-1">Goal</p>
-                                <p>Congratulations. You made a difference</p>
+                                <p class="text-uppercase font-weight-bold py-1">{% trans "Goal" %}</p>
+                                <p>{% trans "Congratulations. You made a difference" %}</p>
                             </div>
                         </div> <!-- End Row -->
                     </div> <!-- End Column -->
@@ -79,13 +82,13 @@
 
             </div> <!-- End Jumbotron -->
         </div> <!-- End Container -->
-    
+
     </div>
     <!-- End Caption -->
 
     <div class="container">
         <hr>
-    </div>      
+    </div>
 </div>
 <!-- End Home Section -->
 
@@ -93,111 +96,117 @@
 <!-- Start Search Map Section -->
 <div id="search" class="offset">
     <div class="search">
-        <div class="container">   
-        <h3>Enter City or Zip Code</h3>
-        <div class="mt-4">
-            <!-- Start Input Group -->
-            <div class="input-group d-flex justify-content-center">
-                <form class="form" method="post">
-                    {% csrf_token %}
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City" aria-label="Zip Code / City" aria-describedby="button-addon2" name="search-field">
-                        <div class="input-group-append">
-                        <button class="btn btn-outline-secondary rounded-0" type="submit" id="search_button"><i class="fas fa-search"></i> Search</button>
-                        {% if gotodiv %}
-                        <script> window.location.hash = '#{{gotodiv}}'; </script>
-                        {% endif %}
+        <div class="container">
+            <h3>{% trans "Enter City or Zip Code" %}</h3>
+            <div class="mt-4">
+                <!-- Start Input Group -->
+                <div class="input-group d-flex justify-content-center">
+                    <form class="form" method="post">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="search-field" placeholder="{% trans 'Zip Code / City' %}"
+                                aria-label="Zip Code / City" aria-describedby="button-addon2" name="search-field">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary rounded-0" type="submit" id="search_button"><i
+                                        class="fas fa-search"></i> {% trans "Search" %}</button>
+                                {% if gotodiv %}
+                                <script>
+                                    window.location.hash = '#{{gotodiv}}';
+                                </script>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Input Group -->
+
+                <!-- Start Map -->
+                <div class="container">
+                    {% include 'pages/map.html' %}
+                </div>
+
+                <!-- End Map -->
+            </div>
+            <!-- End Container -->
+        </div>
+    </div>
+    <!-- End Search Result Section -->
+
+    <!-- Start Team Section -->
+    <div class="container">
+        <hr>
+    </div>
+    <div id="team" class="offset">
+
+        <div class="row py-3">
+
+            <div class="col-12">
+                <h3 class="heading">{% trans "Our Team" %}</h3>
+            </div>
+
+            <div class="col-12 px-xl-5">
+                <div id="team-carousel" class="owl-carousel owl-theme">
+
+                    <div class="row team px-3 px-md-4">
+                        <div class="col-lg-4 my-auto">
+                            <img src="{% static 'images/bert.png' %}" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="text-justify">
+                                <i class="fas fa-quote-left"></i>
+                                {% trans "I am a Data Scientist and want to develop tools that make a difference and improve our lifes." %}
+                                <hr class="clients-hr">
+                                <cite>&#8212; {% trans "Bert, Developer (Hamburg, Germany)" %}</cite>
+                            </blockquote>
                         </div>
                     </div>
-                </form>
-            </div>
-            <!-- End Input Group -->
 
-            <!-- Start Map -->
-            <div class="container">
-                {% include 'pages/map.html' %}
-            </div>
-            
-            <!-- End Map -->
-        </div>
-        <!-- End Container -->
+                    <div class="row team px-3 px-md-4">
+                        <div class="col-lg-4 my-auto">
+                            <img src="{% static 'images/gunnar.jpg' %}" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="text-justify">
+                                <i class="fas fa-quote-left"></i>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. In minus ab doloribus aliquid.
+                                Quibusdam, eos dignissimos sint iure illo quam labore excepturi ut doloremque maxime
+                                ducimus. Voluptates inventore fugiat aliquam!
+                                <hr class="clients-hr">
+                                <cite>&#8212; {% trans "Gunnar, Aspiring Developer (Hamburg, Germany)" %}</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="row team px-3 px-md-4">
+                        <div class="col-lg-4 my-auto">
+                            <img src="{% static 'images/Vinay.jpg' %}" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="text-justify">
+                                <i class="fas fa-quote-left"></i>
+                                Working in power industry, analyzing machines. Want to utilize technology for the
+                                betterment of society. Be good, Do good
+                                <hr class="clients-hr">
+                                <cite>&#8212; {% trans "Vinay, Technologist (Bengaluru, India)" %}</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </div> <!-- End Carousel -->
+            </div> <!-- End Column -->
+
+        </div> <!-- End Row -->
     </div>
-</div>
-<!-- End Search Result Section -->
+    <!-- End of Clients Section -->
+
+    <!-- Top Scroll -->
+    <a href="#home" class="top-scroll">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- End of Top Scroll -->
 
 
-<!-- Start Team Section -->
-<div class="container">
-    <hr>
-</div>
-<div id="team" class="offset">
 
-    <div class="row py-3">
+    {% include 'pages/footer.html' %}
 
-        <div class="col-12">
-            <h3 class="heading">Our Team</h3>
-        </div>
-
-        <div class="col-12 px-xl-5">
-            <div id="team-carousel" class="owl-carousel owl-theme">
-
-                <div class="row team px-3 px-md-4">
-                    <div class="col-lg-4 my-auto">
-                        <img src="{% static 'images/bert.png' %}" alt="">
-                    </div>
-                    <div class="col-lg-8">
-                        <blockquote class="text-justify">
-                            <i class="fas fa-quote-left"></i>
-                            I am a Data Scientist and want to develop tools that make a difference and improve our lifes.
-                            <hr class="clients-hr">
-                            <cite>&#8212; Bert, Developer (Hamburg, Germany)</cite>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <div class="row team px-3 px-md-4">
-                    <div class="col-lg-4 my-auto">
-                        <img src="{% static 'images/gunnar.jpg' %}" alt="">
-                    </div>
-                    <div class="col-lg-8">
-                        <blockquote class="text-justify">
-                            <i class="fas fa-quote-left"></i>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. In minus ab doloribus aliquid. Quibusdam, eos dignissimos sint iure illo quam labore excepturi ut doloremque maxime ducimus. Voluptates inventore fugiat aliquam!
-                            <hr class="clients-hr">
-                            <cite>&#8212; Gunnar,  Aspiring Developer (Hamburg, Germany)</cite>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <div class="row team px-3 px-md-4">
-                    <div class="col-lg-4 my-auto">
-                        <img src="{% static 'images/Vinay.jpg' %}" alt="">
-                    </div>
-                    <div class="col-lg-8">
-                        <blockquote class="text-justify">
-                            <i class="fas fa-quote-left"></i>
-                            Working in power industry, analyzing machines. Want to utilize technology for the betterment of society. Be good, Do good
-                            <hr class="clients-hr">
-                            <cite>&#8212; Vinay, Technologist (Bengaluru, India)</cite>
-                        </blockquote>
-                    </div>
-                </div>
-
-            </div> <!-- End Carousel -->
-        </div> <!-- End Column -->
-
-    </div> <!-- End Row -->
-
-</div>
-<!-- End of Clients Section -->
-
-<!-- Top Scroll -->
-<a href="#home" class="top-scroll">
-    <i class="fa fa-angle-up"></i>
-</a>
-<!-- End of Top Scroll -->
-
-
-{% include 'pages/footer.html' %}
-
-{% endblock content %}
+    {% endblock content %}

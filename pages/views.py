@@ -10,6 +10,7 @@ import geopy
 from geopy.distance import geodesic
 import pandas as pd
 import json
+from django.utils.translation import gettext as _
 
 
 def index(request):

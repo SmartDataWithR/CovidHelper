@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load i18n %}
 <!-- Start Contact Section -->
 
 <div class="container-fluid footer mb-2">
@@ -9,10 +9,10 @@
         Copyright &copy; 2020 dogooddeed.com All rights reserved.
         </div>
         <div>
-            <a class="right" href="{% url 'imprint' %}">Imprint</a>
-            <a class="right" href="{% url 'privacy' %}">Privacy Policy</a>
-            <a class="right" href="{% url 'cookie_policy' %}">Cookie Policy</a>
-            <a class="right" href="{% url 'terms' %}">Terms&Conditions</a>
+            <a class="right" href="{% url 'imprint' %}">{% trans "Imprint" %}</a>
+            <a class="right" href="{% url 'privacy' %}">{% trans "Privacy Policy" %}</a>
+            <a class="right" href="{% url 'cookie_policy' %}">{% trans "Cookie Policy" %}</a>
+            <a class="right" href="{% url 'terms' %}">{% trans "Terms&Conditions" %}</a>
         </div>  
     </div> <!-- End Container -->
 </div> <!-- End Container Fluid -->
