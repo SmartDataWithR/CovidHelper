@@ -77,13 +77,11 @@
   group_membership = group_membership.replace('[', '').replace(']', '').split(',')
 
   var slogan = '{{ slogan }}'
-  slogan = slogan.replace('[', '').replace(']', '').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[0-9]/g, '')
-    .replace(/[;]/g, '').split(',')
-
+  slogan = slogan.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(';, ')
+  
   var description = '{{ description }}'
-  description = description.replace('[', '').replace(']', '').replace(/[&]/g, '').replace(/[#]/g, '').replace(/[0-9]/g,
-    '').replace(/[;]/g, '').split(',')
-
+  description = description.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(';, ')
+  
   var ids = '{{ id }}'
   ids = ids.replace('[', '').replace(']', '').split(',')
   // Longitudes
@@ -100,6 +98,7 @@
   // Latitudes
   var latitudes = '{{ latitudes }}'
   latitudes = latitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
+  
   var sum = 0;
   for(var i=0; i<latitudes.length;i++) {
     latitudes[i] = parseFloat(latitudes[i]);
@@ -112,7 +111,7 @@
   
   longitude_center = parseFloat(longitude_center.replace(',', '.'))
   latitude_center = parseFloat(latitude_center.replace(',', '.'))
-  console.log(longitude_center)
+  
 
   var map_show_location = '{{ map_show_location }}'
   map_show_location = map_show_location.replace('[', '').replace(']', '').replace(/ /g, '').split(',')
@@ -126,10 +125,11 @@
   for (i = 0; i < longitudes.length; i++) {
     lon_i = longitudes[i]
     lat_i = latitudes[i]
-    slogan_i = slogan[i].replace('x', '')
+    slogan_i = slogan[i].replace('x', '').replace(';', '')
     //slogan_i = slogan_i.slice(1, -1);
-    description_i = description[i].replace('x', '')
-    //description_i = description_i.slice(1, -1);
+    description_i = description[i].replace('x', '').replace(';', '')
+    console.log(i)
+    console.log(description_i)
     id_i = ids[i].replace(/ /g, '')
 
 
@@ -172,25 +172,4 @@
   console.log(latitude_center)
 L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
 
-  //L.marker([53.554434, 9.994125]).addTo(mymap).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-  /* var marker = L.marker([53.554434, 9.994125]).addTo(mymap);
-
-  var circle = L.circle([53.554434, 9.994125], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.3,
-    radius: 100
-    }).addTo(mymap);
-  
-  marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-
-  var popup = L.popup();  */
-
-  /* function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-    }
-    mymap.on('click', onMapClick); */
 </script>
