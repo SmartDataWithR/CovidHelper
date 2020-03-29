@@ -1,11 +1,24 @@
-{% extends '_base.html' %}
+{% extends '_base-accounts-users.html' %}
 
 {% load static %}
 
 {% block content %}
-<h1>Privacy Policy</h1>
 
-<iframe src="https://www.iubenda.com/privacy-policy/59192078" width="1000" height="1200" frameborder="0"></iframe>
+<div class="container text-center">
 
-{% include 'pages/footer.html' %}
+   <iframe src="https://www.iubenda.com/privacy-policy/59192078" style="
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;">
+   </iframe>
+
+</div>
+
 {% endblock content %}
