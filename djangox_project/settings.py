@@ -44,7 +44,7 @@ SECRET_KEY = '43)%4yx)aa@a=+_c(fn&kf3g29xax+=+a&key9i=!98zyim=8j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -234,9 +234,9 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # Email setup for Password Reset
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'gollnick.bert@gmail.com'
-EMAIL_HOST_PASSWORD = get_env_variable('GOLLNICK.BERT_GMAIL.COM')
+EMAIL_HOST = 'mail.privateemail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'info@dogooddeed.com'
+EMAIL_HOST_PASSWORD = get_env_variable('INFO_DoGoodDeed')
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Bert Gollnick <bert.gollnick@posteo.net>'
+DEFAULT_FROM_EMAIL = 'Bert Gollnick <info@dogooddeed.com>'
