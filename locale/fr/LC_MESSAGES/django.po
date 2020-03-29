@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-28 06:26+0100\n"
+"POT-Creation-Date: 2020-03-29 18:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,6 +44,130 @@ msgstr ""
 msgid "Set Password"
 msgstr ""
 
-#: .\templates\pages\home.html:157
-msgid "Our Team"
-msgstr ""
+#: .\templates\pages\footer.html:12
+msgid "Imprint"
+msgstr "Imprimer"
+
+#: .\templates\pages\footer.html:13
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: .\templates\pages\footer.html:14
+msgid "Cookie Policy"
+msgstr "Politique de cookies"
+
+#: .\templates\pages\footer.html:15
+msgid "Terms&Conditions"
+msgstr "Termes et conditions"
+
+#: .\templates\pages\home.html:21
+msgid "Stand Together"
+msgstr "Être solidaires"
+
+#: .\templates\pages\home.html:22
+msgid "Getting and providing help"
+msgstr "Obtenir et fournir de l'aide"
+
+#: .\templates\pages\home.html:23
+msgid "during global Covid-19 crisis"
+msgstr "pendant la crise mondiale de Covid-19"
+
+#: .\templates\pages\home.html:23
+msgid "That is possible."
+msgstr "C'est possible."
+
+#: .\templates\pages\home.html:24
+msgid "Just search for your city and get in touch with your neighbor."
+msgstr "Recherchez simplement votre ville et contactez votre voisin."
+
+#: .\templates\pages\home.html:34 .\templates\pages\navbar.html:41
+msgid "Sign up"
+msgstr "S'inscrire"
+
+#: .\templates\pages\home.html:35
+msgid "Sign up and fill out your profile."
+msgstr "Inscrivez-vous et remplissez votre profil."
+
+#: .\templates\pages\home.html:36
+msgid "filling out the profile is unfortunately essential otherwise you'll be not able to use our offer."
+msgstr "remplir le profil est malheureusement indispensable sinon vous ne pourrez pas utiliser notre offre."
+
+#: .\templates\pages\home.html:40
+msgid "Check out"
+msgstr "Check-out"
+
+#: .\templates\pages\home.html:41
+msgid "Enter your city or postal code and see if any of your neighbors need help or offer help."
+msgstr "Entrez votre ville ou votre code postal et voyez si l'un de vos voisins a besoin d'aide ou offre de l'aide."
+
+#: .\templates\pages\home.html:46
+msgid "Start a conversation via email with each other."
+msgstr "Commencez une conversation par e-mail avec l'autre."
+
+#: .\templates\pages\home.html:51
+msgid "Target reached. You helped a neighbor and made a friend for better times."
+msgstr "Objectif atteint. Vous avez aidé un voisin et vous êtes fait un ami pour des temps meilleurs."
+
+#: .\templates\pages\home.html:79
+msgid "Enter City or Zip Code"
+msgstr "Entrez la ville ou le code postal"
+
+#: .\templates\pages\home.html:89
+msgid "Search"
+msgstr "Chercher"
+
+#: .\templates\pages\home.html:110
+msgid "Result"
+msgstr "Résultat"
+
+#: .\templates\pages\home.html:111
+msgid "Slogan"
+msgstr "Slogan"
+
+#: .\templates\pages\home.html:112
+msgid "Description"
+msgstr "La description"
+
+#: .\templates\pages\home.html:113
+msgid "Contact"
+msgstr "Contact"
+
+#: .\templates\pages\home.html:152
+msgid "Supporter"
+msgstr "Supporter"
+
+#: .\templates\pages\home.html:165
+msgid "I am a Data Scientist and want to develop tools that make a difference and improve our lifes."
+msgstr "e suis Data Scientist et je souhaite développer des outils qui font la différence et améliorent nos vies."
+
+#: .\templates\pages\home.html:167
+msgid "Bert, Developer (Hamburg, Germany)"
+msgstr "Bert, développeur (Hambourg, Allemagne)"
+
+#: .\templates\pages\home.html:181
+msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
+msgstr "Gunnar, Aspiring Developer (Hambourg, Allemagne)"
+
+#: .\templates\pages\home.html:193
+msgid "Working in power industry, analyzing machines. Want to utilize technology for the betterment of society. Be good, Do good"
+msgstr "Travailler dans l'industrie électrique, analyser des machines. Vous voulez utiliser la technologie pour l'amélioration de la société. Soyez bon, faites le bien"
+
+#: .\templates\pages\home.html:195
+msgid "Vinay, Technologist (Bengaluru, India)"
+msgstr "Vinay, technologue (Bengaluru, Inde)"
+
+#: .\templates\pages\navbar.html:15 .\templates\pages\navbar.html:32
+msgid "Map"
+msgstr "Carte"
+
+#: .\templates\pages\navbar.html:24
+msgid "Update Profile"
+msgstr "Mettre à jour le profil"
+
+#: .\templates\pages\navbar.html:26
+msgid "Log out"
+msgstr "Se déconnecter"
+
+#: .\templates\pages\navbar.html:38
+msgid "Log in"
+msgstr "S'identifier"
