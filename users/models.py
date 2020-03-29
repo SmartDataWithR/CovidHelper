@@ -39,7 +39,7 @@ class CustomUser(AbstractUser):
     #registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
     #last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
     slogan = models.CharField(max_length=100, blank=True, help_text = 'The headline of your post (will be shown on map)')
-    description = models.CharField(max_length=100, blank=True, help_text='The detailed description of your post (will be shown on map)')
+    description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)')
 
 
     def __str__(self):
