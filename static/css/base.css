@@ -66,8 +66,8 @@ html, body {
 }
 
 h3.heading {
-  font-size: 1.9rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 300;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -76,7 +76,7 @@ h3.heading {
 .heading-underline {
   width: 6rem;
   height: .2rem;
-  background-color: #51ACBC;
+  background-color: #54AFBF;
   margin: 0 auto 3rem;
 }
 /*-- Caption --*/
@@ -96,7 +96,7 @@ h3.heading {
 .caption .text-hero {
   text-transform: uppercase;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 5.3rem;
   letter-spacing: .2rem;
   /* text-shadow: .1rem .1rem .8rem black; */
@@ -120,7 +120,7 @@ h3.heading {
   /* text-shadow: .1rem .1rem .5rem black; */
   padding-top: 3rem;
   padding-bottom: 4rem;
-  color: #9b9b9b;
+  color: #001D28;
 }
 .row img {
   transition: transform .1s ease;
@@ -132,9 +132,9 @@ h3.heading {
   opacity: 1;
 }
 .row p {
-  font-family: 'Oswald',
-  sans-serif;
-  color: #444444;
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: black;
 }
 .row a {
    color: #444444;  
