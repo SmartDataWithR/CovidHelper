@@ -12,7 +12,10 @@
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="#search" class="nav-link"><i class="fas fa-search-location"></i>{% trans "Map" %}</a>
+                    <a href="#search" class="nav-link"><i class="fas fa-search-location"></i>{% trans " Map" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link">Team</a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
@@ -29,10 +32,10 @@
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a href="#search" class="nav-link"><i class="fas fa-search-location"></i>{% trans "Map" %}</a>
+                    <a href="#search" class="nav-link"><i class="fas fa-search-location"></i>{% trans " Map" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#team" class="nav-link">Supporter</a>
+                    <a href="#team" class="nav-link">Team</a>
                 </li>
                 <li class="nav-item">
                     <a href="{% url 'account_login' %}" class="nav-link">{% trans "Log in" %}</a>
@@ -41,24 +44,27 @@
                     <a href="{% url 'account_signup' %}" class="nav-link">{% trans "Sign up" %}</a>
                 </li>
                 {% endif %}
+                <li class="nav-item">
+                    <form action="{% url 'set_language' %}" method="POST">
+                        <div class="form-group">
+                            <div class="input-group input-group-sm">
+                                {% csrf_token %}
+                                <input type="hidden" , name="next" value="{{ redirect_to }}">
+                                <select name="language" id="">
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                                <input class="btn btn-outline-secondary" type="submit" value="Go">
+                            </div>
+                        </div>
+                    </form>
+                </li>
             </ul>
         </div>
-        <form action="{% url 'set_language' %}" method="POST">
-            <div class="form-group">
-                {% csrf_token %}
-                <input type="hidden" , name="next" value="{{ redirect_to }}">
-                <select name="language" id="">
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                        {{ language.name_local }} ({{ language.code }})
-                    </option>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="Go">
-            </div>
-        </form>
-
     </div>
 </nav>
