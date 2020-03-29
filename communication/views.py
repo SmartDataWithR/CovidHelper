@@ -25,7 +25,7 @@ def mailme(request, user_to):
                 send_mail(subject, message, from_email, [recipient])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect('success')
+            return render(request, 'pages/home.html', {'mailstatus': 'Thank you. Your mail has been sent.'})
     context = {'form': form, 'subject': subject, 'sender': from_email, 'recipient': from_email}
     return render(request, "communication/mailme.html", context)
 
