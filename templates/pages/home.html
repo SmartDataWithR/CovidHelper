@@ -18,7 +18,7 @@
         <!-- Start Explaination Section -->
         <div class="container-fluid">
             <div class="jumbotron jumbotron-fluid ">
-                <h1 class="display-3 text-hero">{% trans "Stand Together" %}</h1>
+                <h1 class="display-3 text-hero">{% trans "stick together" %}</h1>
                 <h3 class="lead">{% trans "Getting and providing help" %}  
                     {% trans "during global Covid-19 crisis" %} ? {% trans "That is possible." %} 
                     <br>{% trans "Just search for your city and get in touch with your neighbor." %}</h3>
@@ -33,7 +33,7 @@
                                 <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">{% trans "Sign up" %}</p>
                                 <p class="card-text">{% trans "Sign up and fill out your profile." %}
-                                    {% trans "filling out the profile is unfortunately essential otherwise you'll be not able to use our offer." %}</p></a>
+                                    {% trans "Filling out the profile is unfortunately essential otherwise you'll be not able to use our offer." %}</p></a>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/platzhalter.svg' %}" alt="">
@@ -48,7 +48,9 @@
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/lebensmittelgeschaeft.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">Goal</p>
-                                <p class="card-text">{% trans "Target reached. You helped a neighbor and made a friend for better times." %}</p>
+                                <p class="card-text">
+                                    {% trans "Target reached. You helped a neighbor and made a friend for better times." %}
+                                </p>
                             </div>
                         </div> <!-- End Row -->
                     </div> <!-- End Column -->
@@ -86,7 +88,7 @@
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City" aria-label="Zip Code / City" aria-describedby="button-addon2" name="search-field">
                             <div class="input-group-append">
-                                <button class="btn btn btn-outline-primary" type="submit" id="search_button"><i
+                                <button class="btn btn-outline-secondary btn-color type="submit" id="search_button"><i
                                         class="fas fa-search"></i>{% trans "Search" %}</button>
                                 {% if gotodiv %}
                                 <script> window.location.hash = '#{{gotodiv}}'; </script>
