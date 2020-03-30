@@ -181,8 +181,9 @@ LOCALE_PATHS = [
 ]
 
 VENV_PATH = os.path.dirname(BASE_DIR)
-STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
-MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root') # 'c:/CovidHelpling/static_root' 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
 LANGUAGES = [
     ('en', 'English'),
@@ -239,8 +240,8 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Email setup for Password Reset
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.privateemail.com'
-EMAIL_PORT = 465
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'info@dogooddeed.com'
 EMAIL_HOST_PASSWORD = get_env_variable('INFO_DoGoodDeed')
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Bert Gollnick <info@dogooddeed.com>'
+DEFAULT_FROM_EMAIL = 'Info <info@dogooddeed.com>'
