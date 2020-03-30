@@ -7,15 +7,15 @@
   <div class="container">
     <h2>Log in</h2>
     <div class="svg d-flex justify-content-center">
-      <a href="{% url 'social:begin' 'facebook' %}">
+      <!-- <a href="{% url 'social:begin' 'facebook' %}">
         <img src="{% static "images/006-facebook.svg" %}" max-width="70" height="70">
-      </a>
+      </a> -->
       <a  href="{% url 'social:begin' 'google-oauth2' %}">
         <img src="{% static "images/009-suche.svg" %}" max-width="70" height="70">
       </a>
-      <a  href="{% url 'social:begin' 'linkedin-oauth2' %}">
+      <!-- <a  href="{% url 'social:begin' 'linkedin-oauth2' %}">
         <img src="{% static "images/007-linkedin.svg" %}" max-width="70" height="70">
-      </a>
+      </a> -->
     </div>
     <form method="post">
       {% csrf_token %}
