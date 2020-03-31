@@ -105,21 +105,15 @@ msgid "Check out"
 msgstr "Suche und finde"
 
 #: .\templates\pages\home.html:41
-msgid ""
-"Enter your city or postal code and see if any of your neighbors need help or "
-"offer help."
-msgstr ""
-"Gib deine Stadt oder Postleitzahl ein, um Hilfe und Hilfsangebote zu sehen"
+msgid "Enter your city or postal code and see if any of your neighbors need help or offer help."
+msgstr "Gib deine Stadt oder Postleitzahl ein, um Hilfe und Hilfsangebote zu sehen"
 
 #: .\templates\pages\home.html:46
-msgid ""
-"Start a conversation via email with each other. Exchange information, e.g. "
-"email, shopping list or similar."
-msgstr "Kontaktiere via Mail deine Nachbarn."
+msgid "Start a conversation via email with each other. Exchange information, e.g. email, shopping list or similar."
+msgstr "Kontaktiere via Mail deine Nachbarn und tausche Informationen aus."
 
 #: .\templates\pages\home.html:52
-msgid ""
-"Target reached. You helped a neighbor and made a friend for better times."
+msgid "Target reached. You helped a neighbor and made a friend for better times."
 msgstr "Glückwunsch. Du hast jemandem geholfen."
 
 #: .\templates\pages\home.html:81
@@ -151,33 +145,23 @@ msgid "Our Team"
 msgstr "Unser Team"
 
 #: .\templates\pages\home.html:169
-msgid ""
-"I am a Data Scientist and want to develop tools that make a difference and "
-"improve our lifes."
-msgstr ""
-"Ich bin ein Data Scientist und möchte Tools entwickeln, die einen "
-"Unterschied machen und das Leben verbessern."
+msgid "I am a Data Scientist and want to develop tools that make a difference and improve our lifes."
+msgstr "Ich bin ein Data Scientist und möchte Tools entwickeln, die einen Unterschied machen und das Leben verbessern."
 
 #: .\templates\pages\home.html:171
 msgid "Bert, Developer (Hamburg, Germany)"
 msgstr "Bert, Entwickler (Hamburg, Germany)"
 
 #: .\templates\pages\home.html:183
-msgid ""
-"I am interested in programming because I want to automate the boring stuff "
-"and of course do good deed."
-msgstr ""
+msgid "I am interested in programming because I want to automate the boring stuff and of course do good deed."
+msgstr "Ich interessiere mich für Programmierung, weil ich langweilige Dinge automatisieren und gute Dinge tun will."
 
 #: .\templates\pages\home.html:185
-#, fuzzy
-#| msgid "Gunnar, Aspiring Developer (Hamburg, Germany)"
 msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
 msgstr "Gunnar, Angehender Entwickler (Hamburg, Germany)"
 
 #: .\templates\pages\home.html:197
-msgid ""
-"I am Engineer working in power industry, analyzing machines. Want to utilize "
-"technology for the betterment of society."
+msgid "I am Engineer working in power industry, analyzing machines. Want to utilize technology for the betterment of society."
 msgstr ""
 
 #: .\templates\pages\home.html:199
