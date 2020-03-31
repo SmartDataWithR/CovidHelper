@@ -138,12 +138,12 @@ h3.heading {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: transform;
-  opacity: .6;
+  opacity: .8;
 }
 
 /*-- Darken Background Images --*/
 .fixed-overlay {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.05);
   z-index: 1000 !important;
 }
 
