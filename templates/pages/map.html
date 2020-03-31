@@ -199,25 +199,25 @@
 
     // select the right icon
 
-    // provide help & rough location --> red question mark
+    // provide help & rough location --> green question mark
     if (group_membership[i] == 0 && map_show_location[i] == '0') {
       var icon = greenQuestion;
-      var color = "red"
+      var color = "green"
     }
-    // provide help & exact location --> red marker
+    // provide help & exact location --> green marker
     if (group_membership[i] == 0 && map_show_location[i] == '1') {
       var icon = greenIcon;
-      var color = "red"
+      var color = "green"
     }
-    // need help & rough location --> green question mark
+    // need help & rough location --> red question mark
     if (group_membership[i] == 1 && map_show_location[i] == '0') {
       var icon = redQuestion;
-      var color = "green"
+      var color = "red"
     }
-    // need help & exact location --> green marker
+    // need help & exact location --> red marker
     if (group_membership[i] == 1 && map_show_location[i] == '1') {
       var icon = redIcon;
-      var color = "green"
+      var color = "red"
     }
     //var icon = greenQuestion
 
