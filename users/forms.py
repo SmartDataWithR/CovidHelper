@@ -15,4 +15,4 @@ class CustomUserChangeForm(UserChangeForm):
     
     class Meta:
         model = CustomUser  
-        fields = ('id', 'group_membership','map_show_location', 'street', 'city_name', 'zip_code', 'slogan', 'description')# , 'longitude', 'latitude')
+        fields = ('id', 'group_membership', 'street', 'city_name', 'zip_code', 'slogan', 'description')# , 'longitude', 'latitude')
