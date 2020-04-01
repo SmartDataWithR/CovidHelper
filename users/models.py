@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django_google_maps import fields as map_fields
+from django.core.validators import RegexValidator
 
 class CustomUser(AbstractUser):
     GROUPS = (
@@ -22,6 +23,9 @@ class CustomUser(AbstractUser):
         ('1', 'exact')
     )
 
+    # allowed
+    allowed_chars = RegexValidator(r'^[a-zA-Z0-9, !.?]*$', 'allowed are characters, numbers, points, question and exclamation mark')
+
     group_membership = models.CharField(max_length=1, choices=GROUPS, default=2, help_text='Do you want or need help? Or you can set your status to inactive.')
     map_show_location = models.CharField(max_length=1, choices=MAP_VIEW, default=0, help_text='if you choose exact - your location will be shown exactly; if you do not want to expose your exact location choose rough')
     #help_type = models.CharField(max_length=1, choices=HELP_GROUPS, default=1)
@@ -38,8 +42,8 @@ class CustomUser(AbstractUser):
     #profile_image = models.ImageField(upload_to='profile_image', blank=True)
     #registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
     #last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
-    slogan = models.CharField(max_length=100, blank=True, help_text = 'The headline of your post (will be shown on map)')
-    description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)')
+    slogan = models.CharField(max_length=100, blank=True, help_text = 'The headline of your post (will be shown on map)', validators=[allowed_chars])
+    description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)', validators=[allowed_chars])
 
 
     def __str__(self):

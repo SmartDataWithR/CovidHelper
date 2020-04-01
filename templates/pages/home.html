@@ -59,14 +59,14 @@
                                 <a href="{% url 'update' id=user.id %}">
                                     <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                     <p class="text-uppercase font-weight-bold py-1" style="color:#FF0000">{% trans "Update your profile" %}</p>
-                                    <p class="card-text" style="color:#FF0000">{% trans "Fill out details of your profile" %}
+                                    <p class="card-text" style="color:#FF0000"><b>{% trans "Fill out details of your profile" %}</b>
                                     </p>
                                 </a>
                                 {% else %}
                                 <a href="{% url 'account_signup' %}">
                                     <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                     <p class="text-uppercase font-weight-bold py-1">{% trans "Sign up" %}</p>
-                                    <p class="card-text">{% trans "Sign up" %}
+                                    <p class="card-text">{% trans "Sign up and set up your profile" %}
                                     </p>
                                 </a>
                                 {% endif %}
