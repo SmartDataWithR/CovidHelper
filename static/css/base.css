@@ -125,7 +125,7 @@ h3.heading {
 
 /*--- First Fixed Background Image --*/
 #fixed {
-  background-image: url('../images/AdobeStock_177954339_reduced2.jpg');
+  background-image: url('../images/AdobeStock_177954339_reduced.jpg');
   z-index: -1;
   position: fixed;
   display: block;

@@ -22,9 +22,7 @@
                             <h1 class="text-hero">{% trans "stick together" %}</h1>
                         </div>
                         <div class="col-md-8 col-lg-6 col-xl-6 bg-clear">
-                            <h3 class="heading">{% trans "Getting and providing help" %}
-                                {% trans "during global Covid-19 crisis" %} ? {% trans "That is possible." %}
-                                {% trans "Just search for your city and get in touch with your neighbor." %}
+                            <h3 class="heading">{% trans "To help just search for your city and get in touch with your neighbor." %}
                             </h3>
                         </div>
                     </div>
@@ -57,33 +55,41 @@
                     <div class="col-md-9 col-lg-12 col-xl-11">
                         <div class="row icons">
                             <div class="col-md-6 col-lg-3">
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'update' id=user.id %}">
+                                    <img src="{% static 'images/005-laptop.svg' %}" alt="">
+                                    <p class="text-uppercase font-weight-bold py-1" style="color:#FF0000">{% trans "Update your profile" %}</p>
+                                    <p class="card-text" style="color:#FF0000">{% trans "Fill out details of your profile" %}
+                                    </p>
+                                </a>
+                                {% else %}
                                 <a href="{% url 'account_signup' %}">
                                     <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                     <p class="text-uppercase font-weight-bold py-1">{% trans "Sign up" %}</p>
-                                    <p class="card-text">{% trans "Sign up and fill out your profile." %}
-                                        {% trans "Filling out the profile is unfortunately essential otherwise you'll be not able to use our offer." %}
+                                    <p class="card-text">{% trans "Sign up" %}
                                     </p>
                                 </a>
+                                {% endif %}
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/platzhalter.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">{% trans "Check out" %}</p>
                                 <p class="card-text">
-                                    {% trans "Enter your city or postal code and see if any of your neighbors need help or offer help." %}
+                                    {% trans "Enter your city or postal code" %}
                                 </p>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/010-plaudern.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">Chat</p>
                                 <p class="card-text">
-                                    {% trans "Start a conversation via email with each other. Exchange information, e.g. email, shopping list or similar." %}
+                                    {% trans "Start a conversation via email with each other" %}
                                 </p>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/lebensmittelgeschaeft.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">Goal</p>
                                 <p class="card-text">
-                                    {% trans "Target reached. You helped a neighbor and made a friend for better times." %}
+                                    {% trans "Congratulations. You made a difference." %}
                                 </p>
                             </div>
                         </div> <!-- End Row -->
