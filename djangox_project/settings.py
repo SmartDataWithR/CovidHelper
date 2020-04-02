@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'crispy_forms',
     'debug_toolbar',
+    'sslserver',
 
     # Local
     'users',
