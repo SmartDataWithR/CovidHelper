@@ -207,7 +207,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Django-Allauth Config
 
 LOGIN_URL = '/auth/login/google-oauth2/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/update/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 

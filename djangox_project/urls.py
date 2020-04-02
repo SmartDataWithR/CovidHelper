@@ -17,7 +17,7 @@ urlpatterns += i18n_patterns(
     path('users/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('pages.urls')),
-    path('update/<int:id>', views.updateUser, name='update'),
+    #    path('update/<int:id>', views.updateUser, name='update'),
     path('update/', views.updateUser, name='update'),
     path('', include('social_django.urls', namespace='social')),
     path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
