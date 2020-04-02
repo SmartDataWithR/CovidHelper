@@ -10,12 +10,11 @@
 
     <!-- Start Caption -->
     <div class="caption">
-
         <!--- Start Fixed Background IMG -->
         <div class="fixed-background">
             <div class="row fixed-overlay text-light py-5">
 
-                <!---Start Animation -->
+                <!---Start Container -->
                 <div class="container my-5">
                     <div class="row">
                         <div class="col-md-8 col-lg-6 col-xl-6 bg-clear">
@@ -27,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <!--- End Animation -->
+                <!--- End Container -->
 
             </div>
             <!--- End Row Home Fixed -->
@@ -40,15 +39,6 @@
         </div>
         <!--- End Fixed Background IMG Dark -->
 
-        <!-- Start Explaination Section -->
-        <!-- <div class="container-fluid">
-            <div class="jumbotron jumbotron-fluid ">
-                <h1 class="display-3 text-hero">{% trans "stick together" %}</h1>
-                <h3 class="lead">{% trans "Getting and providing help" %}  
-                    {% trans "during global Covid-19 crisis" %} ? {% trans "That is possible." %} 
-                    <br>{% trans "Just search for your city and get in touch with your neighbor." %}</h3>
-            </div>       
-        </div> -->
         <div class="container-fluid bg-yel">
             <div class="container">
                 <div class="row justify-content-center text-center">
@@ -58,8 +48,10 @@
                                 {% if user.is_authenticated %}
                                 <a href="{% url 'update' id=user.id %}">
                                     <img src="{% static 'images/005-laptop.svg' %}" alt="">
-                                    <p class="text-uppercase font-weight-bold py-1" style="color:#FF0000">{% trans "Update your profile" %}</p>
-                                    <p class="card-text" style="color:#FF0000"><b>{% trans "Fill out details of your profile" %}</b>
+                                    <p class="text-uppercase font-weight-bold py-1" style="color:#cc3d3d">
+                                        {% trans "Update your profile" %}</p>
+                                    <p class="card-text" style="color:#cc3d3d">
+                                        <b>{% trans "Fill out details of your profile" %}</b>
                                     </p>
                                 </a>
                                 {% else %}
@@ -113,21 +105,23 @@
 
 <!-- Start Search Map Section -->
 <div id="search" class="offset">
-    <div class="search justify-content-center text-center">
-        <div class="container">
-            <h3 class="heading">{% trans "Enter City or Zip Code" %}</h3>
-            <div class="heading-underline"></div>
-            <div class="mt-4">
-                <!-- Start Input Group -->
-                <div class="input-group d-flex justify-content-center">
+    <div class="container">
+
+        <h3 class="heading text-center">{% trans "Map" %}</h3>
+        <div class="heading-underline"></div>
+
+        <div class="row justify-content-center text-center">
+            
+            <div class="col-10 col-md-6 col-lg-4">
+                <div class="input-groupd-flex">
                     <form class="form" method="post">
                         {% csrf_token %}
-                        <div class="input-group mb-3">
+                        <div class="input-group input-group-lg">
                             <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City"
-                                aria-label="Zip Code / City" aria-describedby="button-addon2" name="search-field">
+                                aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary btn-color type=" submit" id="search_button"><i
-                                        class="fas fa-search"></i>{% trans "Search" %}</button>
+                                <button class="btn btn-secondary" type="submit" id="search_button"><i
+                                        class="fas fa-search"></i>{% trans " Search" %}</button>
                                 {% if gotodiv %}
                                 <script>
                                     window.location.hash = '#{{gotodiv}}';
@@ -137,84 +131,64 @@
                         </div>
                     </form>
                 </div>
-                <!-- End Input Group -->
-
-                <!-- Start Map -->
-                <div class="container">
-                    {% include 'pages/map.html' %}
-                </div>
-                <!-- End Map -->
-                <div class="container">
-                    <div class="d-flex">
-                        <div class="col-sm-3">
-                            <img src="{% static "images/green_marker.jpg" %}" height="31" width="22"></img>I want to
-                            help.
-                        </div>
-                        <div class="col-sm-3">
-                            <img src="{% static "images/red_marker.jpg" %}" height="31" width="22"></img>I need help.
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <!-- Data Table -->
-                <div class="container">
-                    <table id="table" class="display  table" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>{% trans "Result" %}</th>
-                                <th>{% trans "Slogan" %}</th>
-                                <th>{% trans "Description" %}</th>
-                                <th>{% trans "Contact" %}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in template_table %}
-                            <tr>
-                                <td>{{ item.0 }}</td>
-                                <td>{{ item.2 }}</td>
-                                <td>{{ item.3 }}</td>
-                                <td>{% if user.is_authenticated %}
-                                    <button type="button" class="btn btn-outline-primary"
-                                        onclick="location.href='/mailme/{{item.1 }}'"><i
-                                            class="far fa-envelope"></i>
-                                    </button>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <!-- End Data Table -->
             </div>
 
         </div>
-        <!-- End Container -->
-
+        <div class="row">
+            <!-- Start Input Group -->
+            <div class="col-md-7">
+                <!-- Start Map -->
+                {% include 'pages/map.html' %}
+                <!-- End Map -->
+            </div>
+            <!-- Data Table -->
+            <div class="col-md-5">
+                <table id="table" class="display table" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>{% trans "Nr." %}</th>
+                            <th>{% trans "Description" %}</th>
+                            <th>{% trans "Mail" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in template_table %}
+                        <tr>
+                            <td>{{ item.0 }}</td>
+                            <td>{{ item.3 }}</td>
+                            <td>{% if user.is_authenticated %}
+                                <button type="button" class="btn btn-outline-primary"
+                                    onclick="location.href='http://127.0.0.1:8000/mailme/{{item.1 }}'"><i
+                                        class="far fa-envelope"></i>
+                                </button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- End Data Table -->
+        </div>
     </div>
 </div>
-<!-- End Search Result Section -->
 
 <!-- Start Support Us Section -->
 <div id="support-us" class="offset">
     <div class="support-us">
         <hr>
-
         <h3 class="heading">{% trans "Support Us" %}</h3>
         <div class="heading-underline"></div>
-        <div class="row py-12"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
+        <br>
+            <div class="container justify-content-center text-center">
+                <div class="patreon mb-4">
                     <a href="https://www.patreon.com/dogooddeed?fan_landing=true" target="_blank">
                         <img src="{% static "images/Patreon_Mark_Primary.png" %}" height="50" width="50">
                     </a>
                 </div>
-
-                <div class="col-md-9 font-weight-light heading">
-                    <font size="5">If you like our community please support us via Patreon.</font>
+                
+                <div class="font-weight-light heading justify-content-center text-center mb-4">
+                    <font class="font-weight-light heading" size="5">If you like our community please support us via Patreon.</font>
                 </div>
             </div>
         </div>
@@ -236,7 +210,7 @@
                 <div id="team-carousel" class="owl-carousel owl-theme">
 
                     <div class="row team px-3 px-md-4">
-                        <div class="col-lg-2 my-auto">
+                        <div class="col-lg-4 my-auto">
                             <img src="{% static 'images/bert.png' %}" alt="">
                         </div>
                         <div class="col-lg-8">
@@ -250,7 +224,7 @@
                     </div>
 
                     <div class="row team px-3 px-md-4">
-                        <div class="col-lg-2 my-auto">
+                        <div class="col-lg-4 my-auto">
                             <img src="{% static 'images/Gunnar.jpg' %}" alt="">
                         </div>
                         <div class="col-lg-8">
@@ -264,7 +238,7 @@
                     </div>
 
                     <div class="row team px-3 px-md-4">
-                        <div class="col-lg-2 my-auto">
+                        <div class="col-lg-4 my-auto">
                             <img src="{% static 'images/Vinay.jpg' %}" alt="">
                         </div>
                         <div class="col-lg-8">

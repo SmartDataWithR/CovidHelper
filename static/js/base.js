@@ -229,10 +229,13 @@ $(document).ready(function() {
 });
 
 /*========== Data Table ==========*/
-$(document).ready(function() {
+$(document).ready(function () {
     $("#table").DataTable({
-      scrollY: "50vh",
-      scrollCollapse: true,
-      paging: false
+        scrollY: "50vh",
+        "scrollCollapse": true,
+        "searching": false,
+        "paging": false,
+        "info": false,
+        "dom": '<"top"i>rt<"bottom"flp><"clear">'
     });
-  });
+});

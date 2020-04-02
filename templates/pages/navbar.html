@@ -2,8 +2,10 @@
 {% load i18n %}
 <nav class="navbar navbar-expand-lg fixed-top solid">
     <div class="container">
-        <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'images/dogooddeed.png' %}" alt=""></a>
-        <a href="{% url 'home' %}" class="navbar-brand">DoGoodDeed.com</a>
+        <a href="#home" class="navbar-brand"><img src="{% static 'images/dogooddeed.png' %}" alt=""></a>
+        <div class="home-link">
+            <a href="#home" class="navbar-brand">DoGoodDeed.com</a>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
         </button>
@@ -17,9 +19,9 @@
                 <li class="nav-item">
                     <a href="#team" class="nav-link">Team</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#people" class="nav-link">People</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown"
@@ -34,6 +36,25 @@
                         </div>
                     </div>
                 </li>
+                <form action="{% url 'set_language' %}" method="POST">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="langMenu" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Language
+                            </a>
+                            <div class="dropdown-menu aria-labelledby=" langMenu">
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                <a class="dropdown-item" href="{{ language.code }}">{{ language.name_local }}
+                                    ({{ language.code }})</a>
+                                <div class="dropdown-divider"></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </li>
+                </form>
                 {% else %}
                 <li class="nav-item">
                     <a href="#search" class="nav-link"><i class="fas fa-search-location"></i>{% trans " Map" %}</a>
@@ -50,38 +71,11 @@
                 <li class="nav-item">
                     <a href="{% url 'account_signup' %}" class="nav-link">{% trans "Sign up" %}</a>
                 </li>
-                {% endif %}
-            </ul>
-
-            <ul class="navbar-nav text-center ml-auto">
                 <form action="{% url 'set_language' %}" method="POST">
-                    <!-- <div class="form-group">
-                            <div class="dropdown">
-                                {% csrf_token %}
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Language
-                                </a>
-                                <input type="hidden" , name="next" value="{{ redirect_to }}">
-                                <div class="dropdown-menu aria-labelledby=" dropdownMenuButton">
-                                    {% get_available_languages as LANGUAGES %}
-                                    {% get_language_info_list for LANGUAGES as languages %}
-                                    {% for language in languages %}
-                                    <option onChange="document.location = this.value" id="" value="{{ language.code }}"
-                                        {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                                        {{ language.name_local }} ({{ language.code }})
-                                    </option>
-                                    {% endfor %}
-                                    <input class="btn btn-outline-secondary" type="submit" value="Go">
-
-                                </div>
-                            </div>
-                        </div> -->
-
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="langMenu" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="langMenu" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 Language
                             </a>
                             <div class="dropdown-menu aria-labelledby=" langMenu">
@@ -96,10 +90,8 @@
                         </div>
                     </li>
                 </form>
+                {% endif %}
             </ul>
-            
         </div>
-
-
     </div>
 </nav>
