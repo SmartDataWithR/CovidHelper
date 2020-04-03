@@ -16,6 +16,7 @@ from django.utils.translation import gettext as _, activate
 import socket
 import struct
 
+# import file for ip's to language mapping
 df_ip_lang = pd.read_csv('pages/lng_map.csv', names=['ip_from', 'ip_to', 'country_code', 'country_name', 'lang_code'] )
 
 def ip(request):
@@ -38,18 +39,26 @@ def index(request):
     gotodiv = False
     
     # From IP to Language
+    #--------------------
     request_ip = ip(request)  # get request IP
     
     request_ip_int = ip2int(request_ip[0])  # convert IP to numeric
     
-    df_filt = df_ip_lang[df_ip_lang.ip_from <= request_ip_int]
+    df_filt = df_ip_lang[df_ip_lang.ip_from <= request_ip_int] # filter data for fetched ip
     range_to_check = df_filt.iloc[-1]
     is_in_range = request_ip_int > range_to_check.ip_from & request_ip_int < range_to_check.ip_to  # check that my IP is in range
-    country_code = 'en-us'
-    if is_in_range:
-        country_code = range_to_check.lang_code
-        
-    activate(country_code) 
+    country_code = 'en-us'  # initialise default language
+    if is_in_range:  # if an entry is found in dataframe, set this one to country-code
+        country_code = range_to_check.lang_code    
+    activate(country_code)  # activate the current language code
+    current_path = str(request.get_full_path()).strip('/')
+    print(current_path)
+    # if user selected a language manually, use this one
+    if current_path == 'en':
+        activate('en-us')
+    elif current_path != '':
+        activate(current_path)
+
     context = {}
     if search != None:
         location = locator.geocode(search, timeout=5)

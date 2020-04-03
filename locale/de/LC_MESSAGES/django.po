@@ -95,8 +95,6 @@ msgid "Check out"
 msgstr "Suche und finde"
 
 #: .\templates\pages\home.html:76
-#, fuzzy
-#| msgid "Enter City or Zip Code"
 msgid "Enter your city or postal code"
 msgstr "Gib deine Stadt oder PLZ ein"
 
