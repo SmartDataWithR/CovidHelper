@@ -12,12 +12,23 @@ import pandas as pd
 import json
 from django.utils.translation import gettext as _
 
+def ip(request):
+    ip, is_routable = get_client_ip(request)
+    if ip is None:
+        ip = "0.0.0.0"
+    else:
+        if is_routable:
+            ipv = "Public"
+        else:
+            ipv = "Private"
+    return (ip, ipv) 
 
 def index(request):
     search = request.POST.get('search-field')
     locator = geopy.Nominatim(user_agent="myGeocoder")
     gotodiv = False
     context = {}
+    print(ip(request))
     if search != None:
         location = locator.geocode(search, timeout=5)
         if not hasattr(location, 'longitude'):
@@ -60,18 +71,6 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = 'pages/about.html'
-
-def ip(request):
-    ip, is_routable = get_client_ip(request)
-    if ip is None:
-        ip = "0.0.0.0"
-    else:
-        if is_routable:
-            ipv = "Public"
-        else:
-            ipv = "Private"
-    print(ip, ipv)
-    return render(request, 'pages/home.html')
 
 def searchLocation(request):
     form = SearchForm(request)
