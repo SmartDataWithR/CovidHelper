@@ -52,6 +52,7 @@ html, body {
 .navbar-nav .nav-link:hover {
   color: #c8e7ed;
 }
+
 .custom-toggler-icon {
   color: white;
   font-size: 1.6rem;
@@ -65,20 +66,6 @@ html, body {
   width: 6rem;
 }
 
-h3.heading {
-  font-size: 2.2rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.heading-underline {
-  width: 6rem;
-  height: .2rem;
-  background-color: #54AFBF;
-  margin: 0 auto 3rem;
-}
 /*--- First Fixed Background Image --*/
 #fixed {
   background-image: url('../images/AdobeStock_177954339_reduced.jpg');
@@ -153,7 +140,7 @@ h3.heading {
   width: 4rem;
   margin: 1rem;
 }
-.caption h3 {
+h3.landing {
   text-align: center;
   font-weight: 400;
   font-size: 2rem;
@@ -161,6 +148,20 @@ h3.heading {
   padding-top: 3rem;
   padding-bottom: 4rem;
   color: #001D28;
+}
+h3.heading {
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.heading-underline {
+  width: 6rem;
+  height: .2rem;
+  background-color: #54AFBF;
+  margin: 0 auto 3rem;
 }
 
 /*--- First Fixed Background Image --*/
@@ -208,30 +209,26 @@ h3.heading {
   background-color: rgba(255, 255, 255, .5);
 }
 
-.row img {
+.row img,
+.active-icons {
   transition: transform .1s ease;
-  opacity: .8;
-  width: 4rem;
+  opacity: .7;
 }
-.row img:hover {
-  transform: scale(.99);
-  opacity: 1;
+.active-icons:hover {
+  transform: scale(1.2);
+  opacity: 1.2;
 }
-.row p {
+.row p,
+.active-icons {
   font-size: 1.2rem;
   font-weight: 200;
-  color: black;
+  color: #5a5a5a;
 }
-.row a {
-   color: #444444;  
-}
+
 .row a:hover {
   color: whitesmoke;
 }
-.icons {
-  margin-left: 3rem;
-  margin-right: 3rem;
-}
+
 .bg-yel {
   background-color: whitesmoke;
   /* box-shadow: 0 0 1rem rgba(0, 0, 0, .1); */
