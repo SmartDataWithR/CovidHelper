@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-30 07:26+0200\n"
+"POT-Creation-Date: 2020-04-03 14:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,131 +64,165 @@ msgstr "AGB"
 msgid "stick together"
 msgstr "Haltet Zusammen"
 
-#: .\templates\pages\home.html:22
-msgid "Getting and providing help"
-msgstr "Du benötigst Hilfe oder willst Hilfe leisten"
-
-#: .\templates\pages\home.html:23
-msgid "during global Covid-19 crisis"
-msgstr "während der Covid-19 Krise"
-
-#: .\templates\pages\home.html:23
-msgid "That is possible."
-msgstr "Das ist möglich."
-
 #: .\templates\pages\home.html:24
-msgid "Just search for your city and get in touch with your neighbor."
-msgstr "Suche einfach nach deiner Stadt und sprich deine Nachbarn an."
+msgid "Help your neighbour"
+msgstr "Hilf deinem Nachbarn"
 
-#: .\templates\pages\home.html:34 .\templates\pages\navbar.html:44
+#: .\templates\pages\home.html:43
+msgid "How it works"
+msgstr "Wie es funktioniert"
+
+#: .\templates\pages\home.html:55
+msgid "Update profile"
+msgstr "Profil pflegen"
+
+#: .\templates\pages\home.html:56
+#, fuzzy
+#| msgid "Sign up and fill out your profile."
+msgid "Fill out details of your profile"
+msgstr "Melde dich an und pflege dein Profil"
+
+#: .\templates\pages\home.html:63 .\templates\pages\navbar.html:72
 msgid "Sign up"
 msgstr "Melde dich an"
 
-#: .\templates\pages\home.html:35
-msgid "Sign up and fill out your profile."
+#: .\templates\pages\home.html:64
+msgid "Sign up and set up your profile"
 msgstr "Melde dich an und pflege dein Profil"
 
-#: .\templates\pages\home.html:36
-#, fuzzy
-#| msgid ""
-#| "filling out the profile is unfortunately essential otherwise you'll be "
-#| "not able to use our offer."
-msgid ""
-"Filling out the profile is unfortunately essential otherwise you'll be not "
-"able to use our offer."
-msgstr ""
-"Das Profil auszufüllen ist leider notwendig, um Hilfe zu leisten oder zu "
-"erhalten."
-
-#: .\templates\pages\home.html:40
+#: .\templates\pages\home.html:74
 msgid "Check out"
 msgstr "Suche und finde"
 
-#: .\templates\pages\home.html:41
-msgid "Enter your city or postal code and see if any of your neighbors need help or offer help."
-msgstr "Gib deine Stadt oder Postleitzahl ein, um Hilfe und Hilfsangebote zu sehen"
-
-#: .\templates\pages\home.html:46
-msgid "Start a conversation via email with each other. Exchange information, e.g. email, shopping list or similar."
-msgstr "Kontaktiere via Mail deine Nachbarn und tausche Informationen aus."
-
-#: .\templates\pages\home.html:52
-msgid "Target reached. You helped a neighbor and made a friend for better times."
-msgstr "Glückwunsch. Du hast jemandem geholfen."
-
-#: .\templates\pages\home.html:81
-msgid "Enter City or Zip Code"
+#: .\templates\pages\home.html:76
+#, fuzzy
+#| msgid "Enter City or Zip Code"
+msgid "Enter your city or postal code"
 msgstr "Gib deine Stadt oder PLZ ein"
 
-#: .\templates\pages\home.html:92
-msgid "Search"
+#: .\templates\pages\home.html:84
+msgid "Start a conversation via email with each other"
+msgstr "Kontaktiere via Mail deine Nachbarn und tausche Informationen aus."
+
+#: .\templates\pages\home.html:91
+msgid "Congratulations. You made a friend for better times."
+msgstr "Glückwunsch. Du hast jemandem geholfen."
+
+#: .\templates\pages\home.html:117
+msgid "Map"
+msgstr "Karte"
+
+#: .\templates\pages\home.html:131
+msgid " Search"
 msgstr "Suche"
 
-#: .\templates\pages\home.html:113
-msgid "Result"
-msgstr "Ergebnis"
+#: .\templates\pages\home.html:156
+msgid "Nr."
+msgstr "Nr."
 
-#: .\templates\pages\home.html:114
-msgid "Slogan"
-msgstr "Nachricht"
-
-#: .\templates\pages\home.html:115
+#: .\templates\pages\home.html:157
 msgid "Description"
 msgstr "Details"
 
-#: .\templates\pages\home.html:116
-msgid "Contact"
-msgstr "Kontakt"
+#: .\templates\pages\home.html:158
+msgid "Mail"
+msgstr "Email"
 
-#: .\templates\pages\home.html:154
+#: .\templates\pages\home.html:187
+msgid "Support Us"
+msgstr "Unterstütze uns"
+
+#: .\templates\pages\home.html:198
+msgid "If you like our community please support us via Patreon."
+msgstr "Wenn du unsere Seite magst, unterstütze uns über Patreon."
+
+#: .\templates\pages\home.html:211
 msgid "Our Team"
 msgstr "Unser Team"
 
-#: .\templates\pages\home.html:169
+#: .\templates\pages\home.html:226
 msgid "I am a Data Scientist and want to develop tools that make a difference and improve our lifes."
 msgstr "Ich bin ein Data Scientist und möchte Tools entwickeln, die einen Unterschied machen und das Leben verbessern."
 
-#: .\templates\pages\home.html:171
+#: .\templates\pages\home.html:228
 msgid "Bert, Developer (Hamburg, Germany)"
 msgstr "Bert, Entwickler (Hamburg, Germany)"
 
-#: .\templates\pages\home.html:183
-msgid "I am interested in programming because I want to automate the boring stuff and of course do good deed."
-msgstr "Ich interessiere mich für Programmierung, weil ich langweilige Dinge automatisieren und gute Dinge tun will."
+#: .\templates\pages\home.html:240
+msgid ""
+"I am interested in programming because I want to automate the boring stuff "
+"and of course do good deed."
+msgstr ""
+"Ich interessiere mich für Programmierung, weil ich langweilige Dinge "
+"automatisieren und gute Dinge tun will."
 
-#: .\templates\pages\home.html:185
+#: .\templates\pages\home.html:242
 msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
 msgstr "Gunnar, Angehender Entwickler (Hamburg, Germany)"
 
-#: .\templates\pages\home.html:197
-msgid "I am Engineer working in power industry, analyzing machines. Want to utilize technology for the betterment of society."
+#: .\templates\pages\home.html:254
+msgid ""
+"I am Engineer working in power industry, analyzing machines. Want to utilize "
+"technology for the betterment of society."
 msgstr ""
 
-#: .\templates\pages\home.html:199
+#: .\templates\pages\home.html:256
 msgid "Vinay, Technologist (Bengaluru, India)"
 msgstr "Vinay, Entwickler (Bengaluru, Indien)"
 
-#: .\templates\pages\navbar.html:15 .\templates\pages\navbar.html:35
+#: .\templates\pages\navbar.html:17 .\templates\pages\navbar.html:60
 msgid " Map"
 msgstr ""
 
-#: .\templates\pages\navbar.html:27
+#: .\templates\pages\navbar.html:33
 msgid "Update Profile"
 msgstr "Profil pflegen"
 
-#: .\templates\pages\navbar.html:29
+#: .\templates\pages\navbar.html:35
 msgid "Log out"
 msgstr "Ausloggen"
 
-#: .\templates\pages\navbar.html:41
+#: .\templates\pages\navbar.html:69
 msgid "Log in"
 msgstr "Einloggen"
 
-#~ msgid "Supporter"
-#~ msgstr "Unterstützer"
+#~ msgid "Getting and providing help"
+#~ msgstr "Du benötigst Hilfe oder willst Hilfe leisten"
 
-#~ msgid "Map"
-#~ msgstr "Karte"
+#~ msgid "during global Covid-19 crisis"
+#~ msgstr "während der Covid-19 Krise"
+
+#~ msgid "That is possible."
+#~ msgstr "Das ist möglich."
+
+#~ msgid "Just search for your city and get in touch with your neighbor."
+#~ msgstr "Suche einfach nach deiner Stadt und sprich deine Nachbarn an."
+
+#, fuzzy
+#~| msgid ""
+#~| "filling out the profile is unfortunately essential otherwise you'll be "
+#~| "not able to use our offer."
+#~ msgid ""
+#~ "Filling out the profile is unfortunately essential otherwise you'll be "
+#~ "not able to use our offer."
+#~ msgstr ""
+#~ "Das Profil auszufüllen ist leider notwendig, um Hilfe zu leisten oder zu "
+#~ "erhalten."
+
+#~ msgid ""
+#~ "Enter your city or postal code and see if any of your neighbors need help "
+#~ "or offer help."
+#~ msgstr ""
+#~ "Gib deine Stadt oder Postleitzahl ein, um Hilfe und Hilfsangebote zu sehen"
+
+#~ msgid "Result"
+#~ msgstr "Ergebnis"
+
+#~ msgid "Slogan"
+#~ msgstr "Nachricht"
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"
 
 #~ msgid "Search in your city for people who need or provide help"
 #~ msgstr ""
