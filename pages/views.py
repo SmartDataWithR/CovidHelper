@@ -4,13 +4,19 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from django.conf import settings
 from .forms import SearchForm
 from users.models import CustomUser
 import geopy
 from geopy.distance import geodesic
 import pandas as pd
 import json
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext as _, activate
+# required for IP to numeric
+import socket
+import struct
+
+df_ip_lang = pd.read_csv('pages/lng_map.csv', names=['ip_from', 'ip_to', 'country_code', 'country_name', 'lang_code'] )
 
 def ip(request):
     ip, is_routable = get_client_ip(request)
@@ -23,12 +29,28 @@ def ip(request):
             ipv = "Private"
     return (ip, ipv) 
 
+def ip2int(addr):
+    return struct.unpack("!I", socket.inet_aton(addr))[0]
+
 def index(request):
     search = request.POST.get('search-field')
     locator = geopy.Nominatim(user_agent="myGeocoder")
     gotodiv = False
+    
+    # From IP to Language
+    request_ip = ip(request)  # get request IP
+    
+    request_ip_int = ip2int(request_ip[0])  # convert IP to numeric
+    
+    df_filt = df_ip_lang[df_ip_lang.ip_from <= request_ip_int]
+    range_to_check = df_filt.iloc[-1]
+    is_in_range = request_ip_int > range_to_check.ip_from & request_ip_int < range_to_check.ip_to  # check that my IP is in range
+    country_code = 'en-us'
+    if is_in_range:
+        country_code = range_to_check.lang_code
+        
+    activate(country_code) 
     context = {}
-    print(ip(request))
     if search != None:
         location = locator.geocode(search, timeout=5)
         if not hasattr(location, 'longitude'):
