@@ -1,53 +1,195 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Leaflet -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-crossorigin=""></script>
-</head>
-<body>
-    <div id="mapid" style="width: 100%; height: 400px;"></div>
+{% load static %}
 
-<script>
-  var mymap = L.map('mapid').setView([53.632573, 9.9452053], 13);
+   <!--- Navigation -->
+<div class="container-fluid">
+   <div class="navbar projects navbar-expand-md">
+      <div class="container">
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarProjects">
+            <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+         </button>
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGVocGhpbGIiLCJhIjoiY2s3emFtN2M4MDNwajNxb2ducGNuNWk4byJ9.MxBMpm6g_oaptJPqgqmG7g', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoidGVocGhpbGIiLCJhIjoiY2s3emFtN2M4MDNwajNxb2ducGNuNWk4byJ9.MxBMpm6g_oaptJPqgqmG7g'
-  }).addTo(mymap);
+         <div class="collapse navbar-collapse filter" id="navbarProjects">
+            <ul class="navbar-nav mx-auto button-group filters-button-group">
+               <li class="nav-item">
+                  <a class="nav-link filter" data-filter="*">All</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link filter is-checked" data-filter=".Food">Food</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link filter" data-filter=".Day-to-Day">Day-to-Day</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link filter" data-filter=".Pharmacy">Pharmacy</a>
+               </li>
+            </ul>
+         </div>
 
-  var marker = L.marker([53.632573, 9.9452053]).addTo(mymap);
+      </div> <!-- End Wrapper -->
+   </div> <!-- End Navbar -->
 
-  var circle = L.circle([53.632573, 9.9452053], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.3,
-    radius: 100
-    }).addTo(mymap);
-    
-    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+   <div class="container">
+      <div class="grid mt-2 mb-5">
 
-    var popup = L.popup();
+         <div class="element-item Food Day-to-Day" data-category="transition">
+            <div class="status">
+               <a class="button" data-toggle="modal" data-target="#exampleModal">
+                  <img src="{% static 'images/booth-branding-business-buy-264636.jpg' %}" alt="" />
+                  <div class="top-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">open</div>
+                  <div class="top-right-below badge badge-primary text-wrap rounded-0" style="width: 6rem;">deliver
+                  </div>
+                  <div class="center-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">pickup</div>
+               </a>
+            </div>
+         </div>
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-    }
-    mymap.on('click', onMapClick);
-</script>
-    
-</body>
-</html>
+         <!-- Modal -->
+         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content rounded-0">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Alfonso's Supermarket</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A dolorum, consequatur numquam commodi
+                        quam corporis voluptates, facere, accusamus aspernatur veritatis aut iusto hic velit dolores. A
+                        architecto iure ea deleniti?</p>
+                     <div class="opening">
+                        <p>Open</p>
+                        <p>Mon 8:00 to 16:00</p>
+                        <p>Tue 8:00 to 16:00</p>
+                        <p>Wen 8:00 to 16:00</p>
+                        <p>Thu 8:00 to 16:00</p>
+                        <p>Fri 8:00 to 14:00</p>
+                        <p>Sat closed</p>
+                        <p>Sun closed</p>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal"><i
+                           class="far fa-envelope"></i></button>
+                     <button type="button" class="btn btn-secondary rounded-0"> +49 172 7902072</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="element-item Day-to-Day Pharmacy" data-category="transition">
+            <div class="status">
+               <a class="button" data-toggle="modal" data-target="#exampleModal1">
+                  <img src="{% static 'images/grocery-cart-with-item-1005638.jpg' %}" alt="" />
+                  <div class="top-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">open</div>
+                  <div class="top-right-below badge badge-primary text-wrap rounded-0" style="width: 6rem;">deliver
+                  </div>
+                  <div class="center-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">pickup</div>
+               </a>
+            </div>
+         </div>
+
+         <!-- Modal -->
+         <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog rounded-0" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Berta's Drugstore</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A dolorum, consequatur numquam commodi
+                        quam
+                        corporis voluptates, facere, accusamus aspernatur veritatis aut iusto hic velit dolores. A
+                        architecto
+                        iure ea deleniti?</p>
+                     <table class="table opening table-borderless table-sm">
+                        <thead class="thead">
+                           <tr>
+                              <th scope="col">Opening hours</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th scope="row">Mon</th>
+                              <td>8:00 to 16:00</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">Tue</th>
+                              <td>8:00 to 16:00</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">Wen</th>
+                              <td>8:00 to 16:00</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">Thu</th>
+                              <td>8:00 to 16:00</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">Fri</th>
+                              <td>8:00 to 16:00</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">Sat</th>
+                              <td>8:00 to 14:00</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">Sun</th>
+                              <td>8:00 to 14:00</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal"><i
+                           class="far fa-envelope"></i></button>
+                     <button type="button" class="btn btn-secondary rounded-0"> +49 152 7902072</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="element-item Food Day-to-Day" data-category="transition">
+            <a class="img-popup" href="{% static 'images/flower.jpg' %}" title="Portfolio Item Description"><img
+                  src="{% static 'images/flower.jpg' %}" alt="" /></a>
+         </div>
+
+         <div class="element-item Food Pharmacy" data-category="transition">
+            <a class="img-popup" href="{% static 'images/sunset.jpg' %}" title="Portfolio Item Description"><img
+                  src="{% static 'images/sunset.jpg' %}" alt="" /></a>
+         </div>
+
+         <div class="element-item Food Day-to-Day" data-category="transition">
+            <a class="img-popup" href="{% static 'images/lantern.jpg' %}" title="Portfolio Item Description"><img
+                  src="{% static 'images/lantern.jpg' %}" alt="" /></a>
+         </div>
+
+         <div class="element-item Day-to-Day Pharmacy" data-category="transition">
+            <a class="img-popup" href="{% static 'images/road.jpg' %}" title="Portfolio Item Description"><img
+                  src="{% static 'images/road.jpg' %}" alt="" /></a>
+         </div>
+
+         <div class="element-item Pharmacy" data-category="transition">
+            <a class="img-popup" href="{% static 'images/photo-of-people-walking-in-front-of-pharmacy-2414476.jpg' %}"
+               title="Portfolio Item Description"><img
+                  src="{% static 'images/photo-of-people-walking-in-front-of-pharmacy-2414476.jpg' %}" alt="" /></a>
+         </div>
+
+         <div class="element-item Food" data-category="transition">
+            <a class="img-popup" href="{% static 'images/nature.jpg' %}" title="Portfolio Item Description"><img
+                  src="{% static 'images/nature.jpg' %}" alt="" /></a>
+         </div>
+
+         <div class="element-item Food" data-category="transition">
+            <a class="img-popup" href="{% static 'images/woods.jpg' %}" title="Portfolio Item Description"><img
+                  src="{% static 'images/woods.jpg' %}" alt="" /></a>
+         </div>
+
+      </div> <!-- End Grid -->
+   </div>
+</div>
