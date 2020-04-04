@@ -59,7 +59,7 @@
                     <a href="#search" class="nav-link"><i class="fas fa-search-location"></i>{% trans " Map" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#team" class="nav-link">Team</a>
+                    <a href="#team" class="nav-link">{% trans "Team" %}</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a href="#people" class="nav-link">People</a>
@@ -75,7 +75,7 @@
                         <div class="dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="langMenu" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                Language
+                                {% trans "Language" %}
                             </a>
                             <div class="dropdown-menu aria-labelledby=" langMenu">
                                 {% get_available_languages as LANGUAGES %}

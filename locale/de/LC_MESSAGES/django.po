@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-04 09:38+0200\n"
+"POT-Creation-Date: 2020-04-04 16:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr "AGB"
 
 #: .\templates\pages\home.html:21
 msgid "Do good deeds"
-msgstr "Vollbringe eine gute Tat"
+msgstr "Tue etwas Gutes"
 
 #: .\templates\pages\home.html:24
 msgid "Help your neighbour and find help"
@@ -95,6 +95,10 @@ msgstr "Suche in deiner Umgebung"
 #: .\templates\pages\home.html:76
 msgid "Enter your city or postal code"
 msgstr "Gib deine Stadt oder PLZ ein"
+
+#: .\templates\pages\home.html:82
+msgid "Chat"
+msgstr "Tauscht euch aus"
 
 #: .\templates\pages\home.html:84
 msgid "Start a conversation via email with each other"
@@ -169,6 +173,8 @@ msgid ""
 "I am Engineer working in power industry, analyzing machines. Want to utilize "
 "technology for the betterment of society."
 msgstr ""
+"Ich bin ein Ingenieur, der in der Energiewirtschaft arbeitet. Ich will "
+"Technologie entwickeln zum Wohle der Gesellschaft."
 
 #: .\templates\pages\home.html:256
 msgid "Vinay, Technologist (Bengaluru, India)"
@@ -186,9 +192,17 @@ msgstr "Profil pflegen"
 msgid "Log out"
 msgstr "Ausloggen"
 
+#: .\templates\pages\navbar.html:62
+msgid "Team"
+msgstr "Team"
+
 #: .\templates\pages\navbar.html:68
 msgid "Log in"
 msgstr "Einloggen"
+
+#: .\templates\pages\navbar.html:78
+msgid "Language"
+msgstr "Sprache"
 
 #~ msgid "stick together"
 #~ msgstr "Haltet Zusammen"
@@ -237,9 +251,6 @@ msgstr "Einloggen"
 #~ msgid "Search in your city for people who need or provide help"
 #~ msgstr ""
 #~ "Suche in deiner Stadt nach Menschen, die Hilfe benötigen oder leisten"
-
-#~ msgid "Chat"
-#~ msgstr "Tauscht euch aus"
 
 #~ msgid "Get in contact via email"
 #~ msgstr "Startet den Kontakt mittels Email"

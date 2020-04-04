@@ -3,7 +3,11 @@ html, body {
   font-family: 'Open Sans',
   sans-serif;
   /* font-family: 'Oswald', sans-serif; */
-  color: #505962;
+  color: #505962; 
+}
+
+select {
+  overflow-y: hidden;
 }
 
 /*--- Nav Scrolling Offset --*/

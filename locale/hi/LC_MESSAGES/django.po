@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-29 18:13+0200\n"
+"POT-Creation-Date: 2020-04-04 16:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,12 @@ msgid ""
 "We've received a request to reset your password. If you didn't make this "
 "request, you can safely ignore this email. Otherwise, click the button below "
 "to reset your password."
-msgstr "से नमस्कार  %(site_name)s!\n"
+msgstr ""
+"से नमस्कार  %(site_name)s!\n"
 "\n"
-"हमें आपका पासवर्ड रीसेट करने का अनुरोध मिला है. यदि आपने इसे नहीं बनाया है"
-"अनुरोध, आप इस ईमेल को सुरक्षित रूप से अनदेखा कर सकते हैं. अन्यथा, नीचे दिए गए बटन पर क्लिक करें"
-"अपना पासवर्ड रीसेट करने के लिए"
-
+"हमें आपका पासवर्ड रीसेट करने का अनुरोध मिला है. यदि आपने इसे नहीं बनाया हैअनुरोध, आप इस "
+"ईमेल को सुरक्षित रूप से अनदेखा कर सकते हैं. अन्यथा, नीचे दिए गए बटन पर क्लिक करेंअपना "
+"पासवर्ड रीसेट करने के लिए"
 
 #: .\templates\account\email\password_reset_key_message.txt:8
 #, python-format
@@ -43,7 +43,8 @@ msgstr "यदि आप भूल गए हैं, तो आपका उप�
 msgid ""
 "Thank you for using %(site_name)s!\n"
 "%(site_domain)s"
-msgstr "उपयोग करने के लिए आपका धन्यवाद %(site_name)s!\n"
+msgstr ""
+"उपयोग करने के लिए आपका धन्यवाद %(site_name)s!\n"
 "%(site_domain)s"
 
 #: .\templates\account\password_set.html:16
@@ -67,124 +68,190 @@ msgid "Terms&Conditions"
 msgstr "नियम एवं शर्तें"
 
 #: .\templates\pages\home.html:21
-msgid "Stand Together"
-msgstr "साथ में खड़े रहो"
-
-#: .\templates\pages\home.html:22
-msgid "Getting and providing help"
-msgstr "सहायता प्राप्त करना और प्रदान करना"
-
-#: .\templates\pages\home.html:23
-msgid "during global Covid-19 crisis"
-msgstr "वैश्विक कोविद -19 संकट के दौरान"
-
-#: .\templates\pages\home.html:23
-msgid "That is possible."
-msgstr "यह सम्भव है"
+msgid "Do good deeds"
+msgstr "अच्छे काम करें"
 
 #: .\templates\pages\home.html:24
-msgid "Just search for your city and get in touch with your neighbor."
-msgstr "बस अपने शहर की तलाश करें और अपने पड़ोसी से संपर्क करें।"
+msgid "Help your neighbour and find help"
+msgstr "अपने पड़ोसी की मदद करें और मदद पाएं"
 
-#: .\templates\pages\home.html:34 .\templates\pages\navbar.html:41
+#: .\templates\pages\home.html:43
+msgid "How it works"
+msgstr "यह काम किस प्रकार करता है"
+
+#: .\templates\pages\home.html:55
+msgid "Update profile"
+msgstr "प्रोफ़ाइल अपडेट करें"
+
+#: .\templates\pages\home.html:56
+msgid "Fill out details of your profile"
+msgstr "अपनी प्रोफ़ाइल का विवरण भरें"
+
+#: .\templates\pages\home.html:63 .\templates\pages\navbar.html:71
 msgid "Sign up"
 msgstr "साइन अप करें"
 
-#: .\templates\pages\home.html:35
-msgid "Sign up and fill out your profile."
-msgstr "साइन अप करें और अपना प्रोफ़ाइल भरें"
+#: .\templates\pages\home.html:64
+msgid "Sign up and set up your profile"
+msgstr "साइन अप करें और अपना प्रोफ़ाइल सेट करें"
 
-#: .\templates\pages\home.html:36
-msgid ""
-"filling out the profile is unfortunately essential otherwise you'll be not "
-"able to use our offer."
-msgstr "प्रोफ़ाइल भरना दुर्भाग्य से आवश्यक है अन्यथा आप नहीं होंगे हमारे प्रस्ताव का उपयोग करने में सक्षम"
+#: .\templates\pages\home.html:74
+msgid "Search near you"
+msgstr "आप के पास खोजें"
 
-#: .\templates\pages\home.html:40
-msgid "Check out"
-msgstr "चेक आउट"
+#: .\templates\pages\home.html:76
+msgid "Enter your city or postal code"
+msgstr "अपना शहर या डाक कोड दर्ज करें"
 
-#: .\templates\pages\home.html:41
-msgid ""
-"Enter your city or postal code and see if any of your neighbors need help or "
-"offer help."
-msgstr "अपना शहर या डाक कोड दर्ज करें और देखें कि आपके किसी पड़ोसी को मदद की ज़रूरत है या मदद का प्रस्ताव"
+#: .\templates\pages\home.html:82
+msgid "Chat"
+msgstr "बातचीत"
 
-#: .\templates\pages\home.html:46
-msgid ""
-"Start a conversation via email with each other. Exchange information, e.g. "
-"email, shopping list or similar."
-msgstr "एक-दूसरे के साथ ईमेल के जरिए बातचीत शुरू करें. एक्सचेंज की जानकारी, उदा। ईमेल, खरीदारी की सूची या समान"
-
-#: .\templates\pages\home.html:51
-msgid ""
-"Target reached. You helped a neighbor and made a friend for better times."
-msgstr "टारगेट तक पहुंच गया. आपने पड़ोसी की मदद की और बेहतर समय के लिए दोस्त बनाया"
-
-#: .\templates\pages\home.html:79
-msgid "Enter City or Zip Code"
-msgstr "शहर या ज़िप कोड दर्ज करें"
+#: .\templates\pages\home.html:84
+msgid "Start a conversation via email with each other"
+msgstr "एक-दूसरे के साथ ईमेल के जरिए बातचीत शुरू करें "
 
 #: .\templates\pages\home.html:89
-msgid "Search"
-msgstr "खोज"
+msgid "Goal"
+msgstr "लक्ष्य"
 
-#: .\templates\pages\home.html:110
-msgid "Result"
-msgstr "परिणाम"
+#: .\templates\pages\home.html:91
+msgid "Congratulations. You made a good deed."
+msgstr "बधाई हो। आपने एक अच्छा काम किया"
 
-#: .\templates\pages\home.html:111
-msgid "Slogan"
-msgstr "नारा"
-
-#: .\templates\pages\home.html:112
-msgid "Description"
-msgstr "विवरण"
-
-#: .\templates\pages\home.html:113
-msgid "Contact"
-msgstr "संपर्क करें"
-
-#: .\templates\pages\home.html:152
-msgid "Supporter"
-msgstr "समर्थक"
-
-#: .\templates\pages\home.html:165
-msgid ""
-"I am a Data Scientist and want to develop tools that make a difference and "
-"improve our lifes."
-msgstr "मैं एक डेटा साइंटिस्ट हूं और ऐसे उपकरण विकसित करना चाहता हूं, जिनसे फर्क पड़ता है और हमारे जीवन में सुधार"
-
-#: .\templates\pages\home.html:167
-msgid "Bert, Developer (Hamburg, Germany)"
-msgstr "बर्ट, डेवलपर (हैम्बर्ग, जर्मनी)"
-
-#: .\templates\pages\home.html:181
-msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
-msgstr "गुन्नार, आकांक्षी डेवलपर (हैम्बर्ग, जर्मनी)"
-
-#: .\templates\pages\home.html:193
-msgid ""
-"I am Engineer working in power industry, analyzing machines. Want to utilize technology "
-"for the betterment of society."
-msgstr "मैं पावर इंडस्ट्री में काम कर रहा इंजीनियर हूं, मशीनों का विश्लेषण कर रहा हूं. समाज की भलाई के लिए प्रौद्योगिकी का उपयोग करना चाहता हूं "
-
-#: .\templates\pages\home.html:195
-msgid "Vinay, Technologist (Bengaluru, India)"
-msgstr "विनय, टेक्नोलॉजिस्ट (बेंगलुरु, भारत)"
-
-#: .\templates\pages\navbar.html:15 .\templates\pages\navbar.html:32
+#: .\templates\pages\home.html:117
 msgid "Map"
 msgstr "नक्शा"
 
-#: .\templates\pages\navbar.html:24
+#: .\templates\pages\home.html:131
+msgid " Search"
+msgstr "खोज"
+
+#: .\templates\pages\home.html:156
+msgid "Nr."
+msgstr "सं"
+
+#: .\templates\pages\home.html:157
+msgid "Description"
+msgstr "विवरण"
+
+#: .\templates\pages\home.html:158
+msgid "Mail"
+msgstr "मेल"
+
+#: .\templates\pages\home.html:187
+msgid "Support Us"
+msgstr "समर्थक"
+
+#: .\templates\pages\home.html:198
+msgid "If you like our community please support us via Patreon."
+msgstr "यदि आप हमारे समुदाय को पसंद करते हैं तो कृपया पैट्रन के माध्यम से हमारा समर्थन करें"
+
+#: .\templates\pages\home.html:211
+msgid "Our Team"
+msgstr "हमारी टीम"
+
+#: .\templates\pages\home.html:226
+msgid ""
+"I am a Data Scientist and want to develop tools that make a difference and "
+"improve our lifes."
+msgstr ""
+"मैं एक डेटा साइंटिस्ट हूं और ऐसे उपकरण विकसित करना चाहता हूं, जिनसे फर्क पड़ता है और हमारे "
+"जीवन में सुधार"
+
+#: .\templates\pages\home.html:228
+msgid "Bert, Developer (Hamburg, Germany)"
+msgstr "बर्ट, डेवलपर (हैम्बर्ग, जर्मनी)"
+
+#: .\templates\pages\home.html:240
+msgid ""
+"I am interested in programming because I want to automate the boring stuff "
+"and of course do good deed."
+msgstr ""
+"मुझे प्रोग्रामिंग में दिलचस्पी है क्योंकि मैं बोरिंग सामान को स्वचालित करना चाहता हूंऔर "
+"निश्चित रूप से अच्छा काम करते हैं"
+
+#: .\templates\pages\home.html:242
+msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
+msgstr "गुन्नार, आकांक्षी डेवलपर (हैम्बर्ग, जर्मनी)"
+
+#: .\templates\pages\home.html:254
+msgid ""
+"I am Engineer working in power industry, analyzing machines. Want to utilize "
+"technology for the betterment of society."
+msgstr ""
+"मैं पावर इंडस्ट्री में काम कर रहा इंजीनियर हूं, मशीनों का विश्लेषण कर रहा हूं. समाज की भलाई "
+"के लिए प्रौद्योगिकी का उपयोग करना चाहता हूं "
+
+#: .\templates\pages\home.html:256
+msgid "Vinay, Technologist (Bengaluru, India)"
+msgstr "विनय, टेक्नोलॉजिस्ट (बेंगलुरु, भारत)"
+
+#: .\templates\pages\navbar.html:17 .\templates\pages\navbar.html:59
+msgid " Map"
+msgstr "नक्शा"
+
+#: .\templates\pages\navbar.html:32
 msgid "Update Profile"
 msgstr "प्रोफ़ाइल अपडेट करें"
 
-#: .\templates\pages\navbar.html:26
+#: .\templates\pages\navbar.html:34
 msgid "Log out"
 msgstr "लॉग आउट"
 
-#: .\templates\pages\navbar.html:38
+#: .\templates\pages\navbar.html:62
+msgid "Team"
+msgstr "हमारी टीम"
+
+#: .\templates\pages\navbar.html:68
 msgid "Log in"
 msgstr "लॉग इन करें"
+
+#: .\templates\pages\navbar.html:78
+msgid "Language"
+msgstr "भाषा"
+
+#~ msgid "Stand Together"
+#~ msgstr "साथ में खड़े रहो"
+
+#~ msgid "Getting and providing help"
+#~ msgstr "सहायता प्राप्त करना और प्रदान करना"
+
+#~ msgid "during global Covid-19 crisis"
+#~ msgstr "वैश्विक कोविद -19 संकट के दौरान"
+
+#~ msgid "That is possible."
+#~ msgstr "यह सम्भव है"
+
+#~ msgid "Just search for your city and get in touch with your neighbor."
+#~ msgstr "बस अपने शहर की तलाश करें और अपने पड़ोसी से संपर्क करें।"
+
+#~ msgid ""
+#~ "filling out the profile is unfortunately essential otherwise you'll be "
+#~ "not able to use our offer."
+#~ msgstr ""
+#~ "प्रोफ़ाइल भरना दुर्भाग्य से आवश्यक है अन्यथा आप नहीं होंगे हमारे प्रस्ताव का उपयोग करने में "
+#~ "सक्षम"
+
+#~ msgid "Check out"
+#~ msgstr "चेक आउट"
+
+#~ msgid ""
+#~ "Enter your city or postal code and see if any of your neighbors need help "
+#~ "or offer help."
+#~ msgstr ""
+#~ "अपना शहर या डाक कोड दर्ज करें और देखें कि आपके किसी पड़ोसी को मदद की ज़रूरत है या "
+#~ "मदद का प्रस्ताव"
+
+#~ msgid ""
+#~ "Target reached. You helped a neighbor and made a friend for better times."
+#~ msgstr "टारगेट तक पहुंच गया. आपने पड़ोसी की मदद की और बेहतर समय के लिए दोस्त बनाया"
+
+#~ msgid "Result"
+#~ msgstr "परिणाम"
+
+#~ msgid "Slogan"
+#~ msgstr "नारा"
+
+#~ msgid "Contact"
+#~ msgstr "संपर्क करें"
