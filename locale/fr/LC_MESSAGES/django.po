@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-29 18:01+0200\n"
+"POT-Creation-Date: 2020-04-04 16:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,11 +27,16 @@ msgid ""
 "request, you can safely ignore this email. Otherwise, click the button below "
 "to reset your password."
 msgstr ""
+"Bonjour de %(site_name)s!\n"
+"\n"
+"Nous avons reçu une demande de réinitialisation de votre mot de passe. Si tu "
+"n'as pas fait çademande, vous pouvez ignorer cet e-mail en toute sécurité. "
+"Sinon, cliquez sur le bouton ci-dessouspour réinitialiser votre mot de passe."
 
 #: .\templates\account\email\password_reset_key_message.txt:8
 #, python-format
 msgid "In case you forgot, your username is %(username)s."
-msgstr ""
+msgstr "En cas d'oubli, votre nom d'utilisateur est %(username)s."
 
 #: .\templates\account\email\password_reset_key_message.txt:10
 #, python-format
@@ -39,10 +44,12 @@ msgid ""
 "Thank you for using %(site_name)s!\n"
 "%(site_domain)s"
 msgstr ""
+"Merci d'utiliser %(site_name)s!\n"
+"%(site_domain)s"
 
 #: .\templates\account\password_set.html:16
 msgid "Set Password"
-msgstr ""
+msgstr "Définir le mot de passe"
 
 #: .\templates\pages\footer.html:12
 msgid "Imprint"
@@ -61,113 +68,198 @@ msgid "Terms&Conditions"
 msgstr "Termes et conditions"
 
 #: .\templates\pages\home.html:21
-msgid "Stand Together"
-msgstr "Être solidaires"
-
-#: .\templates\pages\home.html:22
-msgid "Getting and providing help"
-msgstr "Obtenir et fournir de l'aide"
-
-#: .\templates\pages\home.html:23
-msgid "during global Covid-19 crisis"
-msgstr "pendant la crise mondiale de Covid-19"
-
-#: .\templates\pages\home.html:23
-msgid "That is possible."
-msgstr "C'est possible."
+msgid "Do good deeds"
+msgstr "Faire de bonnes actions"
 
 #: .\templates\pages\home.html:24
-msgid "Just search for your city and get in touch with your neighbor."
-msgstr "Recherchez simplement votre ville et contactez votre voisin."
+msgid "Help your neighbour and find help"
+msgstr "Aidez votre voisin et trouvez de l'aide"
 
-#: .\templates\pages\home.html:34 .\templates\pages\navbar.html:41
+#: .\templates\pages\home.html:43
+msgid "How it works"
+msgstr "Comment ça fonctionne"
+
+#: .\templates\pages\home.html:55
+msgid "Update profile"
+msgstr "Mettre à jour le profil"
+
+#: .\templates\pages\home.html:56
+#, fuzzy
+#| msgid "Sign up and fill out your profile."
+msgid "Fill out details of your profile"
+msgstr "Remplissez les détails de votre profil"
+
+#: .\templates\pages\home.html:63 .\templates\pages\navbar.html:71
 msgid "Sign up"
 msgstr "S'inscrire"
 
-#: .\templates\pages\home.html:35
-msgid "Sign up and fill out your profile."
+#: .\templates\pages\home.html:64
+#, fuzzy
+#| msgid "Sign up and fill out your profile."
+msgid "Sign up and set up your profile"
 msgstr "Inscrivez-vous et remplissez votre profil."
 
-#: .\templates\pages\home.html:36
-msgid "filling out the profile is unfortunately essential otherwise you'll be not able to use our offer."
-msgstr "remplir le profil est malheureusement indispensable sinon vous ne pourrez pas utiliser notre offre."
+#: .\templates\pages\home.html:74
+msgid "Search near you"
+msgstr "Recherchez près de chez vous"
 
-#: .\templates\pages\home.html:40
-msgid "Check out"
-msgstr "Check-out"
+#: .\templates\pages\home.html:76
+#, fuzzy
+#| msgid "Enter City or Zip Code"
+msgid "Enter your city or postal code"
+msgstr "Entrez votre ville ou code postal"
 
-#: .\templates\pages\home.html:41
-msgid "Enter your city or postal code and see if any of your neighbors need help or offer help."
-msgstr "Entrez votre ville ou votre code postal et voyez si l'un de vos voisins a besoin d'aide ou offre de l'aide."
+#: .\templates\pages\home.html:82
+msgid "Chat"
+msgstr "Bavarder"
 
-#: .\templates\pages\home.html:46
-msgid "Start a conversation via email with each other."
-msgstr "Commencez une conversation par e-mail avec l'autre."
-
-#: .\templates\pages\home.html:51
-msgid "Target reached. You helped a neighbor and made a friend for better times."
-msgstr "Objectif atteint. Vous avez aidé un voisin et vous êtes fait un ami pour des temps meilleurs."
-
-#: .\templates\pages\home.html:79
-msgid "Enter City or Zip Code"
-msgstr "Entrez la ville ou le code postal"
+#: .\templates\pages\home.html:84
+msgid "Start a conversation via email with each other"
+msgstr "Démarrer une conversation par e-mail avec l'autre"
 
 #: .\templates\pages\home.html:89
-msgid "Search"
-msgstr "Chercher"
+msgid "Goal"
+msgstr "Objectif"
 
-#: .\templates\pages\home.html:110
-msgid "Result"
-msgstr "Résultat"
+#: .\templates\pages\home.html:91
+msgid "Congratulations. You made a good deed."
+msgstr "Toutes nos félicitations. Vous avez fait une bonne action."
 
-#: .\templates\pages\home.html:111
-msgid "Slogan"
-msgstr "Slogan"
-
-#: .\templates\pages\home.html:112
-msgid "Description"
-msgstr "La description"
-
-#: .\templates\pages\home.html:113
-msgid "Contact"
-msgstr "Contact"
-
-#: .\templates\pages\home.html:152
-msgid "Supporter"
-msgstr "Supporter"
-
-#: .\templates\pages\home.html:165
-msgid "I am a Data Scientist and want to develop tools that make a difference and improve our lifes."
-msgstr "e suis Data Scientist et je souhaite développer des outils qui font la différence et améliorent nos vies."
-
-#: .\templates\pages\home.html:167
-msgid "Bert, Developer (Hamburg, Germany)"
-msgstr "Bert, développeur (Hambourg, Allemagne)"
-
-#: .\templates\pages\home.html:181
-msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
-msgstr "Gunnar, Aspiring Developer (Hambourg, Allemagne)"
-
-#: .\templates\pages\home.html:193
-msgid "Working in power industry, analyzing machines. Want to utilize technology for the betterment of society. Be good, Do good"
-msgstr "Travailler dans l'industrie électrique, analyser des machines. Vous voulez utiliser la technologie pour l'amélioration de la société. Soyez bon, faites le bien"
-
-#: .\templates\pages\home.html:195
-msgid "Vinay, Technologist (Bengaluru, India)"
-msgstr "Vinay, technologue (Bengaluru, Inde)"
-
-#: .\templates\pages\navbar.html:15 .\templates\pages\navbar.html:32
+#: .\templates\pages\home.html:117
 msgid "Map"
 msgstr "Carte"
 
-#: .\templates\pages\navbar.html:24
+#: .\templates\pages\home.html:131
+msgid " Search"
+msgstr "Chercher"
+
+#: .\templates\pages\home.html:156
+msgid "Nr."
+msgstr "Nr."
+
+#: .\templates\pages\home.html:157
+msgid "Description"
+msgstr "La description"
+
+#: .\templates\pages\home.html:158
+msgid "Mail"
+msgstr "Courrier"
+
+#: .\templates\pages\home.html:187
+msgid "Support Us"
+msgstr "Soutenez-nous"
+
+#: .\templates\pages\home.html:198
+msgid "If you like our community please support us via Patreon."
+msgstr "Si vous aimez notre communauté, veuillez nous soutenir via Patreon."
+
+#: .\templates\pages\home.html:211
+msgid "Our Team"
+msgstr "Notre équipe"
+
+#: .\templates\pages\home.html:226
+msgid ""
+"I am a Data Scientist and want to develop tools that make a difference and "
+"improve our lifes."
+msgstr ""
+"e suis Data Scientist et je souhaite développer des outils qui font la "
+"différence et améliorent nos vies."
+
+#: .\templates\pages\home.html:228
+msgid "Bert, Developer (Hamburg, Germany)"
+msgstr "Bert, développeur (Hambourg, Allemagne)"
+
+#: .\templates\pages\home.html:240
+msgid ""
+"I am interested in programming because I want to automate the boring stuff "
+"and of course do good deed."
+msgstr ""
+"Je suis intéressé par la programmation car je veux automatiser les trucs "
+"ennuyeuxet bien sûr faire de bonnes actions."
+
+#: .\templates\pages\home.html:242
+msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
+msgstr "Gunnar, Aspiring Developer (Hambourg, Allemagne)"
+
+#: .\templates\pages\home.html:254
+msgid ""
+"I am Engineer working in power industry, analyzing machines. Want to utilize "
+"technology for the betterment of society."
+msgstr ""
+"Je suis Ingénieur travaillant dans l'industrie électrique, analysant des "
+"machines. Vous voulez utilisertechnologie pour l'amélioration de la société. "
+
+#: .\templates\pages\home.html:256
+msgid "Vinay, Technologist (Bengaluru, India)"
+msgstr "Vinay, technologue (Bengaluru, Inde)"
+
+#: .\templates\pages\navbar.html:17 .\templates\pages\navbar.html:59
+msgid " Map"
+msgstr "Carte"
+
+#: .\templates\pages\navbar.html:32
 msgid "Update Profile"
 msgstr "Mettre à jour le profil"
 
-#: .\templates\pages\navbar.html:26
+#: .\templates\pages\navbar.html:34
 msgid "Log out"
 msgstr "Se déconnecter"
 
-#: .\templates\pages\navbar.html:38
+#: .\templates\pages\navbar.html:62
+msgid "Team"
+msgstr "Notre équipe"
+
+#: .\templates\pages\navbar.html:68
 msgid "Log in"
 msgstr "S'identifier"
+
+#: .\templates\pages\navbar.html:78
+msgid "Language"
+msgstr "Langue"
+
+#~ msgid "Stand Together"
+#~ msgstr "Être solidaires"
+
+#~ msgid "Getting and providing help"
+#~ msgstr "Obtenir et fournir de l'aide"
+
+#~ msgid "during global Covid-19 crisis"
+#~ msgstr "pendant la crise mondiale de Covid-19"
+
+#~ msgid "That is possible."
+#~ msgstr "C'est possible."
+
+#~ msgid "Just search for your city and get in touch with your neighbor."
+#~ msgstr "Recherchez simplement votre ville et contactez votre voisin."
+
+#~ msgid ""
+#~ "filling out the profile is unfortunately essential otherwise you'll be "
+#~ "not able to use our offer."
+#~ msgstr ""
+#~ "remplir le profil est malheureusement indispensable sinon vous ne pourrez "
+#~ "pas utiliser notre offre."
+
+#~ msgid "Check out"
+#~ msgstr "Check-out"
+
+#~ msgid ""
+#~ "Enter your city or postal code and see if any of your neighbors need help "
+#~ "or offer help."
+#~ msgstr ""
+#~ "Entrez votre ville ou votre code postal et voyez si l'un de vos voisins a "
+#~ "besoin d'aide ou offre de l'aide."
+
+#~ msgid ""
+#~ "Target reached. You helped a neighbor and made a friend for better times."
+#~ msgstr ""
+#~ "Objectif atteint. Vous avez aidé un voisin et vous êtes fait un ami pour "
+#~ "des temps meilleurs."
+
+#~ msgid "Result"
+#~ msgstr "Résultat"
+
+#~ msgid "Slogan"
+#~ msgstr "Slogan"
+
+#~ msgid "Contact"
+#~ msgstr "Contact"
