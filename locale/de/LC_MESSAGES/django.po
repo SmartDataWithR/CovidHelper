@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-03 14:46+0200\n"
+"POT-Creation-Date: 2020-04-04 09:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,12 +61,12 @@ msgid "Terms&Conditions"
 msgstr "AGB"
 
 #: .\templates\pages\home.html:21
-msgid "stick together"
-msgstr "Haltet Zusammen"
+msgid "Do good deeds"
+msgstr "Vollbringe eine gute Tat"
 
 #: .\templates\pages\home.html:24
-msgid "Help your neighbour"
-msgstr "Hilf deinem Nachbarn"
+msgid "Help your neighbour and find help"
+msgstr "Hilf deinem Nachbarn und finde Hilfe"
 
 #: .\templates\pages\home.html:43
 msgid "How it works"
@@ -77,12 +77,10 @@ msgid "Update profile"
 msgstr "Profil pflegen"
 
 #: .\templates\pages\home.html:56
-#, fuzzy
-#| msgid "Sign up and fill out your profile."
 msgid "Fill out details of your profile"
 msgstr "Melde dich an und pflege dein Profil"
 
-#: .\templates\pages\home.html:63 .\templates\pages\navbar.html:72
+#: .\templates\pages\home.html:63 .\templates\pages\navbar.html:71
 msgid "Sign up"
 msgstr "Melde dich an"
 
@@ -91,8 +89,8 @@ msgid "Sign up and set up your profile"
 msgstr "Melde dich an und pflege dein Profil"
 
 #: .\templates\pages\home.html:74
-msgid "Check out"
-msgstr "Suche und finde"
+msgid "Search near you"
+msgstr "Suche in deiner Umgebung"
 
 #: .\templates\pages\home.html:76
 msgid "Enter your city or postal code"
@@ -102,9 +100,13 @@ msgstr "Gib deine Stadt oder PLZ ein"
 msgid "Start a conversation via email with each other"
 msgstr "Kontaktiere via Mail deine Nachbarn und tausche Informationen aus."
 
+#: .\templates\pages\home.html:89
+msgid "Goal"
+msgstr "Ziel"
+
 #: .\templates\pages\home.html:91
-msgid "Congratulations. You made a friend for better times."
-msgstr "Glückwunsch. Du hast jemandem geholfen."
+msgid "Congratulations. You made a good deed."
+msgstr "Glückwunsch. Du hast eine gute Tat vollbracht."
 
 #: .\templates\pages\home.html:117
 msgid "Map"
@@ -139,8 +141,12 @@ msgid "Our Team"
 msgstr "Unser Team"
 
 #: .\templates\pages\home.html:226
-msgid "I am a Data Scientist and want to develop tools that make a difference and improve our lifes."
-msgstr "Ich bin ein Data Scientist und möchte Tools entwickeln, die einen Unterschied machen und das Leben verbessern."
+msgid ""
+"I am a Data Scientist and want to develop tools that make a difference and "
+"improve our lifes."
+msgstr ""
+"Ich bin ein Data Scientist und möchte Tools entwickeln, die einen "
+"Unterschied machen und das Leben verbessern."
 
 #: .\templates\pages\home.html:228
 msgid "Bert, Developer (Hamburg, Germany)"
@@ -168,21 +174,27 @@ msgstr ""
 msgid "Vinay, Technologist (Bengaluru, India)"
 msgstr "Vinay, Entwickler (Bengaluru, Indien)"
 
-#: .\templates\pages\navbar.html:17 .\templates\pages\navbar.html:60
+#: .\templates\pages\navbar.html:17 .\templates\pages\navbar.html:59
 msgid " Map"
 msgstr ""
 
-#: .\templates\pages\navbar.html:33
+#: .\templates\pages\navbar.html:32
 msgid "Update Profile"
 msgstr "Profil pflegen"
 
-#: .\templates\pages\navbar.html:35
+#: .\templates\pages\navbar.html:34
 msgid "Log out"
 msgstr "Ausloggen"
 
-#: .\templates\pages\navbar.html:69
+#: .\templates\pages\navbar.html:68
 msgid "Log in"
 msgstr "Einloggen"
+
+#~ msgid "stick together"
+#~ msgstr "Haltet Zusammen"
+
+#~ msgid "Check out"
+#~ msgstr "Suche und finde"
 
 #~ msgid "Getting and providing help"
 #~ msgstr "Du benötigst Hilfe oder willst Hilfe leisten"
@@ -231,9 +243,6 @@ msgstr "Einloggen"
 
 #~ msgid "Get in contact via email"
 #~ msgstr "Startet den Kontakt mittels Email"
-
-#~ msgid "Goal"
-#~ msgstr "Ziel"
 
 #~ msgid "Zip Code / City"
 #~ msgstr "PLZ / Stadt"
