@@ -19,7 +19,7 @@
                     <div class="row justify-content-center text-center">
                         <div class="col-sm-12 col-lg-8 col-xl-8 bg-clear">
                             <h1 class="text-hero logo"><img src="{% static 'images/LogoFiles/Vector/SVG/withBackground.svg' %}" alt="">{% trans "DoGoodDeed" %}</h1>
-                            <h3 class="heading">Do a good deed makes happy. You will see!</h3>
+                            <h3 class="heading">{% trans "Help your neighbour and find help" %}</h3>
                         </div>
                     </div>
                 </div>
@@ -36,8 +36,8 @@
         </div>
         <!--- End Fixed Background IMG Dark -->
         <div class="container">
-            <h2>Check out who needs a good deed!</h2>
-            <h2 class="bottom-h2">Or simply offer a good deed.</h2>
+            <h2>{% trans "Find out who needs help" %}</h2>
+            <h2 class="bottom-h2">{% trans "or who provides help" %}</h2>
             <!-- Start Bouncing Down Arrow -->
             <a href="#search" class="down-arrow text-center">
                 <div class="arrow d-none d-md-block">
@@ -61,7 +61,7 @@
                                         <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                         </div>
                                         <p class="text-uppercase font-weight-bold py-1">{% trans "Update profile" %}</p>
-                                        <p class="card-text">{% trans "Fill out details of your profile" %}</p>
+                                        <p class="card-text">{% trans "1. Fill out details of your profile" %}</p>
                                     </a>
                                 {% else %}
                                 <a href="{% url 'account_signup' %}">
@@ -250,7 +250,21 @@
                                 <i class="fas fa-quote-left"></i>
                                 {% trans "I am Engineer working in power industry, analyzing machines. Want to utilize technology for the betterment of society." %}
                                 <hr class="clients-hr">
-                                <cite>&#8212; {% trans "Vinay, Technologist (Bengaluru, India)" %}</cite>
+                                <cite>&#8212; {% trans "Vinay, Technologist (Bangalore, India)" %}</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="row team px-3 px-md-4">
+                        <div class="col-lg-4 my-auto">
+                            <img src="{% static 'images/Malathi.jpg' %}" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="text-justify">
+                                <i class="fas fa-quote-left"></i>
+                                {% trans "I am an Software Engineer working in wind power industry as a full stack developer. Coding on different technologies is my passion." %}
+                                <hr class="clients-hr">
+                                <cite>&#8212; {% trans "Malathi, Developer (Bangalore, India)" %}</cite>
                             </blockquote>
                         </div>
                     </div>

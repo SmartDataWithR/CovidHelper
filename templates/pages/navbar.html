@@ -67,24 +67,21 @@
                 <li class="nav-item">
                     <a href="{% url 'account_signup' %}" class="nav-link">{% trans "Sign up" %}</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#team" class="nav-link">{% trans "Team" %}</a>
-                </li>
-                <form action="{% url 'set_language' %}" method="POST">
+                <form action="" method="POST">
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="langMenu" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                {% trans "Language" %}
+                                Language
                             </a>
-                            <div class="dropdown-menu aria-labelledby=" langMenu">
-                                {% get_available_languages as LANGUAGES %}
-                                {% get_language_info_list for LANGUAGES as languages %}
-                                {% for language in languages %}
-                                <a class="dropdown-item" href="{{ language.code }}">{{ language.name_local }}
-                                    ({{ language.code }})</a>
-                                <div class="dropdown-divider"></div>
-                                {% endfor %}
+                            <div class="dropdown-menu" aria-labelledby=" langMenu">
+                                <a class="dropdown-item" href="/en/">english (en)</a>
+                                <a class="dropdown-item" href="/de/">deutsch (de)</a>
+                                <a class="dropdown-item" href="/es/">español (es)</a>
+                                <a class="dropdown-item" href="/fr/">français (fr)</a>
+                                <a class="dropdown-item" href="/hi/">hindi (hi)</a>
+                                <!-- <div class="dropdown-divider"></div> -->
+
                             </div>
                         </div>
                     </li>
