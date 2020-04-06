@@ -166,7 +166,7 @@ msgstr ""
 
 #: .\templates\pages\home.html:242
 msgid "Gunnar,  Aspiring Developer (Hamburg, Germany)"
-msgstr "Gunnar, Angehender Entwickler (Hamburg, Germany)"
+msgstr "Gunnar, Aufstrebender Entwickler (Hamburg, Germany)"
 
 #: .\templates\pages\home.html:254
 msgid ""
