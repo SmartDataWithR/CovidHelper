@@ -1,16 +1,3 @@
-// /*========== NAVBAR TRANSPARENT TO SOLID ==========*/
-// $(document).ready(function () { //when document(DOM) loads completely
-//     checkScroll(); //check if page is scrolled
-//     $(window).scroll(checkScroll); //get scroll position of window
-// });
-
-// function checkScroll() { //check if page is scrolled
-// if ($(window).scrollTop() >= 300) { //if window is scrolled 300px or more
-//     $('.navbar').addClass('solid'); //add class 'solid' to element with class 'navbar'
-// } else { //if page is not scrolled 300px from top
-//     $('.navbar').removeClass('solid'); //remove class 'solid' from navbar element
-// }
-// }
 
 /*========== ADD SOLID CLASS TO NAVBAR WHEN TOGGLED ==========*/
 $('.navbar-toggler').click(function () { //when navbar-toggler is clicked
@@ -19,21 +6,57 @@ $('.navbar-toggler').click(function () { //when navbar-toggler is clicked
     }
 });
 
-
-/*========== CLOSE MOBILE MENU ON CLICK & SMOOTH SCROLL TO LINK a[href^="#"] ==========*/
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-    $('.navbar-toggler').addClass('collapsed');
-    $('#navbarResponsive').removeClass('show');
-
-    setTimeout(function () {
-        $('nav.navbar').removeClass('solid-toggle');
-    }, 300);
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 1000);
+/*========== CLOSE MOBILE NAV ON CLICK ==========*/
+$(document).ready(function () { //when document loads completely.
+    $(document).click(function (event) { //click anywhere
+        var clickover = $(event.target); //get the target element where you clicked
+        var _opened = $(".navbar-collapse").hasClass("show"); //check if element with 'navbar-collapse' class has a class called show. Returns true and false.
+        if (_opened === true && !clickover.hasClass("navbar-toggler")) { // if _opened is true and clickover(element we clicked) doesn't have 'navbar-toggler' class
+            $(".navbar-toggler").click(); //toggle the navbar; close the navbar menu in mobile.
+        }
+    });
 });
+
+/*========== MULTI-LEVEL / DOUBLE CLICK DROP DOWN MENU ==========*/
+$(document).ready(function () {
+    var DELAY = 700, clicks = 0, timer = null;
+
+    // On click or double click
+    $("nav ul li.dropdown a.dropdown-toggle")
+        .on("click", function (e) {
+            clicks++;
+            if (clicks === 1) {
+                timer = setTimeout(function () {
+                    clicks = 0;
+                }, DELAY);
+            } else {
+                clearTimeout(timer);
+                window.location.href = $(this).attr('href');
+                clicks = 0;
+            }
+        })
+        .on("dblclick", function (e) {
+            e.preventDefault();
+        });
+
+    //mulit-level menu
+    $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        $(this).siblings().toggleClass("show");
+
+
+        if (!$(this).next().hasClass('show')) {
+            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+        }
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+            $('.dropdown-submenu .show').removeClass("show");
+        });
+
+    });
+});
+
 
 /*========== BOUNCING DOWN ARROW ==========*/
 $(document).ready(function () {
@@ -73,12 +96,12 @@ $(document).ready(function(){ //when document(DOM) loads completely
   });
 
 /*========== TOP SCROLL BUTTON ==========*/
-$(document).ready(function () {
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {
-            $('.top-scroll').fadeIn();
-        } else {
-            $('.top-scroll').fadeOut();
+$(document).ready(function () { //when document(DOM) loads completely
+    $(window).scroll(function () { //when webpage is scrolled
+        if ($(this).scrollTop() > 500) { //if scroll from top is more than 500
+            $('.top-scroll').fadeIn(); //display element with class 'top-scroll'
+        } else { //if not
+            $('.top-scroll').fadeOut(); //hide element under 500 px
         }
     });
 });
@@ -147,4 +170,6 @@ $(document).ready(function () {
         "info": false,
         "dom": '<"top"i>rt<"bottom"flp><"clear">'
     });
-});
+}); 
+
+
