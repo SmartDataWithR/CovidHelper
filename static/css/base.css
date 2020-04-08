@@ -407,13 +407,19 @@ img.subpage {
   background-color: #FFFFFF;
   border-radius: 0rem;
   padding: 25px 40px;
-  box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+  box-shadow: rgba(0,0,0,0.1) 0 0 7px;
   max-width: 26rem;
   margin: 120px auto;
 }
 .form-control {
   border: 1px solid #ced4da;
   border-radius: 0rem !important;
+}
+.alert {
+  border-radius: 0rem !important;   
+}
+.alert li {
+  display: block;
 }
   /*============= MEDIA QUERIES =============*/
 
@@ -442,6 +448,7 @@ img.subpage {
   .fas {
     display: none !important;
   }
+  
 }
 
 /* Devices under 576px (sm) */
