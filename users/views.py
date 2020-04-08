@@ -11,15 +11,15 @@ import pandas as pd
 @transaction.atomic
 def updateUser(request):
     user = CustomUser.objects.get(email=request.user)
-    df = pd.DataFrame([u.slogan, u.description, u.email] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
-    df.columns = ['slogan', 'description', 'username']
+    # df = pd.DataFrame([u.slogan, u.description, u.email] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
+    # df.columns = ['slogan', 'description', 'username']
     
-    # find out if user profile is filled
-    df_filt = df[df['username'] == str(request.user)]
-    slogan = df_filt['slogan'][0]
-    description = df_filt['description'][0]
-    if len(slogan)>0 or len(description)>0:
-        return redirect('/')
+    # # find out if user profile is filled
+    # df_filt = df[df['username'] == str(request.user)]
+    # slogan = df_filt['slogan'][0]
+    # description = df_filt['description'][0]
+    # if len(slogan)>0 or len(description)>0:
+    #     return redirect('/')
 
     #user = CustomUser.objects.get(id=id)
     locator = geopy.Nominatim(user_agent="myGeocoder")
