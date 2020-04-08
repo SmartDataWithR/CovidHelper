@@ -104,6 +104,10 @@
   // get locations and convert it to floats
   var center_lon = "{{ longitude }}"
   var center_lat = "{{ latitude }}"
+  var username = "{{ username }}"
+  console.log(username)  
+  username = username.replace('[', '').replace(';]', '').replace(/[&#39]/g, '').split(';, ')
+  console.log(username)
   if (isNaN(parseFloat(center_lon))) {
     center_lon = 10
   } else {
@@ -187,11 +191,11 @@
     description_i = description[i].replace('x', '').replace(';', '')
   
     id_i = ids[i].replace(/ /g, '')
-
-
+    username_i = username[i].replace(';', '')
+    
     // show contact link or not
     if (is_authenticated == 'True') {
-      contact_link = "<br><a href='/mailme/" + id_i + "'>Mail me</a>"
+      contact_link =  "<br><a href='/compose/" + id_i + "'>Mail me</a>" //"<br><a href='/mailme/" + id_i + "'>Mail me</a>"
     }
     if (is_authenticated == 'False') {
       contact_link = "<br><b>Please register to contact the user.</b>"
@@ -233,8 +237,6 @@
 
   }
   // Create a center circle
-  console.log(longitude_center)
-  console.log(latitude_center)
 L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
 
 

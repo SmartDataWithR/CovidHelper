@@ -1,4 +1,5 @@
 {% load static %}
+{% load inbox %}
 {% load i18n %}
 <nav class="navbar navbar-expand-lg fixed-top solid">
     <div class="container">
@@ -27,6 +28,8 @@
                         </a>
                         <div class="dropdown-menu aria-labelledby=" userMenu">
                             <a class="dropdown-item" href="{% url 'update' %}">{% trans "Update Profile" %}</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'messages_inbox' %}">{% trans "Messages" %} ({% inbox_count %})</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'account_logout' %}">{% trans "Log out" %}</a>
                         </div>

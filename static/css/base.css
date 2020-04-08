@@ -8,7 +8,8 @@ html {
 a:active, a:focus,
 button:active, button:focus,
 textarea:hover, textarea:active, textarea:focus,
-input:hover, input:active, input:focus {
+/* input:hover, input:active, input:focus  */
+{
   outline: 0 !important;
   -webkit-appearance: none;
   box-shadow: none !important;
@@ -518,6 +519,14 @@ a.top-scroll:hover {
   margin-right: 0px !important;
 }
 
+/* Compose Message */
+#div_id_recipient, input[name='recipient'] {
+  color: white;
+  border: 0px;
+}
+
+
+
 /*============ BOOTSTRAP BREAK POINTS:
 
 Extra small (xs) devices (portrait phones, less than 576px)
@@ -535,4 +544,4 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 
-=============*/
+=============

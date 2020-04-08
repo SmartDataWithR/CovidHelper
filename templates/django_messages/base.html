@@ -1,0 +1,29 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %} Messages {% endblock title %}
+
+{% block content %}
+<br><br><br>
+
+
+<h2>{% trans "Messages" %}</h2>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'messages_inbox' %}">Inbox</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="url 'messages_outbox' %} ">Outbox</a>
+    </li>
+    <li class=" nav-item">
+            <a class="nav-link" href="{% url 'messages_trash' %} ">Trash</a>
+    </li>
+</ul>
+<!-- <ul class="subnavilist">
+    <li><a href="{% url 'messages_inbox' %} ">&raquo;&nbsp;{% trans "Inbox" %}</a></li>
+    <li><a href="{% url 'messages_outbox' %} ">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>
+    <li><a href="{% url 'messages_compose' %} ">&raquo;&nbsp;{% trans "New Message" %}</a></li>
+    <li><a href="{% url 'messages_trash' %} ">&raquo;&nbsp;{% trans "Trash" %}</a></li>
+</ul> -->
+{% endblock %}
