@@ -312,6 +312,7 @@ blockquote .svg-inline--fa {
   border-top: .1rem solid rgb(70, 70, 70);
 }
 
+
   /*============= Footer SECTION =============*/
 
 .footer {
@@ -477,6 +478,11 @@ img.subpage {
     padding: 1rem;
     height: 80px;
   }
+}
+
+/*============= UPDATE PROFILE SECTION =======*/
+input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: red;
 }
 
 /*============ BOOTSTRAP BREAK POINTS:
