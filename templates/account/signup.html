@@ -19,28 +19,27 @@
         {% csrf_token %}
         {{ form|crispy }}
 
-        <p class="subpage">OR</p>
-        
-        <div class="svg d-flex justify-content-center">
-          <a href="{% url 'social:begin' 'google-oauth2' %}">
-            <img class="subimg" src="{% static "images/009-suche.svg" %}" max-width="70" height="70">
-          </a>
-          <a href="{% url 'social:begin' 'linkedin-oauth2' %}">
-            <img class="subimg" src="{% static "images/007-linkedin.svg" %}" max-width="70" height="70">
-          </a>
-        </div>
-
-        <p class="subpage"><input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the <a
-          href="{% url 'terms' %}" target="_blank">Terms and Conditions</a> and <a href="{% url 'privacy' %}"
-          target="_blank">Privacy Policy</a>
-        </p>
         <div class=" justify-content-center text-center">
           <button class="btn btn-secondary btn-block rounded-0" type="submit">Sign up</button>
         </div>
       </form>
 
+      <p class="subpage">OR</p>
       
+      <div class="svg d-flex justify-content-center">
+        <a href="{% url 'social:begin' 'google-oauth2' %}">
+          <img class="subimg" src="{% static "images/009-suche.svg" %}" max-width="70" height="70">
+        </a>
+        <a href="{% url 'social:begin' 'linkedin-oauth2' %}">
+          <img class="subimg" src="{% static "images/007-linkedin.svg" %}" max-width="70" height="70">
+        </a>
+      </div>
 
+      <p class="subpage"><input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the
+        <a href="{% url 'terms' %}" target="_blank">Terms and Conditions</a> and <a href="{% url 'privacy' %}"
+          target="_blank">Privacy Policy</a>
+      </p>
+    
     </div>
   </div>
 </div>

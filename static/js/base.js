@@ -1,16 +1,4 @@
-// /*========== NAVBAR TRANSPARENT TO SOLID ==========*/
-// $(document).ready(function () { //when document(DOM) loads completely
-//     checkScroll(); //check if page is scrolled
-//     $(window).scroll(checkScroll); //get scroll position of window
-// });
 
-// function checkScroll() { //check if page is scrolled
-// if ($(window).scrollTop() >= 300) { //if window is scrolled 300px or more
-//     $('.navbar').addClass('solid'); //add class 'solid' to element with class 'navbar'
-// } else { //if page is not scrolled 300px from top
-//     $('.navbar').removeClass('solid'); //remove class 'solid' from navbar element
-// }
-// }
 
 /*========== ADD SOLID CLASS TO NAVBAR WHEN TOGGLED ==========*/
 $('.navbar-toggler').click(function () { //when navbar-toggler is clicked
@@ -19,17 +7,7 @@ $('.navbar-toggler').click(function () { //when navbar-toggler is clicked
     }
 });
 
-<<<<<<< HEAD
-/*========== CLOSE MOBILE NAV ON CLICK ==========*/
-// $(document).ready(function () { //when document loads completely.
-//     $(document).click(function (event) { //click anywhere
-//         var clickover = $(event.target); //get the target element where you clicked
-//         var _opened = $(".navbar-collapse").hasClass("show"); //check if element with 'navbar-collapse' class has a class called show. Returns true and false.
-//         if (_opened === true && !clickover.hasClass("navbar-toggler")) { // if _opened is true and clickover(element we clicked) doesn't have 'navbar-toggler' class
-//             $(".navbar-toggler").click(); //toggle the navbar; close the navbar menu in mobile.
-//         }
-//     });
-// });
+
 /*========== CLOSE MOBILE MENU ON CLICK & SMOOTH SCROLL TO LINK a[href^="#"] ==========*/
 $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
@@ -45,23 +23,28 @@ $(document).on('click', 'a[href^="#"]', function (event) {
     }, 1000);
 }); 
 
-=======
->>>>>>> Branch10
 
-/*========== CLOSE MOBILE MENU ON CLICK & SMOOTH SCROLL TO LINK a[href^="#"] ==========*/
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-    $('.navbar-toggler').addClass('collapsed');
-    $('#navbarResponsive').removeClass('show');
+/*========== MULTI-LEVEL / DOUBLE CLICK DROP DOWN MENU ==========*/
+// $(document).ready(function () {
+//     var DELAY = 700, clicks = 0, timer = null;
 
-    setTimeout(function () {
-        $('nav.navbar').removeClass('solid-toggle');
-    }, 300);
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 1000);
-});
+//     // On click or double click
+//     $("nav ul li.dropdown a.dropdown-toggle")
+//         .on("click", function (e) {
+//             clicks++;
+//             if (clicks === 1) {
+//                 timer = setTimeout(function () {
+//                     clicks = 0;
+//                 }, DELAY);
+//             } else {
+//                 clearTimeout(timer);
+//                 window.location.href = $(this).attr('href');
+//                 clicks = 0;
+//             }
+//         })
+//         .on("dblclick", function (e) {
+//             e.preventDefault();
+//         });
 
 /*========== BOUNCING DOWN ARROW ==========*/
 $(document).ready(function () {
@@ -77,40 +60,6 @@ $(document).ready(function () {
         'resizeDuration': 600,
         'wrapAround': true,
         'imageFadeDuration': 500
-    });
-});
-
-
-/*========== MEET THE TEAM CAROUSEL ==========*/
-$(document).ready(function () { //when document(DOM) loads completely
-    $('#seller-carousel').owlCarousel({ //owlCarousel settings
-        autoplay: true, //set to false to turn off autoplay and only use nav
-        autoplayHoverPause: true, //set to false to prevent pausing on hover
-        loop: true, //set to false to stop carousel after all slides shown
-        autoplayTimeout: 8000, //time between transitions
-        smartSpeed: 1200, //transition speed
-        dotsSpeed: 1000, //transition speed when using dots/buttons
-        responsive: { //set number of items shown per screen width
-            0: {
-                items: 1 //0px width and up display 1 item
-            },
-            768: {
-                items: 2 //768px width and up display 2 items
-            },
-            992: {
-                items: 4 //992px width and up display 3 items
-            }
-        }
-    });
-});
-
-
-/*========== SKILLS COUNTER ==========*/
-$(document).ready(function () {
-    $('.counter').counterUp({
-        delay: 10,
-        time: 3000,
-        beginAt: 0
     });
 });
 
@@ -144,46 +93,6 @@ $(document).ready(function () {
             $('.top-scroll').fadeOut();
         }
     });
-});
-
-
-/*========== MAKE ALL ANIMATION "FADEINUP" ON MOBILE ==========*/
-$(document).ready(function () {
-    if ($(window).width() < 768) {
-        $('div').attr('data-animation', 'fadeInUp');
-    }
-});
-
-
-
-/*========== WAYPOINTS ANIMATION DELAY ==========*/
-//Original Resource: https://www.oxygenna.com/tutorials/scroll-animations-using-waypoints-js-animate-css
-$(function () { // a self calling function
-    function onScrollInit(items, trigger) { // a custom made function
-        items.each(function () { //for every element in items run function
-            var osElement = $(this), //set osElement to the current
-                osAnimationClass = osElement.attr('data-animation'), //get value of attribute data-animation type
-                osAnimationDelay = osElement.attr('data-delay'); //get value of attribute data-delay time
-
-            osElement.css({ //change css of element
-                '-webkit-animation-delay': osAnimationDelay, //for safari browsers
-                '-moz-animation-delay': osAnimationDelay, //for mozilla browsers
-                'animation-delay': osAnimationDelay //normal
-            });
-
-            var osTrigger = (trigger) ? trigger : osElement; //if trigger is present, set it to osTrigger. Else set osElement to osTrigger
-
-            osTrigger.waypoint(function () { //scroll upwards and downwards
-                osElement.addClass('animated').addClass(osAnimationClass); //add animated and the data-animation class to the element.
-            }, {
-                triggerOnce: true, //only once this animation should happen
-                offset: '70%' // animation should happen when the element is 70% below from the top of the browser window
-            });
-        });
-    }
-
-    onScrollInit($('.os-animation')); //function call with only items
-    onScrollInit($('.staggered-animation'), $('.staggered-animation-container')); //function call with items and trigger
 });
 
 
