@@ -66,13 +66,14 @@ def index(request):
             location = locator.geocode('Hamburg', timeout=5)
 
 
-        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.description, u.map_show_location, u.username] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
+        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.description, u.map_show_location, u.username, u.help_type] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
         
-        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description', 'map_show_location', 'username'] # 
+        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description', 'map_show_location', 'username', 'help_type'] # 
         df['distance'] = [geodesic((location.longitude, location.latitude), (x, y)).miles for x,y in zip(df['longitude'], df['latitude'])]
         
         # filter for distance max 20km (12.4miles)
         df_filt = df[df['distance'] < 12.4]
+        
     
         # pass the data to the template
         group_membership = df_filt['group_membership'].values.tolist()

@@ -481,7 +481,7 @@ img.subpage {
 }
 
 /*============= UPDATE PROFILE SECTION =======*/
-input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.text-highlight input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: red;
 }
 
