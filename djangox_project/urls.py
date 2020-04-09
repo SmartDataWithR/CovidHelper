@@ -22,6 +22,7 @@ urlpatterns += i18n_patterns(
     path('', include('social_django.urls', namespace='social')),
     path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     path('mailme/<user_to>/', mailme),
+    path('', include('django_messages.urls')),
     path('success/', successView, name='success'), prefix_default_language=False
 )
 

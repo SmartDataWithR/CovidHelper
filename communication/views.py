@@ -20,7 +20,6 @@ def mailme(request, user_to):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            print('code is here')
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
                  

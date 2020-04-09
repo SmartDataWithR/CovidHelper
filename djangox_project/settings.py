@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'debug_toolbar',
     'sslserver',
+    'django_messages',
 
     # Local
     'users',

@@ -43,6 +43,7 @@
 
     </div>
   </div>
+</div>
 
 </div>
 
@@ -55,12 +56,11 @@
   var c2 = this.checked ? "{% url 'social:begin' 'linkedin-oauth2' %}" : "{% url 'account_signup' %}";
   console.log('hier')
 
-
-  // change the href attribute for the element ID = download to the value stored in 'c'.
-  $('#google').attr("href", c);
-  $('#linkedin').attr("href", c);
+    // change the href attribute for the element ID = download to the value stored in 'c'.
+    $('#google').attr("href", c);
+    $('#linkedin').attr("href", c);
   });
-    </script>
+</script>
 
 
 {% endblock content %}
