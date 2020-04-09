@@ -6,20 +6,31 @@ from django.db import transaction
 import geopy
 import pandas as pd
 
+@login_required
+@transaction.atomic
+def redirect_select(request):
+    user = CustomUser.objects.get(email=request.user)
+    df = pd.DataFrame([u.slogan, u.description, u.email] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
+    df.columns = ['slogan', 'description', 'username']
+    
+    # find out if user profile is filled
+    df_filt = df[df['username'] == str(request.user)]
+    slogan = df_filt['slogan'][0]
+    description = df_filt['description'][0]
+    slogan_length=len(slogan)
+    desc_length=len(description)
+    print(slogan_length)
+    print(desc_length)
+    if slogan_length>0 or desc_length>0:
+        return redirect('/')
+    else:
+        return redirect('/update/')
+
 # Create your views here.
 @login_required
 @transaction.atomic
 def updateUser(request):
     user = CustomUser.objects.get(email=request.user)
-    # df = pd.DataFrame([u.slogan, u.description, u.email] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
-    # df.columns = ['slogan', 'description', 'username']
-    
-    # # find out if user profile is filled
-    # df_filt = df[df['username'] == str(request.user)]
-    # slogan = df_filt['slogan'][0]
-    # description = df_filt['description'][0]
-    # if len(slogan)>0 or len(description)>0:
-    #     return redirect('/')
 
     #user = CustomUser.objects.get(id=id)
     locator = geopy.Nominatim(user_agent="myGeocoder")
