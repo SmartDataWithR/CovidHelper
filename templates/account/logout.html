@@ -6,19 +6,24 @@
 
 
 {% block content %}
-<div class="caption">
-  <div class="container justify-content-center text-center">
-    <h2>Sign Out</h2>
+<div class="conatiner login">
 
-    <p>Are you sure you want to sign out?</p>
+  <div class="row login">
+    <div class="col-sm-6 offset-sm-3 login">
+  
+      <img class="subpage" src="{% static "images/LogoFiles/Vector/SVG/withBackground.svg" %}" alt="">
+      <h2 class="subpage">Sign out</h2>
 
-    <form method="post" action="{% url 'account_logout' %}">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <div class="justify-content-center text-center"></div>
-        <button class="btn btn-outline-primary" type="submit">Sign Out</button>
-      </div>
-    </form>
+      <p>Are you sure you want to sign out?</p>
+
+      <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="justify-content-center text-center"></div>
+          <button class="btn btn-secondary rounded-0" type="submit">Sign Out</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 

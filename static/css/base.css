@@ -1,20 +1,3 @@
-/*-- iPhone X Remove Gutters
-Ignore W3C Validation error for this style. --*/
-html {
-   padding: env(safe-area-inset);
-}
-
-/*-- Remove orange Browser Outline Around Elements --*/
-a:active, a:focus,
-button:active, button:focus,
-textarea:hover, textarea:active, textarea:focus,
-/* input:hover, input:active, input:focus  */
-{
-  outline: 0 !important;
-  -webkit-appearance: none;
-  box-shadow: none !important;
-}
-
 /*-- Pointer Cursor On Links & Buttons --*/
 a, .btn, button {
    cursor: pointer!important;
@@ -25,7 +8,8 @@ html, body {
   font-family: 'Open Sans',
   sans-serif;
   /* font-family: 'Oswald', sans-serif; */
-  color: #505962; 
+  color: #505962;
+  position: relative;
 }
 
 /*--- Nav Scrolling Offset --*/
@@ -177,7 +161,6 @@ h3.landing {
 h3.heading {
   font-size: 2.2rem;
   font-weight: 300;
-  text-transform: uppercase;
   text-align: center;
   margin-bottom: 1.5rem;
   color: #212529;
@@ -329,95 +312,6 @@ blockquote .svg-inline--fa {
   border-top: .1rem solid rgb(70, 70, 70);
 }
 
-/*-- shop Gallery Menu --*/
-
-.navbar.projects {
-  padding: .7rem 1rem;
-  font-weight: 300;
-  letter-spacing: .1rem;
-  font-size: .9rem;
-  transition: background-color .5s ease;
-  box-shadow: none!important;
-  opacity: 0.9;
-}
-.filter ul li {
-   padding: .5rem;
-}
-.navbar.projects .navbar-nav .nav-link {
-   font-size: 1.2rem;
-   padding-top: 0rem;
-   text-align: center;
-   text-shadow: none!important;
-   transition: all .3s ease;
-}
-.filter ul li.filter-active a.nav-link.filter,
-a.filter.is-checked,
-li a.nav-link.filter.active,
-li a.nav-link.filter:hover {
-   color: #c8e7ed!important;
-   cursor: pointer!important;
-}
-a.nav-link.filter {
-   padding-left: 1rem;
-}
- 
-/*-- Filter Gallery Layout --*/
-.element-item {
-   position: relative;
-   float: left;
-   width: 33%;
-   min-height: 14rem;
-   padding: .6rem;
-}
-.element-item img {
-   width: 100%;
-   margin-bottom: 0!important;
-   height: auto;
-   display:block;
-   transition: opacity .2s ease-out;
-   opacity: .9;
-}
-.element-item a img:hover {
-   opacity: 1!important;
-}
-
-/* Container holding the image and the text */
-.status {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-/* Top right text */
-.top-right {
-  position: absolute;
-  font-size: 1.2rem;
-  top: 8px;
-  right: 2px;
-  background-color: #c8e7ed;
-  color: #293346;
-  
-}
-.top-right-below {
-  position: absolute;
-  font-size: 1.2rem;
-  top: 40px;
-  right: 2px;
-  background-color: #c8e7ed;
-  color: #293346;
-}
-.center-right {
-  position: absolute;
-  font-size: 1.2rem;
-  top: 72px;
-  right: 2px;
-  background-color: #c8e7ed;
-  color: #293346;
-}
-.opening {
-   font-size: 0.9rem;
-   margin: 0;
-}
-
   /*============= Footer SECTION =============*/
 
 .footer {
@@ -461,7 +355,73 @@ a.top-scroll:hover {
   height: 1.7rem;
 }
 
-/*============= MEDIA QUERIES =============*/
+/*============= Subpages =============*/
+.col-form-label {
+  display: none !important;
+}
+h2.subpage{
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 28px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: #2d2d2d;
+  font-size: 18px;
+}
+img.subpage {
+  width: 4.5rem;
+}
+.row.login p.subpage {
+  text-align: center;
+  font-weight: 100;
+  padding-top: 1.5rem;
+  color: #2d2d2d;
+  font-size: 14px;
+}
+.row.login .subimg {
+  transition: transform .1s ease;
+  opacity: 1;
+}
+.row.login a:hover {
+  color: hsl(202,92%,85%)
+}
+.subimg {
+  padding: 1rem;
+  height: 90px;
+}
+.inner-section {
+  width: 100%;
+  padding: 0px;
+  overflow: visible;
+  margin-bottom: 30px;
+}
+.login .row {
+  text-align: center;
+  padding: 25px 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
+}
+.col-sm-6.offset-sm-3.login {
+  background-color: #FFFFFF;
+  border-radius: 0rem;
+  padding: 25px 40px;
+  box-shadow: rgba(0,0,0,0.1) 0 0 7px;
+  max-width: 26rem;
+  margin: 120px auto;
+}
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0rem !important;
+}
+.alert {
+  border-radius: 0rem !important;   
+}
+.alert li {
+  display: block;
+}
+  /*============= MEDIA QUERIES =============*/
 
 /* Devices under 992px (lg) */
 @media (max-width: 991.98px) {
@@ -488,7 +448,7 @@ a.top-scroll:hover {
   .fas {
     display: none !important;
   }
-
+  
 }
 
 /* Devices under 576px (sm) */
@@ -505,27 +465,19 @@ a.top-scroll:hover {
     width: 5rem;
     opacity: 1 !important;
   }
+  .col-sm-6.offset-sm-3.login {
+    background-color: #FFFFFF;
+    border-radius: 0rem;
+    padding: 25px 40px;
+    box-shadow: rgba(0,0,0,0) 0 0 0;
+    max-width: 26rem;
+    margin: 2rem auto;
+  }
+  .subimg {
+    padding: 1rem;
+    height: 80px;
+  }
 }
-
-/*--- Fix for Navbar Jumping During Scroll --*/
-.fixed-top {
-  -webkit-backface-visibility: hidden;
-}
-
-/*-- Bootstrap Mobile Gutter Fix --*/
-.row,
-.container-fluid {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-}
-
-/* Compose Message */
-#div_id_recipient, input[name='recipient'] {
-  color: white;
-  border: 0px;
-}
-
-
 
 /*============ BOOTSTRAP BREAK POINTS:
 
