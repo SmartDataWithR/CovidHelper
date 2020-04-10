@@ -42,7 +42,7 @@ class CustomUser(AbstractUser):
     #profile_image = models.ImageField(upload_to='profile_image', blank=True)
     #registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
     #last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
-    slogan = models.CharField(max_length=100, blank=True, help_text = 'The headline of your post (will be shown on map)', validators=[allowed_chars])
+    slogan = models.TextField(max_length=1000, blank=True, help_text = 'The headline of your post (will be shown on map)', validators=[allowed_chars])
     description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)', validators=[allowed_chars])
 
 

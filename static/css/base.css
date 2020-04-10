@@ -403,7 +403,7 @@ img.subpage {
 
   /*============= Profile page =============*/
 
-.svg-inline--fa.fa-user {
+.row.profile .svg-inline--fa.fa-user {
   font-size: 4rem;
   color: lightslategrey;
   margin-bottom: 1rem;
@@ -423,11 +423,12 @@ img.subpage {
   max-width: 26rem;
   margin: 4rem auto;
 }
-#id_group_membership,
-#id_zip_code,
-#id_city_name,
-#id_slogan {
-  background-color: #f0fff0;
+.row.profile #id_group_membership,
+.row.profile #id_zip_code,
+.row.profile #id_city_name,
+.row.profile #id_slogan,
+.row.profile #help {
+  background-color: #fff7f7;
 }
 .row.profile .hide {
    display: none !important;
@@ -435,10 +436,7 @@ img.subpage {
 .row.profile .small {
   margin-bottom: 1rem;
 }
-.row.profile .description
-{
-   display: none !important;
-}
+
 
 
   /*============= MEDIA QUERIES =============*/
