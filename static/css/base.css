@@ -312,6 +312,7 @@ blockquote .svg-inline--fa {
   border-top: .1rem solid rgb(70, 70, 70);
 }
 
+
   /*============= Footer SECTION =============*/
 
 .footer {
@@ -356,6 +357,9 @@ a.top-scroll:hover {
 }
 
 /*============= Subpages =============*/
+#div_id_login label, #div_id_password label {
+  display: none;
+}
 .col-form-label {
   display: none !important;
 }
@@ -478,6 +482,18 @@ img.subpage {
     height: 80px;
   }
 }
+
+/*============= UPDATE PROFILE SECTION =======*/
+.text-highlight input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: red;
+}
+
+/*============= COMPOSE MESSAGE SECTION =======*/
+.hide-recipient {
+  display: none;
+  color: white;
+}
+
 
 /*============ BOOTSTRAP BREAK POINTS:
 

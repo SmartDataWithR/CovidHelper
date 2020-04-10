@@ -10,10 +10,10 @@
 
   <div class="row login">
     <div class="col-sm-6 offset-sm-3 login">
-      
+
       <img class="subpage" src="{% static "images/LogoFiles/Vector/SVG/withBackground.svg" %}" alt="">
       <h2 class="subpage">Sign up for DoGoodDeed</h2>
-      
+
       <form method="post"
         onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
         {% csrf_token %}
@@ -25,12 +25,12 @@
       </form>
 
       <p class="subpage">OR</p>
-      
+
       <div class="svg d-flex justify-content-center">
-        <a href="{% url 'social:begin' 'google-oauth2' %}">
+        <a href="#" id="google">
           <img class="subimg" src="{% static "images/009-suche.svg" %}" max-width="70" height="70">
         </a>
-        <a href="{% url 'social:begin' 'linkedin-oauth2' %}">
+        <a href="#" id="linkedin">
           <img class="subimg" src="{% static "images/007-linkedin.svg" %}" max-width="70" height="70">
         </a>
       </div>
@@ -39,21 +39,19 @@
         <a href="{% url 'terms' %}" target="_blank">Terms and Conditions</a> and <a href="{% url 'privacy' %}"
           target="_blank">Privacy Policy</a>
       </p>
-    
+
     </div>
   </div>
 </div>
 
-</div>
+<script type="text/javascript">
+  $('#agree').change(function () {
 
-  <script type="text/javascript">
-    $('#agree').change(function(){
-  
-  // jquery shorthand conditioning statement. If true use link1 if not use link2.
-  var c = this.checked ? "{% url 'social:begin' 'google-oauth2' %}" : "{% url 'account_signup' %}";
-  console.log('hier')
-  var c2 = this.checked ? "{% url 'social:begin' 'linkedin-oauth2' %}" : "{% url 'account_signup' %}";
-  console.log('hier')
+    // jquery shorthand conditioning statement. If true use link1 if not use link2.
+    var c = this.checked ? "{% url 'social:begin' 'google-oauth2' %}" : "{% url 'account_signup' %}";
+    console.log('hier')
+    var c2 = this.checked ? "{% url 'social:begin' 'linkedin-oauth2' %}" : "{% url 'account_signup' %}";
+    console.log('hier')
 
     // change the href attribute for the element ID = download to the value stored in 'c'.
     $('#google').attr("href", c);

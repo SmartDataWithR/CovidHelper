@@ -12,7 +12,8 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('email', 'username')
 
 class CustomUserChangeForm(UserChangeForm):
-    
+    slogan = forms.CharField(widget= forms.TextInput(attrs={'placeholder':'Describe yourself or the type of help'}))
+    description = forms.CharField(widget= forms.TextInput(attrs={'placeholder':'Please add more specific information'}))
     class Meta:
         model = CustomUser  
         fields = ('id', 'group_membership', 'help_type','street', 'city_name', 'zip_code', 'slogan', 'description')# , 'longitude', 'latitude')
