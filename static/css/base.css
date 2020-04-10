@@ -357,6 +357,9 @@ a.top-scroll:hover {
 }
 
 /*============= Subpages =============*/
+#div_id_login label, #div_id_password label {
+  display: none;
+}
 .col-form-label {
   display: none !important;
 }
