@@ -244,9 +244,11 @@ def compose_with_userto(request, user_to, recipient=None, form_class=ComposeForm
         template_name='django_messages/compose.html', success_url=None,
         recipient_filter=None):
     
-    df = pd.DataFrame([u.email, u.username] for u in CustomUser.objects.raw('SELECT id, slogan, email FROM users_customuser where id='+ user_to) )
+    df = pd.DataFrame([u.email, u.username,u.slogan] for u in CustomUser.objects.raw('SELECT id, slogan, email FROM users_customuser where id='+ user_to) )
     email_recipient = str(df.iloc[0, 0])
     username = str(df.iloc[0, 1])
+    slogan = "Re: " + str(df.iloc[0, 2])
+    print(slogan)
     
     recipient = username
     if request.method == "POST":
@@ -271,7 +273,7 @@ def compose_with_userto(request, user_to, recipient=None, form_class=ComposeForm
                 success_url = request.GET['next']
             return HttpResponseRedirect(success_url)
     else:
-        form = form_class(initial={"subject": request.GET.get("subject", "")})
+        form = form_class(initial={"subject": slogan})
         if recipient is not None:
             recipients = [u for u in User.objects.filter(**{'%s__in' % get_username_field(): [r.strip() for r in recipient.split('+')]})]
             form.fields['recipient'].initial = recipients

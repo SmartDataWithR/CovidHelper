@@ -485,6 +485,13 @@ img.subpage {
   color: red;
 }
 
+/*============= COMPOSE MESSAGE SECTION =======*/
+.hide-recipient {
+  display: none;
+  color: white;
+}
+
+
 /*============ BOOTSTRAP BREAK POINTS:
 
 Extra small (xs) devices (portrait phones, less than 576px)
