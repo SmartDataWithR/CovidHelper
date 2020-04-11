@@ -10,18 +10,17 @@ import pandas as pd
 @transaction.atomic
 def redirect_select(request):
     user = CustomUser.objects.get(email=request.user)
-    df = pd.DataFrame([u.slogan, u.description, u.email] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
-    df.columns = ['slogan', 'description', 'username']
+    df = pd.DataFrame([u.description, u.email] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
+    df.columns = ['description', 'username']
     
     # find out if user profile is filled
     df_filt = df[df['username'] == str(request.user)]
-    slogan = df_filt['slogan'][0]
+    # slogan = df_filt['slogan'][0]
     description = df_filt['description'][0]
-    slogan_length=len(slogan)
+    # slogan_length=len(slogan)
     desc_length=len(description)
-    print(slogan_length)
-    print(desc_length)
-    if slogan_length>0 or desc_length>0:
+    
+    if desc_length>0:
         return redirect('/')
     else:
         return redirect('/update/')
@@ -37,10 +36,10 @@ def updateUser(request):
     form = CustomUserChangeForm(instance=user)
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST, instance=user)
-        
         # location = locator.geocode(address)
         if form.is_valid():
             data = request.POST.copy()
+            
             address = data.get('street') + ' ' + data.get('zip_code') + ' ' + data.get('city_name')
             location = locator.geocode(address)
             
@@ -53,6 +52,5 @@ def updateUser(request):
             return redirect('/')
         else:
             form = CustomUserChangeForm(request.POST, instance=user)
-            print(request.POST)
             context = {'form': form}
     return render(request, 'users/updateUser.html', {'form': form}) 

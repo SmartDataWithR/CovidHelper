@@ -9,7 +9,7 @@
 
         <!-- <img class="subpage" src="{% static "images/LogoFiles/Vector/SVG/withBackground.svg" %}" alt=""> -->
         <div><i class="fas fa-user"></i></div>
-        <h2 class="subpage">Welcome "User"</h2>
+        <h2 class="subpage">Welcome {{ request.user.username }}</h2>
 
         <form action="" method="post">
             {% csrf_token %}
@@ -47,12 +47,14 @@
                     
                     <p>A brief description</p>
                     <div class="row">
-                        <div class="form-group col-md-12 mb-0">
+                        <div class="description form-group col-md-12 mb-0">
                             {{ form.slogan|as_crispy_field }}
                         </div>
-                        <!-- <div class="description form-group col-md-12 mb-0">
+                    </div>
+                    <div class="row">
+                        <div class="description form-group col-md-12 mb-0">
                             {{ form.description|as_crispy_field }}
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,7 +93,7 @@
                         </p>
                         
                         <select class="form-control" multiple id="help" size="7" onchange="getComboA(this)">
-                            <option value="Deliver Food">Deliver Food</option>
+                            <option value="Deliver Food">Bring Food or Medicine</option>
                             <option value="Walk the dog" selected="selected">Walk the dog</option>
                             <option value="Child care">Child care</option>
                             <option value="Physical work">Physical work</option>

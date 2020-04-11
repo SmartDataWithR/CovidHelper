@@ -78,6 +78,7 @@ def index(request):
         # pass the data to the template
         group_membership = df_filt['group_membership'].values.tolist()
         group_membership = [int(x) for x in group_membership]
+        help_type = df_filt['help_type'].values.tolist()
         slogan = df_filt['slogan'].values.tolist()
         description = df_filt['description'].values.tolist() 
         username = df_filt['username'].values.tolist()
@@ -92,7 +93,7 @@ def index(request):
         template_table = list(zip(rname, ids, slogan, description))
 
         gotodiv = 'search'
-        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv, 'map_show_location':map_show_location, 'template_table':template_table, 'username':username}
+        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv, 'map_show_location':map_show_location, 'template_table':template_table, 'username':username, 'help_type':help_type}
         
         
     
