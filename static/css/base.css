@@ -246,7 +246,6 @@ h3 {
 td {
   font-size: 1rem;
 }
-
 /*============= TEAM SECTION =============*/
 .team {
     background-color: whitesmoke;
@@ -398,7 +397,6 @@ img.subpage {
     border: 1px solid #ced4da;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     margin-bottom: 1rem;
-    margin-top: 10px;
 }
 
   /*============= Profile page =============*/
