@@ -2,14 +2,82 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %} Update Your Profile {% endblock title %}
 {% block content %}
-<br><br><br>
+
+<div class="row profile">
+    <div class="col-sm-6 offset-sm-3 profile">
+
+        <!-- <img class="subpage" src="{% static "images/LogoFiles/Vector/SVG/withBackground.svg" %}" alt=""> -->
+        <div><i class="fas fa-user"></i></div>
+        <h2 class="subpage">Welcome "User"</h2>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    <p>I'm here to...</p>
+                    {{ form.group_membership|as_crispy_field }}
+                    <p>in my neighborhood...</p>
+                    <div class="row">
+                        <div class="form-group col-md-4 mb-0">
+                            {{ form.zip_code|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-8 mb-0">
+                            {{ form.city_name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-12 mb-0">
+                            {{ form.street|as_crispy_field }}
+                        </div>
+                    </div>
+
+                    <p>I am happy to...</p>
+                    <select class="form-control" multiple id="help" size="7" onchange="getComboA(this)">
+                        <option value="Deliver Food">Deliver Food</option>
+                        <option value="Walk the dog" selected="selected">Walk the dog</option>
+                        <option value="Child care">Child care</option>
+                        <option value="Physical work">Physical work</option>
+                        <option value="Online Teaching">Online Teaching</option>
+                        <option value="Miscellanious">Miscellanious</option>   
+                    </select>
+                    <div class="small">
+                    <small class="form-text text-muted text-center">
+                        Press CTRL to select multiple
+                    </small>
+                    </div>
+                    
+                    <p>A brief description</p>
+                    <div class="row">
+                        <div class="form-group col-md-12 mb-0">
+                            {{ form.slogan|as_crispy_field }}
+                        </div>
+                        <!-- <div class="description form-group col-md-12 mb-0">
+                            {{ form.description|as_crispy_field }}
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="hide">
+                <div class="form-group col-md-12 mb-0">
+                    {{ form.help_type|as_crispy_field }}
+                    <small>
+                        Add categories separated by commas
+                    </small>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-secondary btn-block rounded-0" type="submit">Save</button>
+            </div>
+        </form>
+
+    </div>
+</div>
 
 
-<div class="container">
-    <h2>Update your profile</h2>
-    <div id="updateUser">
+
+
+    <!-- <div id="updateUser">
         <form action="" method="post">
             {% csrf_token %}
             <div class="form-row">
@@ -67,7 +135,9 @@
             <button class="btn btn-success" type="submit">Update</button>
         </form>
     </div>
-</div>
+</div> -->
+
+
 <script type="application/javascript">
     function getComboA(selectObject) {
         var value = $(selectObject).val(); //selectObject.value;  

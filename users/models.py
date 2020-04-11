@@ -5,9 +5,9 @@ from django.core.validators import RegexValidator
 
 class CustomUser(AbstractUser):
     GROUPS = (
-        ('0', 'I want to help'),
-        ('1', 'I need help'),
-        ('2', 'Inactive (invisible to others)')
+        ('0', 'offer help'),
+        ('1', 'find help'),
+        ('2', 'find help anonym ')
     )
 
     HELP_GROUPS = (
@@ -26,10 +26,10 @@ class CustomUser(AbstractUser):
     # allowed
     allowed_chars = RegexValidator(r'^[a-zA-Z0-9, !.?]*$', 'allowed are characters, numbers, points, question and exclamation mark')
 
-    group_membership = models.CharField(max_length=1, choices=GROUPS, default=2, help_text='Do you want or need help? Or you can set your status to inactive.')
+    group_membership = models.CharField(max_length=1, choices=GROUPS, default=2, help_text='')
     map_show_location = models.CharField(max_length=1, choices=MAP_VIEW, default=0, help_text='if you choose exact - your location will be shown exactly; if you do not want to expose your exact location choose rough')
     help_type = models.CharField(max_length=255, blank=True)
-    street = models.CharField(max_length=500, blank=True, help_text='Add your street and number for exact location (leave it out if you feel uncomfortable with it);max length 500 characters')
+    street = models.CharField(max_length=500, blank=True, help_text='Add your street and number or leave it out if you feel uncomfortable to share your exact location')
     city_name = models.CharField(max_length=100, blank=True)
     zip_code = models.IntegerField(blank=True, default=0)
     longitude = models.FloatField(default=42, blank=True, null=True)
@@ -42,7 +42,7 @@ class CustomUser(AbstractUser):
     #profile_image = models.ImageField(upload_to='profile_image', blank=True)
     #registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
     #last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
-    slogan = models.CharField(max_length=100, blank=True, help_text = 'The headline of your post (will be shown on map)', validators=[allowed_chars])
+    slogan = models.TextField(max_length=1000, blank=True, help_text = 'The headline of your post (will be shown on map)', validators=[allowed_chars])
     description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)', validators=[allowed_chars])
 
 
