@@ -248,8 +248,7 @@ def compose_with_userto(request, user_to, recipient=None, form_class=ComposeForm
     email_recipient = str(df.iloc[0, 0])
     username = str(df.iloc[0, 1])
     slogan = "Re: " + str(df.iloc[0, 2])
-    print(slogan)
-    
+        
     recipient = username
     if request.method == "POST":
         sender = request.user
