@@ -191,7 +191,10 @@ h3.heading {
 .active-icons {
   font-size: 1.2rem;
   font-weight: 200;
-  color: #5a5a5a;
+  color: #5a5a5a; 
+}
+p .card-text {
+  margin-bottom: 1.3rem !important;
 }
 
 .row a:hover {
@@ -245,6 +248,9 @@ h3 {
 }
 td {
   font-size: 1rem;
+}
+.col-md-5.data-table {
+  margin-top: 19px;
 }
 /*============= TEAM SECTION =============*/
 .team {
@@ -434,7 +440,9 @@ img.subpage {
 .row.profile .small {
   margin-bottom: 1rem;
 }
-
+.row.profile label {
+  display: none
+}
 
 
   /*============= MEDIA QUERIES =============*/
