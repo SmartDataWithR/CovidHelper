@@ -63,7 +63,7 @@
                                         <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                     </div>
                                     <p class="text-uppercase font-weight-bold py-1">{% trans "Update profile" %}</p>
-                                    <p class="card-text">{% trans "1. Fill out details of your profile" %}</p>
+                                    <p>{% trans "1. Fill out details of your profile" %}</p>
                                 </a>
                                 {% else %}
                                 <a href="{% url 'account_signup' %}">
@@ -71,7 +71,7 @@
                                         <img src="{% static 'images/005-laptop.svg' %}" alt="">
                                     </div>
                                     <p class="text-uppercase font-weight-bold py-1">{% trans "Sign up" %}</p>
-                                    <p class="card-text">{% trans "1. Sign up and set up your profile" %}
+                                    <p>{% trans "1. Sign up and set up your profile" %}
                                     </p>
                                 </a>
                                 {% endif %}
@@ -82,7 +82,7 @@
                                         <img src="{% static 'images/platzhalter.svg' %}" alt="">
                                     </div>
                                     <p class="text-uppercase font-weight-bold py-1">{% trans "Search near you" %}</p>
-                                    <p class="card-text">
+                                    <p>
                                         {% trans "2. Enter your city or postal code" %}
                                     </p>
                                 </a>
@@ -90,14 +90,14 @@
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/010-plaudern.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">{% trans "Chat" %}</p>
-                                <p class="card-text">
+                                <p>
                                     {% trans "3. Start a conversation via email with each other" %}
                                 </p>
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <img src="{% static 'images/lebensmittelgeschaeft.svg' %}" alt="">
                                 <p class="text-uppercase font-weight-bold py-1">{% trans "Goal" %}</p>
-                                <p class="card-text">
+                                <p>
                                     {% trans "4. Congratulations. You made a friend for better times." %}
                                 </p>
                             </div>
@@ -122,7 +122,7 @@
                 <div class="input-groupd-flex">
                     <form class="form" method="post">
                         {% csrf_token %}
-                        <div class="input-group input-group-lg">
+                        <div class="input-group input-group-lg">   
                             <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City"
                                 aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
                             <div class="input-group-append">
@@ -133,6 +133,17 @@
                                     window.location.hash = '#{{gotodiv}}';
                                 </script>
                                 {% endif %}
+                                <!-- <div class="input-group-append">
+                                    <button class="btn btn-secondary dropdown-toggle rounded-0" type="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </form>
@@ -173,7 +184,7 @@
                 </div> -->
             </div>
             <!-- Data Table -->
-            <div class="col-md-5">
+            <div class="col-md-5 data-table">
                 <table id="table" class="display table" style="width:100%">
                     <thead>
                         <tr>
