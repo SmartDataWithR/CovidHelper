@@ -16,7 +16,7 @@ def redirect_select(request):
     # find out if user profile is filled
     df_filt = df[df['username'] == str(request.user)]
     # slogan = df_filt['slogan'][0]
-    description = df_filt['description'][0]
+    description = df_filt.iloc[0,0]
     # slogan_length=len(slogan)
     desc_length=len(description)
     
