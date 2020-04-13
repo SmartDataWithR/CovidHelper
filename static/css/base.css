@@ -323,7 +323,7 @@ a.top-scroll:hover {
 
 /*============= Subpages =============*/
 
-.form label {
+.form label, .requiredField {
   display: none !important;
 }
 .col-form-label {
@@ -510,7 +510,6 @@ img.subpage {
   display: none;
   color: white;
 }
-
 
 /*============ BOOTSTRAP BREAK POINTS:
 
