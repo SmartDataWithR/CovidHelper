@@ -18,7 +18,10 @@ def redirect_select(request):
     # slogan = df_filt['slogan'][0]
     description = df_filt.iloc[0,0]
     # slogan_length=len(slogan)
-    desc_length=len(description)
+    if description==None:
+        desc_length=0
+    else:
+        desc_length=len(description)
     
     if desc_length>0:
         return redirect('/')
