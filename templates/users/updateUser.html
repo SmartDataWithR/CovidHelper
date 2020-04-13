@@ -14,7 +14,7 @@
             {% endif %}
             {% if form.userImg_Url.value != 0 %}
             <div>
-                <img src="/../images/images/{{ form.userImg_Url.value }}" class="img-responsive" style="width: 150px;" />
+                <img src="/../images/images/{{ form.userImg_Url.value }}" class="img-responsive profile-image" style="width: 150px;" />
             </div>
             {% endif %}
         </div>
@@ -65,6 +65,7 @@
                             {{ form.description|as_crispy_field }}
                         </div>
                     </div>
+                    <p>Your profile image</p>
 					<div class="row">
                         <div class="imagefield form-group col-md-12 mb-0">
                             {{ form.user_Main_Img|as_crispy_field }}
