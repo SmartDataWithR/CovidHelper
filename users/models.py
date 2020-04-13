@@ -39,6 +39,8 @@ class CustomUser(AbstractUser):
     #web = models.CharField(max_length=100, blank=True)
     #skype = models.CharField(max_length=100, blank=True)
     #linkedin = models.CharField(max_length=100, blank=True)
+    user_Main_Img = models.ImageField(upload_to='images/')
+    userImg_Url = models.CharField(max_length=500, blank=True, default=0)
     #profile_image = models.ImageField(upload_to='profile_image', blank=True)
     #registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
     #last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
