@@ -8,10 +8,19 @@
     <div class="col-sm-6 offset-sm-3 profile">
 
         <!-- <img class="subpage" src="{% static "images/LogoFiles/Vector/SVG/withBackground.svg" %}" alt=""> -->
-        <div><i class="fas fa-user"></i></div>
+        <div>
+            {% if form.userImg_Url.value == 0 %}
+            <i class="fas fa-user"></i>
+            {% endif %}
+            {% if form.userImg_Url.value != 0 %}
+            <div>
+                <img src="/../images/images/{{ form.userImg_Url.value }}" class="img-responsive" style="width: 150px;" />
+            </div>
+            {% endif %}
+        </div>
         <h2 class="subpage">Welcome {{ request.user.username }}</h2>
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-12 mb-0">
@@ -56,6 +65,11 @@
                             {{ form.description|as_crispy_field }}
                         </div>
                     </div>
+					<div class="row">
+                        <div class="imagefield form-group col-md-12 mb-0">
+                            {{ form.user_Main_Img|as_crispy_field }}
+                        </div>
+					</div>
                 </div>
             </div>
 

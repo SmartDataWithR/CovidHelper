@@ -15,4 +15,4 @@ class CustomUserChangeForm(UserChangeForm):
     #description = forms.CharField(widget= forms.TextInput(attrs={'placeholder':'Please add more specific information'}))
     class Meta:
         model = CustomUser  
-        fields = ('id', 'group_membership', 'help_type','street', 'city_name', 'zip_code','slogan', 'description')# , 'longitude', 'latitude')
+        fields = ('id', 'group_membership', 'help_type','street', 'city_name', 'zip_code', 'slogan', 'description', 'user_Main_Img', 'userImg_Url')# , 'longitude', 'latitude')
