@@ -42,15 +42,19 @@ def updateUser(request):
             
             address = data.get('street') + ' ' + data.get('zip_code') + ' ' + data.get('city_name')
             location = locator.geocode(address)
-            Imagename = request.FILES['user_Main_Img'].name
+            #Imagename = request.FILES['user_Main_Img'].name
             # replace the longitude latitude information
             form_new = form.save(commit=False)
             form_new.longitude = location.longitude
             form_new.latitude = location.latitude
-            form_new.userImg_Url = Imagename
-            form_new.save()
-
-            return redirect('/')
+            if form.is_valid() and 'user_Main_Img' in request.FILES:
+                Imagename = request.FILES['user_Main_Img'].name
+                form_new.userImg_Url = Imagename
+                form_new.save()
+                return redirect('/')
+            else:
+                form_new.save()
+                return redirect('/')
         else:
             form = CustomUserChangeForm(request.POST, instance=user)
             context = {'form': form}
