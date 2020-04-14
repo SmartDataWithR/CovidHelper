@@ -252,6 +252,18 @@ td {
 .col-md-5.data-table {
   margin-top: 19px;
 }
+
+/*============= UPDATE PROFILE =============*/
+.profile-image {
+  width: 6rem !important;
+  border-radius: 50%;
+}
+
+.imagefield #text {
+  display: none!;
+}
+
+
 /*============= TEAM SECTION =============*/
 .team {
     background-color: whitesmoke;
@@ -323,7 +335,7 @@ a.top-scroll:hover {
 
 /*============= Subpages =============*/
 
-.form label {
+.form label, .requiredField {
   display: none !important;
 }
 .col-form-label {
@@ -510,7 +522,6 @@ img.subpage {
   display: none;
   color: white;
 }
-
 
 /*============ BOOTSTRAP BREAK POINTS:
 

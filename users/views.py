@@ -16,9 +16,12 @@ def redirect_select(request):
     # find out if user profile is filled
     df_filt = df[df['username'] == str(request.user)]
     # slogan = df_filt['slogan'][0]
-    description = df_filt['description'][0]
+    description = df_filt.iloc[0,0]
     # slogan_length=len(slogan)
-    desc_length=len(description)
+    if description==None:
+        desc_length=0
+    else:
+        desc_length=len(description)
     
     if desc_length>0:
         return redirect('/')
@@ -35,21 +38,26 @@ def updateUser(request):
     locator = geopy.Nominatim(user_agent="myGeocoder")
     form = CustomUserChangeForm(instance=user)
     if request.method == 'POST':
-        form = CustomUserChangeForm(request.POST, instance=user)
+        form = CustomUserChangeForm(request.POST,request.FILES, instance=user)
         # location = locator.geocode(address)
         if form.is_valid():
             data = request.POST.copy()
             
             address = data.get('street') + ' ' + data.get('zip_code') + ' ' + data.get('city_name')
             location = locator.geocode(address)
-            
+            #Imagename = request.FILES['user_Main_Img'].name
             # replace the longitude latitude information
             form_new = form.save(commit=False)
             form_new.longitude = location.longitude
             form_new.latitude = location.latitude
-            form_new.save()
-
-            return redirect('/')
+            if form.is_valid() and 'user_Main_Img' in request.FILES:
+                Imagename = request.FILES['user_Main_Img'].name
+                form_new.userImg_Url = Imagename
+                form_new.save()
+                return redirect('/')
+            else:
+                form_new.save()
+                return redirect('/')
         else:
             form = CustomUserChangeForm(request.POST, instance=user)
             context = {'form': form}
