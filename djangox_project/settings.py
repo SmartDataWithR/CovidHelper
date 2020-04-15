@@ -245,10 +245,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 # Email setup
-# EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'mail.privateemail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'info@dogooddeed.com'
-# EMAIL_HOST_PASSWORD = get_env_variable('INFO_DoGoodDeed')
-# EMAIL_USE_TLS = True
-# DEFAULT_FROM_EMAIL = 'Info <info@dogooddeed.com>'
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.privateemail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'info@dogooddeed.com'
+EMAIL_HOST_PASSWORD = get_env_variable('INFO_DoGoodDeed')
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Info <info@dogooddeed.com>'

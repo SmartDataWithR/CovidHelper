@@ -1,0 +1,22 @@
+{% extends '_base-accounts-users.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="caption">
+   <br>
+      <br>
+   <div class="container">
+      <div class="h1">Contact Us</div>
+      
+      <form method="post">
+         {% csrf_token %}
+         {{ form|crispy }}
+         <button type="submit" class="btn btn-secondary rounded-0"><i class="far fa-envelope"></i> Send</button>
+      </form>
+   </div>
+</div>
+
+{% include 'pages/footer.html' %}
+{% endblock content %}

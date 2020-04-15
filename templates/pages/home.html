@@ -120,9 +120,9 @@
 
             <div class="col-10 col-md-6 col-lg-4">
                 <div class="input-groupd-flex">
-                    <form class="form" method="post"> 
+                    <form class="form" method="post">
                         {% csrf_token %}
-                        <div class="input-group input-group-lg">   
+                        <div class="input-group input-group-lg">
                             <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City"
                                 aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
                             <div class="input-group-append">
@@ -410,8 +410,12 @@
     <i class="fa fa-angle-up"></i>
 </a>
 <!-- End of Top Scroll -->
-
-
+<div class="container">
+    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
+</div>
+>
 {% include 'pages/footer.html' %}
 
 {% endblock content %}
