@@ -105,9 +105,9 @@
   var center_lon = "{{ longitude }}"
   var center_lat = "{{ latitude }}"
   var username = "{{ username }}"
-  console.log(username)  
+  
   username = username.replace('[', '').replace(';]', '').replace(/[&#39]/g, '').split(';, ')
-  console.log(username)
+  
   if (isNaN(parseFloat(center_lon))) {
     center_lon = 10
   } else {
@@ -138,11 +138,11 @@
   group_membership = group_membership.replace('[', '').replace(']', '').split(',')
 
   var slogan = '{{ slogan }}'
-  console.log(slogan)
+  
   slogan = slogan.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(', ')
-  console.log(slogan)
+  
   var description = '{{ description }}'
-  description = description.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(';, ')
+  description = description.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(', ')
   
   var ids = '{{ id }}'
   ids = ids.replace('[', '').replace(']', '').split(',')
@@ -190,7 +190,8 @@
     slogan_i = slogan[i].replace('x', '').replace(';', '')
     if (slogan_i == 'None' && group_membership[i]== 0) {
       slogan_i = 'I want to help.'
-    } else {
+    } 
+    if (slogan_i == 'None' && group_membership[i]== 1) {
       slogan_i = 'I need some help.'
     }
     //slogan_i = slogan_i.slice(1, -1);
@@ -201,7 +202,7 @@
     
     // show contact link or not
     if (is_authenticated == 'True') {
-      contact_link = "<br><a href='/mailme/" + id_i + "'>Mail me</a>"
+      contact_link = "<br><a href='/compose/" + id_i + "'>Contact me</a>"
     }
     if (is_authenticated == 'False') {
       contact_link = "<br><b>Please register to contact the user.</b>"
@@ -235,36 +236,14 @@
                       number: i, 
                       markerColor: color
                   })}).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" + slogan_i + "</font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {closeOnClick: false, autoClose: true,}).openPopup();
-
+   
   }
   // Create a center circle
-  console.log(longitude_center)
-  console.log(latitude_center)
-L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
+  L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
 
 
-// Marker with numbers
 
-
-  function createMap() {
-    // create the map
   
-  if (mymap != undefined) { mymap.remove(); }
-  mymap = L.map('mapid').setView([center_lat, center_lon], 10);
-  L.tileLayer(
-  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGVocGhpbGIiLCJhIjoiY2s3emFtN2M4MDNwajNxb2ducGNuNWk4byJ9.MxBMpm6g_oaptJPqgqmG7g', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoidGVocGhpbGIiLCJhIjoiY2s3emFtN2M4MDNwajNxb2ducGNuNWk4byJ9.MxBMpm6g_oaptJPqgqmG7g'
-  }).addTo(mymap);
-
-  // Create a center circle
-L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
-
-  }
   
 
 function categorySelected(cb) {
@@ -272,34 +251,7 @@ function categorySelected(cb) {
   var s2 = document.getElementById('defaultChecked2').checked;
   var s3 = document.getElementById('defaultChecked3').checked;
   console.log([s1, s2, s3])
-  // var i;
-  // for (i = 0; i < longitudes.length; i++) {
-  //   help_type_i = help_type[i]
-  //   console.log(help_type_i)
-  //   // check for category 1: "Deliver food"
-  //   cat1_bool = help_type_i.includes('Deliver Food')
-  //   // check for category 2: "Child care"
-  //   cat2_bool = help_type_i.includes('Child care')
-  //   // check for category 3: "Physical work"
-  //   cat3_bool = help_type_i.includes('Physical work')
-  //   var mymarker = L.marker([lat_i, lon_i], {
-  //                   icon: new L.AwesomeNumberMarkers({
-  //                     number: i, 
-  //                     markerColor: color
-  //                 })}).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i  + "</font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {closeOnClick: false, autoClose: true,}).openPopup();
-  
-  //   // if not one of the categories is represented, delete the marker
-  //   console.log([s1, cat1_bool])
-  //   if (!s1 && !cat1_bool) {
-  //     mymap.off();
-  //     mymap.remove();
-  //    // mymarker.clearLayers();
-      
-  //     //mymap.removeLayer(mymarker);
-  //   }
-
-
-  // }
+// remove the complete map
   
 } // end categorySelected
 

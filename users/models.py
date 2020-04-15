@@ -24,7 +24,7 @@ class CustomUser(AbstractUser):
     )
 
     # allowed
-    allowed_chars = RegexValidator(r'^[a-zA-Z0-9, !.?]*$', 'allowed are characters, numbers, points, question and exclamation mark')
+    allowed_chars = RegexValidator(r'^[a-zA-Z0-9 !.?]*$', 'allowed are characters, numbers, points, question and exclamation mark')
 
     group_membership = models.CharField(max_length=1, choices=GROUPS, default=2, help_text='')
     map_show_location = models.CharField(max_length=1, choices=MAP_VIEW, default=0, help_text='if you choose exact - your location will be shown exactly; if you do not want to expose your exact location choose rough')
@@ -45,7 +45,7 @@ class CustomUser(AbstractUser):
     #registered_on = models.DateTimeField(blank=True, null=True)  # sets the value whenever created
     #last_login = models.DateTimeField(blank=True, null=True)  # updates whenever last accessed
     slogan = models.TextField(max_length=1000, blank=True, help_text = 'The headline of your post (will be shown on map)', validators=[allowed_chars], null=True)
-    description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)', null=True)
+    description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)', validators=[allowed_chars], null=True)
 
 
     def __str__(self):
