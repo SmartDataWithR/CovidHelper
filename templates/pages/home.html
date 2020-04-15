@@ -120,13 +120,13 @@
 
             <div class="col-10 col-md-6 col-lg-4">
                 <div class="input-groupd-flex">
-                    <form class="form" method="post">
+                    <form class="form" method="post"> 
                         {% csrf_token %}
                         <div class="input-group input-group-lg">   
                             <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City"
                                 aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
                             <div class="input-group-append">
-                                <button class="btn btn-secondary" type="submit" id="search_button"><i
+                                <button class="" type="submit" id="search_button"><i
                                         class="fas fa-search"></i>{% trans " Search" %}</button>
                                 {% if gotodiv %}
                                 <script>

@@ -15,6 +15,7 @@ urlpatterns =  [
 ]
 
 urlpatterns += i18n_patterns(
+    path('', include('sendemail.urls')),
     path('users/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('pages.urls')),
@@ -25,7 +26,7 @@ urlpatterns += i18n_patterns(
     path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     path('mailme/<user_to>/', mailme),
     path('', include('django_messages.urls')),
-    path('success/', successView, name='success'), prefix_default_language=False
+    path('success/', successView, name='success'), prefix_default_language=False,
 )
 
 if settings.DEBUG:
