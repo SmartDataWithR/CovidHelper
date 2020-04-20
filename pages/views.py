@@ -35,6 +35,7 @@ def ip2int(addr):
 
 def index(request):
     search = request.POST.get('search-field')
+    # define here reference to get dropdown values
     locator = geopy.Nominatim(user_agent="myGeocoder")
     gotodiv = False
     
@@ -66,9 +67,9 @@ def index(request):
             location = locator.geocode('Hamburg', timeout=5)
 
 
-        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.description, u.map_show_location, u.username, u.help_type] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
+        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.description, u.map_show_location, u.username, u.help_type, u.shop_type] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
         
-        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description', 'map_show_location', 'username', 'help_type'] # 
+        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'description', 'map_show_location', 'username', 'help_type', 'shop_type'] # 
         df['distance'] = [geodesic((location.longitude, location.latitude), (x, y)).miles for x,y in zip(df['longitude'], df['latitude'])]
         
         # filter for distance max 20km (12.4miles)
@@ -80,6 +81,7 @@ def index(request):
         group_membership = [int(x) for x in group_membership]
         help_type = df_filt['help_type'].values.tolist()
         slogan = df_filt['slogan'].values.tolist()
+        shop_type = df_filt['shop_type'].values.tolist()
         description = df_filt['description'].values.tolist() 
         username = df_filt['username'].values.tolist()
         #tel_private = df_filt['tel_private'].values.tolist()
@@ -93,7 +95,7 @@ def index(request):
         template_table = list(zip(rname, ids, slogan, description))
 
         gotodiv = 'search'
-        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv, 'map_show_location':map_show_location, 'template_table':template_table, 'username':username, 'help_type':help_type}
+        context = {'longitude': location.longitude, 'latitude': location.latitude,'id':ids, 'group_membership': group_membership, 'longitudes': longitudes, 'latitudes': latitudes, 'slogan': slogan, 'description': description, 'gotodiv': gotodiv, 'map_show_location':map_show_location, 'template_table':template_table, 'username':username, 'help_type':help_type, 'shop_type': shop_type}
         
         
     
