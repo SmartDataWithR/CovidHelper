@@ -40,16 +40,13 @@
                     </div>
 
                     <p>I am happy to...</p>
-                    <select class="form-control" multiple id="help" size="7">
+                    <select class="form-control" multiple id="help" size="7" onchange="getComboA(this)">
                         <option value="Deliver Food">Deliver Food</option>
                         <option value="Walk the dog" selected="selected">Walk the dog</option>
                         <option value="Child care">Child care</option>
                         <option value="Physical work">Physical work</option>
                         <option value="Online Teaching">Online Teaching</option>
-                        <option value="Miscellanious">Miscellanious</option>  
-                        <!-- <option value="GroceryStore">Grocery Store</option>  
-                        <option value="PharmacyStore">Pharmacy</option>  
-                        <option value="OtherStore">Other Store</option>   -->
+                        <option value="Miscellanious">Miscellanious</option>   
                     </select>
                     <div class="small">
                     <small class="form-text text-muted text-center">
@@ -91,9 +88,72 @@
             </div>
         </form>
 
-
     </div>
 </div>
+
+
+
+
+    <!-- <div id="updateUser">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0 mt-0">
+                    {{ form.group_membership|as_crispy_field }}
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12 mb-0 mt-0">
+                        <p>
+                            How do you want to help?
+                        </p>
+                        
+                        <select class="form-control" multiple id="help" size="7" onchange="getComboA(this)">
+                            <option value="Deliver Food">Bring Food or Medicine</option>
+                            <option value="Walk the dog" selected="selected">Walk the dog</option>
+                            <option value="Child care">Child care</option>
+                            <option value="Physical work">Physical work</option>
+                            <option value="Online Teaching">Online Teaching</option>
+                            <option value="Miscellanious">Miscellanious</option>
+                        </select>
+                        <br>
+                        <small>
+                            Press CTRL to select multiple
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group col-md-12 mb-0 mt-0">
+                {{ form.help_type|as_crispy_field }}
+                <small>
+                    Add categories separated by commas
+                </small>
+            </div>
+            <div class="form-group col-md-12 mb-0 mt-0">
+                {{ form.street|as_crispy_field }}
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3 mb-0">
+                    {{ form.zip_code|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-9 mb-0">
+                    {{ form.city_name|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0 text-highlight">
+                    {{ form.slogan|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-12 mb-0 text-highlight">
+                    {{ form.description|as_crispy_field }}
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Update</button>
+        </form>
+    </div>
+</div> -->
+
 
 <script type="application/javascript">
     function getComboA(selectObject) {
@@ -101,32 +161,6 @@
         document.getElementById("id_help_type").value = value;
         console.log(value);
     }
-
-    // $(function () {
-    //     $("#id_group_membership").change(function (e) {
-    //         $("#help").empty();
-
-    //         var options = 
-    //         $("#id_group_membership option").filter(function(e){
-    //             selected_group = $("#id_group_membership option:selected").val()
-    //             if (selected_group == 3) {
-    //                 console.log('here')
-    //                 var options = ["1", "2", "3", "4", "5"]; 
-
-    //                 for(var i = 0; i < options.length; i++) {
-    //                     var opt = options[i];
-    //                     var el = document.createElement("help");
-    //                     el.textContent = opt;
-    //                     el.value = opt;
-    //                     help.appendChild(el);
-    //                 }​
-    //             } 
-                
-    //             return ["1", "2", "3", "4", "5"];
-    //         });
-    //         $("#help").append(options);
-    //     });
-    // });
 </script>
 
 

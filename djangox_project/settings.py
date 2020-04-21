@@ -116,26 +116,26 @@ WSGI_APPLICATION = 'djangox_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'dogooddeed_db',
-#         'USER': 'dogooddeed_user',
-#         'PASSWORD': get_env_variable('AZURE_SQL'),
-#         'HOST': 'dogooddeed.database.windows.net',
-#         'PORT': '',
-#         'OPTIONS': {
-#             'driver': 'ODBC Driver 13 for SQL Server',
-#         },
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'dogooddeed_db',
+        'USER': 'dogooddeed_user',
+        'PASSWORD': get_env_variable('AZURE_SQL'),
+        'HOST': 'dogooddeed.database.windows.net',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 13 for SQL Server',
+        },
+    }
+}
 
 
 
@@ -235,7 +235,7 @@ GOOGLE_MAPS_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
 DJANGOCMS_GOOGLEMAP_API_KEY = get_env_variable('GOOGLE_MAPS_API_KEY')
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SITE_ID = 1
+SITE_ID = 2
 
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False

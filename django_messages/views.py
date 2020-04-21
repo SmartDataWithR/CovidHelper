@@ -39,25 +39,6 @@ def inbox(request, template_name='django_messages/inbox.html'):
     })
 
 @login_required
-def inbox_groupby_sender(request, template_name='django_messages/inbox_groupby_sender.html'):
-    """
-    Displays a list of received messages for the current user.
-    results are grouped by sender
-    """
-    recipient_id = request.user.id
-    print(recipient_id)
-    message_list = Message.objects.inbox_for(request.user.id)
-    sql_query = 'SELECT * FROM django_messages_message WHERE recipient_id='+str(recipient_id)
-    print(sql_query)
-    df = pd.DataFrame([u.id, u.sender_id, u.sent_at, u.subject] for u in Message.objects.raw(sql_query) )
-
-    print(df)
-    return render(request, template_name, {
-        'message_list': message_list,
-    })
-
-
-@login_required
 def outbox(request, template_name='django_messages/outbox.html'):
     """
     Displays a list of sent messages by the current user.

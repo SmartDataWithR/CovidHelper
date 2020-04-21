@@ -18,16 +18,4 @@ class CustomUserChangeForm(UserChangeForm):
     description = forms.CharField(required=False, widget= forms.TextInput(attrs={'placeholder':'Please add more specific information'}))
     class Meta:
         model = CustomUser  
-        fields = ('id', 'group_membership', 'help_type','street', 'city_name', 'zip_code', 'slogan', 'description', 'user_Main_Img', 'userImg_Url')
-
-
-class CustomShopChangeForm(UserChangeForm):
-    city_name = forms.CharField(required=False, widget= forms.TextInput(attrs={'placeholder':'your city'}))
-    zip_code = forms.CharField(required=False, widget= forms.TextInput(attrs={'placeholder':'zip-code'}))
-    street = forms.CharField(required=False, widget= forms.TextInput(attrs={'placeholder':'your street (max. characters 500)'}))
-    slogan = forms.CharField(required=False, widget= forms.TextInput(attrs={'placeholder':'Describe yourself or the type of help'}))
-    description = forms.CharField(required=False, widget= forms.TextInput(attrs={'placeholder':'Please add more specific information'}))
-    #shop_type = forms.CharField(required=False)
-    class Meta:
-        model = CustomUser  
-        fields = ('id', 'group_membership','help_type','street', 'city_name', 'zip_code', 'slogan', 'description', 'user_Main_Img', 'userImg_Url', 'shop_title', 'shop_open', 'shop_closed', 'shop_deliver', 'shop_pickup', 'shop_type')
+        fields = ('id', 'group_membership', 'help_type','street', 'city_name', 'zip_code', 'slogan', 'description', 'user_Main_Img', 'userImg_Url')# , 'longitude', 'latitude')
