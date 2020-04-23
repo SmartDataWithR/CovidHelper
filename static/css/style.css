@@ -1,0 +1,303 @@
+/*============= RESET STYLE =============
+FONTS:
+Body: font-family: 'Lato', sans-serif;
+Nav & Headings: font-family: 'Roboto', sans-serif;
+*/
+
+/*-- iPhone X Remove Gutters
+Ignore W3C Validation error for this style. --*/
+html {
+   padding: env(safe-area-inset);
+}
+
+/*-- Body Resets --*/
+body {
+   background: #f9f9f9;
+   font-family: 'Lato', sans-serif;
+   font-size: 1.15rem;
+   color: #293346;
+}
+
+/*-- Extra Bootstrap Column Padding --*/
+[class*="col-"] {
+   padding: 1rem;
+ }
+
+/*-- Remove orange Browser Outline Around Elements --*/
+a:active, a:focus,
+button:active, button:focus,
+textarea:hover, textarea:active, textarea:focus,
+input:hover, input:active, input:focus {
+  outline: 0 !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+/*-- Pointer Cursor On Links & Buttons --*/
+a, .btn, button {
+   cursor: pointer!important;
+}
+
+/*-- Max-width Container For Elements
+other than navbar, carousel, banner & footer --*/
+.wrapper {
+	max-width: 1220px;
+   margin: 0 auto;
+   padding: 0 1rem;
+   overflow: hidden;
+}
+
+/*-- Headings --*/
+h1 {
+   font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-size: 175%;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	padding: .6rem 0;
+}
+h2, h3, h4 {
+   font-family: 'Roboto', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+}
+h5 {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 700;
+}
+
+
+/*-- Remove Link Color/Underline from Phone #s --*/
+a {
+   color: #293346;
+}
+a:hover {
+   color: #293346;
+   text-decoration: none;
+}
+
+
+/*============= PORTFOLIO GALLERY FILTER / LIGHTBOX =============*/
+
+/*-- shop Gallery Menu --*/
+
+.navbar.projects {
+  padding: .7rem 1rem;
+  font-weight: 300;
+  letter-spacing: .1rem;
+  font-size: .9rem;
+  transition: background-color .5s ease;
+  box-shadow: none!important;
+  opacity: 0.9;
+}
+.filter ul li {
+   padding: .5rem;
+}
+.navbar.projects .navbar-nav .nav-link {
+   font-size: 1.2rem;
+   padding-top: 0rem;
+   text-align: center;
+   text-shadow: none!important;
+   transition: all .3s ease;
+}
+.filter ul li.filter-active a.nav-link.filter,
+a.filter.is-checked,
+li a.nav-link.filter.active,
+li a.nav-link.filter:hover {
+   color: #c8e7ed!important;
+   cursor: pointer!important;
+}
+a.nav-link.filter {
+   padding-left: 1rem;
+}
+ 
+/*-- Filter Gallery Layout --*/
+.element-item {
+   position: relative;
+   float: left;
+   width: 33%;
+   min-height: 14rem;
+   padding: .6rem;
+}
+.element-item img {
+   width: 100%;
+   margin-bottom: 0!important;
+   height: auto;
+   display:block;
+   transition: opacity .2s ease-out;
+   opacity: .9;
+}
+.element-item a img:hover {
+   opacity: 1!important;
+}
+
+/* Container holding the image and the text */
+.status {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+/* Top right text */
+.top-right {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 8px;
+  right: 2px;
+  background-color: #c8e7ed;
+  color: #293346;
+  
+}
+.top-right-below {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 40px;
+  right: 2px;
+  background-color: #c8e7ed;
+  color: #293346;
+}
+.center-right {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 72px;
+  right: 2px;
+  background-color: #c8e7ed;
+  color: #293346;
+}
+.opening {
+   font-size: 0.9rem;
+   margin: 0;
+}
+
+
+
+
+/*============= MEDIA QUERIES =============*/
+
+/* Large (lg) devices (desktops, 992px and under) */
+@media (max-width: 991.98px) {
+   .navbar {
+      padding: .25rem 5rem;
+   }
+   .carousel-caption h2 {
+      font-size: 1.7rem;
+   }
+   .element-item {
+      width: 50%;
+      min-height: 12.6rem;
+   }
+}
+
+/* Medium (md) devices (tablets, 768px and under) */
+@media (max-width: 767.98px) {
+   .navbar {
+      padding: .2rem 2.5rem;
+   }
+   .navbar-brand img {
+      height: 2.3rem;
+   }
+   .svg-inline--fa.fa-bars {
+      font-size: 1.55rem;
+   }
+   .offset:before {
+      height: 3.2rem;
+      margin-top: -3.2rem;
+   }
+   .carousel-caption {
+      top:45%!important;
+   }
+   .carousel-caption h2 {
+      font-size: 1.5rem;
+   }
+   .btn {
+      padding: .45rem 1rem;
+   }
+   p.lead {
+      font-size: 1.05rem;
+   }
+   .navbar.projects .navbar-toggler {
+      width: 100%;
+   }
+   .navbar.projects .custom-toggler-icon {
+      float: right;
+   }
+   .element-item {
+      width: 100%;
+      min-height: 14rem;
+   }
+}
+
+/* Small (sm) devices (landscape phones, 576px and under) */
+@media (max-width: 575.98px) {
+   .carousel-caption {
+      top:52%!important;
+   }
+   .carousel-caption h2 {
+      font-size: 1.3rem;
+   }
+   .btn {
+      padding: .4rem .9rem;
+   }
+   h2 {
+      font-size: 1.8rem;
+   }
+   h3 {
+      font-size: 1.7rem;
+   }
+}
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
+
+/*============= WAYPOINTS (ANIMATION DELAY) =============*/
+
+/*--- OPTION: TURN OFF ANIMATION ON MOBILE --*
+
+@media (max-width: 767px) {
+.animated, .os-animation {
+  -webkit-animation: none!important;
+  -moz-animation: none!important;
+  -o-animation: none!important;
+  animation: none!important;
+  opacity: 1!important;
+  -webkit-animation-delay: none !important;
+  -moz-animation-delay: none !important;
+  animation-delay: none !important;
+  }
+}
+
+
+/*--- Prevent WayPoints from Browser Window Scrolling On Mobile --*/
+/* Devices under 768px (md) */
+@media (max-width: 767px) {
+   .row {
+     overflow-x: hidden;
+     overflow-y: hidden;
+   }
+}
+ 
+/*--- Fix for Navbar Jumping During Scroll --*/
+.fixed-top  {
+   -webkit-backface-visibility: hidden;
+ }
+
+/*-- Bootstrap Mobile Gutter Fix --*/
+.row, .container-fluid {
+   margin-left: 0px !important;
+   margin-right: 0px !important;
+}

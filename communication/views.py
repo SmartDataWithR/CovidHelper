@@ -33,3 +33,8 @@ def mailme(request, user_to):
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')
+
+def shopme(request, user_to):
+    # get the slogan, so we can use it for the subject
+    df = pd.DataFrame([u.id, u.slogan, u.email] for u in CustomUser.objects.raw('SELECT id, slogan, email FROM users_customuser where id='+ user_to) )
+    return render(request, "shops/shops.html")

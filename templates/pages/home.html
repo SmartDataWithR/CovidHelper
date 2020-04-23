@@ -124,10 +124,17 @@
                         {% csrf_token %}
                         <div class="input-group input-group-lg">
                             <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City"
-                                aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
+                                   aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
+                            <select class="form-control" id="search-catogery" name="search-catogery" onchange="getCatogeryS(this)">
+                                <option value="0">I want to help</option>
+                                <option value="1">I need help</option>
+                                <option value="3">Shop keeper</option>
+                                <option value="4" selected="selected">All</option>
+                            </select>
                             <div class="input-group-append">
-                                <button class="" type="submit" id="search_button"><i
-                                        class="fas fa-search"></i>{% trans " Search" %}</button>
+                                <button class="" type="submit" id="search_button">
+                                    <i class="fas fa-search"></i>{% trans " Search" %}
+                                </button>
                                 {% if gotodiv %}
                                 <script>
                                     window.location.hash = '#{{gotodiv}}';
@@ -166,7 +173,9 @@
                     <div class="col-sm-3">
                         <img src="{% static "images/red_marker.jpg" %}" height="31" width="22"></img>I need help.
                     </div>
-
+                    <div class="col-sm-3">
+                        <img src="{% static "images/lebensmittelgeschaeft.svg" %}" height="31" width="22"></img>Shop
+                    </div>
                 </div>
 
                 <!-- <div class="h6">Help Type</div>
@@ -191,6 +200,7 @@
                             <th>{% trans "Nr." %}</th>
                             <th>{% trans "Description" %}</th>
                             <th>{% trans "Mail" %}</th>
+                            <th>{% trans "Shops List" %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -198,9 +208,19 @@
                         <tr>
                             <td>{{ item.0 }}</td>
                             <td>{{ item.3 }}</td>
-                            <td>{% if user.is_authenticated %}
+                            <td>
+                                {% if user.is_authenticated %}
                                 <button type="button" class="btn btn-outline-primary"
-                                    onclick="location.href='/compose/{{item.1 }}'"><i class="far fa-envelope"></i>
+                                        onclick="location.href='/compose/{{item.1 }}'">
+                                    <i class="far fa-envelope"></i>
+                                </button>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if user.is_authenticated %}
+                                <button type="button" class="btn btn-outline-primary"
+                                        onclick="location.href='/shopme/{{item.1 }}'">
+                                    <i class="far fa-search-plus"></i>
                                 </button>
                                 {% endif %}
                             </td>
@@ -237,7 +257,6 @@
 </div>
 </div>
 <!-- End Support Us Section -->
-
 <!-- Start Team Section -->
 <div id="team" class="offset">
     <div class="team">
@@ -314,8 +333,14 @@
         <hr>
     </div>
 </div>
+<script type="application/javascript">
+    function getCatogeryS(selectObject) {
+        var value = $(selectObject).val(); //selectObject.value;
+        document.getElementById("search-catogery").value = value;
+        console.log(value);
+    }
+</script>
 <!-- End of Clients Section -->
-
 <!-- Start Portfolio Section -->
 <!-- <div id="people" class="offset">
 
