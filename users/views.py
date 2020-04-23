@@ -8,6 +8,9 @@ import pandas as pd
 
 @login_required
 @transaction.atomic
+# check if there is a text in "description"
+# yes: redirect to /
+# no: redirect to /update
 def redirect_select(request):
     user = CustomUser.objects.get(email=request.user)
     df = pd.DataFrame([u.description, u.email, u.group_membership] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )

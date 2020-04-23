@@ -118,6 +118,14 @@
     popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
 
+  var shopIcon = L.icon({
+    iconUrl: '/static/images/lebensmittelgeschaeft.svg',
+    shadowUrl: '',
+    iconSize: [38, 95], // size of the icon
+    //iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
+    //popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
+  });
+
   // get locations and convert it to floats
   var center_lon = "{{ longitude }}"
   var center_lat = "{{ latitude }}"
@@ -198,6 +206,12 @@
   var map_show_location = '{{ map_show_location }}'
   map_show_location = map_show_location.replace('[', '').replace(']', '').replace(/ /g, '').split(',')
 
+  var shop_type = '{{ shop_type }}'
+  console.log(shop_type)
+  shop_type = shop_type.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(', ')
+  console.log(shop_type)
+
+
   var is_authenticated = '{{ user.is_authenticated }}'
   var contact_link
   
@@ -215,8 +229,11 @@
       slogan_i = 'I need some help.'
     }
     //slogan_i = slogan_i.slice(1, -1);
-    description_i = description[i].replace('x', '').replace(';', '')
-  
+    description_i = description[i].replace('x', '').replace(/;/g, "");
+    
+    shop_type_i = shop_type[i]
+    shop_type_i = shop_type_i.replace(/;/g, "");
+
     id_i = ids[i].replace(/ /g, '')
     username_i = username[i].replace(';', '')
     
@@ -250,8 +267,16 @@
       var icon = redIcon;
       var color = "red"
     }
+    // shop shopping basket for group membership "shop"
+    if (group_membership[i] == 3) {
+      var icon = shopIcon;
+      
+      var mymarker = L.marker([lat_i, lon_i], {
+                    icon: shopIcon}).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" + "<span class='badge badge-secondary'>" + shop_type_i + "</span></font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {closeOnClick: false, autoClose: true,}).openPopup();
     
-    var mymarker = L.marker([lat_i, lon_i], {
+    // for all other types show marker
+    } else {
+      var mymarker = L.marker([lat_i, lon_i], {
                     icon: new L.AwesomeNumberMarkers({
                       number: i, 
                       markerColor: color
@@ -287,7 +312,7 @@ function categorySelected(cb) {
   var s1 = document.getElementById('defaultChecked').checked;
   var s2 = document.getElementById('defaultChecked2').checked;
   var s3 = document.getElementById('defaultChecked3').checked;
-  console.log([s1, s2, s3])
+  //console.log([s1, s2, s3])
 // remove the complete map
   
 } // end categorySelected

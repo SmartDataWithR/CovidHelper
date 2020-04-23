@@ -48,5 +48,6 @@ class CustomUser(AbstractUser):
     shop_deliver = models.BooleanField(default=False, null=True)
     shop_pickup = models.BooleanField(default=False, null=True)
 
+
     def __str__(self):
         return self.email

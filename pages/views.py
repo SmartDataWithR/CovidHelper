@@ -91,6 +91,7 @@ def index(request):
         help_type = df_filt['help_type'].values.tolist()
         userImg_Url = df_filt['userImg_Url'].values.tolist()
         slogan = df_filt['slogan'].values.tolist()
+        shop_type = df_filt['shop_type'].values.tolist()
         description = df_filt['description'].values.tolist() 
         username = df_filt['username'].values.tolist()
         zipcode = df_filt['zip_code'].values.tolist()
