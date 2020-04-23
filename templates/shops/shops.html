@@ -1,0 +1,194 @@
+{% extends 'shops/base.html' %}
+{% include 'pages/navbar_account_users.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--- Start shop Section -->
+<div id="shop" class="offset">
+    <!--- Navigation -->
+    <div class="navbar projects navbar-expand-md">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarProjects">
+                <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse filter" id="navbarProjects">
+                <ul class="navbar-nav mx-auto button-group filters-button-group">
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}" class="nav-link filter"><i class="fas fa-arrow-circle-left"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link filter" data-filter="*">All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link filter is-checked" data-filter=".Food">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link filter" data-filter=".Day-to-Day">Day-to-Day</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link filter" data-filter=".Pharmacy">Pharmacy</a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- End Wrapper -->
+    </div> <!-- End Navbar -->
+    <div class="container">
+        <div class="grid mt-2 mb-5">
+            <div class="element-item Food Day-to-Day" data-category="transition">
+                <div class="status">
+                    <a class="button" data-toggle="modal" data-target="#exampleModal">
+                        <img src="{% static 'images/shop/img/booth-branding-business-buy-264636.jpg' %}" alt="" />
+                        <div class="top-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">open</div>
+                        <div class="top-right-below badge badge-primary text-wrap rounded-0" style="width: 6rem;">deliver</div>
+                        <div class="center-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">pickup</div>
+                    </a>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content rounded-0">
+                        <div class="modal-header text-center">
+                            <img src="{% static 'images/shop/img/booth-branding-business-buy-264636.jpg' %}" class="img-thumbnail rounded-0" alt="...">
+                            <h5 class="modal-title" id="exampleModalLabel">Alfonso's Supermarket</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A dolorum, consequatur numquam commodi quam corporis voluptates, facere, accusamus aspernatur veritatis aut iusto hic velit dolores. A architecto iure ea deleniti?</p>
+                            <div class="opening">
+                                <p>Open</p>
+                                <p>Mon 8:00 to 16:00</p>
+                                <p>Tue 8:00 to 16:00</p>
+                                <p>Wen 8:00 to 16:00</p>
+                                <p>Thu 8:00 to 16:00</p>
+                                <p>Fri 8:00 to 14:00</p>
+                                <p>Sat closed</p>
+                                <p>Sun closed</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Sethweg 27c <br> 22455 Hamburg</p>
+                            <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal"><i class="far fa-envelope"></i></button>
+                            <button type="button" class="btn btn-secondary rounded-0"> +49 172 7902072</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="element-item Day-to-Day Pharmacy" data-category="transition">
+                <div class="status">
+                    <a class="button" data-toggle="modal" data-target="#exampleModal1">
+                        <img src="{% static 'images/shop/img/grocery-cart-with-item-1005638.jpg' %}" alt="" />
+                        <div class="top-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">open</div>
+                        <div class="top-right-below badge badge-primary text-wrap rounded-0" style="width: 6rem;">deliver</div>
+                        <div class="center-right badge badge-primary text-wrap rounded-0" style="width: 6rem;">pickup</div>
+                    </a>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog rounded-0" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Berta's Drugstore</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A dolorum, consequatur numquam commodi quam
+                                corporis voluptates, facere, accusamus aspernatur veritatis aut iusto hic velit dolores. A architecto
+                                iure ea deleniti?
+                            </p>
+                            <table class="table opening table-borderless table-sm">
+                                <thead class="thead">
+                                    <tr>
+                                        <th scope="col">Opening hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Mon</th>
+                                        <td>8:00 to 16:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tue</th>
+                                        <td>8:00 to 16:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Wen</th>
+                                        <td>8:00 to 16:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Thu</th>
+                                        <td>8:00 to 16:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Fri</th>
+                                        <td>8:00 to 16:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sat</th>
+                                        <td>8:00 to 14:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sun</th>
+                                        <td>8:00 to 14:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">
+                                <i class="far fa-envelope"></i>
+                            </button>
+                            <button type="button" class="btn btn-secondary rounded-0"> +49 152 7902072</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="element-item Food Day-to-Day" data-category="transition">
+                <a class="img-popup" href="{% static 'images/shop/img/flower.jpg' %}" title="Portfolio Item Description">
+                    <img src="{% static 'images/shop/img/flower.jpg' %}" alt="" />
+                </a>
+            </div>
+            <div class="element-item Food Pharmacy" data-category="transition">
+                <a class="img-popup" href="{% static 'images/shop/img/sunset.jpg' %}" title="Portfolio Item Description">
+                    <img src="{% static 'images/shop/img/sunset.jpg' %}" alt="" />
+                </a>
+            </div>
+            <div class="element-item Food Day-to-Day" data-category="transition">
+                <a class="img-popup" href="{% static 'images/shop/img/lantern.jpg' %}" title="Portfolio Item Description">
+                    <img src="{% static 'images/shop/img/lantern.jpg' %}" alt="" />
+                </a>
+            </div>
+            <div class="element-item Day-to-Day Pharmacy" data-category="transition">
+                <a class="img-popup" href="{% static 'images/shop/img/road.jpg' %}" title="Portfolio Item Description">
+                    <img src="{% static 'images/shop/img/road.jpg' %}" alt="" />
+                </a>
+            </div>
+            <div class="element-item Pharmacy" data-category="transition">
+                <a class="img-popup" href="{% static 'images/shop/img/photo-of-people-walking-in-front-of-pharmacy-2414476.jpg' %}" title="Portfolio Item Description">
+                    <img src="{% static 'images/shop/img/photo-of-people-walking-in-front-of-pharmacy-2414476.jpg' %}" alt="" />
+                </a>
+            </div>
+            <div class="element-item Food" data-category="transition">
+                <a class="img-popup" href="{% static 'images/shop/img/nature.jpg' %}" title="Portfolio Item Description">
+                    <img src="{% static 'images/shop/img/nature.jpg' %}" alt="" />
+                </a>
+            </div>
+            <div class="element-item Food" data-category="transition">
+                <a class="img-popup" href="{% static 'images/shop/img/woods.jpg' %}" title="Portfolio Item Description">
+                    <img src="{% static 'images/shop/img/woods.jpg' %}" alt="" />
+                </a>
+            </div>
+        </div> <!-- End Grid -->
+    </div>
+</div>
+<!--- End Shop Section -->
+{% endblock content %}
