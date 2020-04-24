@@ -124,8 +124,9 @@
                         {% csrf_token %}
                         <div class="input-group input-group-lg">
                             <input type="text" class="form-control" id="search-field" placeholder="Zip Code / City"
-                                   aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
-                            <select class="form-control" id="search-catogery" name="search-catogery" onchange="getCatogeryS(this)">
+                                aria-label="Zip Code / City" aria-describedby="search_button" name="search-field">
+                            <select class="form-control" id="search-catogery" name="search-catogery"
+                                onchange="getCatogeryS(this)">
                                 <option value="0">I want to help</option>
                                 <option value="1">I need help</option>
                                 <option value="3">Shop keeper</option>
@@ -140,18 +141,8 @@
                                     window.location.hash = '#{{gotodiv}}';
                                 </script>
                                 {% endif %}
-                                <!-- <div class="input-group-append">
-                                    <button class="btn btn-secondary dropdown-toggle rounded-0" type="button" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                        <div role="separator" class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Separated link</a>
-                                    </div>
-                                </div> -->
                             </div>
+                            
                         </div>
                     </form>
                 </div>
@@ -211,7 +202,7 @@
                             <td>
                                 {% if user.is_authenticated %}
                                 <button type="button" class="btn btn-outline-primary"
-                                        onclick="location.href='/compose/{{item.1 }}'">
+                                    onclick="location.href='/compose/{{item.1 }}'">
                                     <i class="far fa-envelope"></i>
                                 </button>
                                 {% endif %}
@@ -219,7 +210,7 @@
                             <td>
                                 {% if user.is_authenticated %}
                                 <button type="button" class="btn btn-outline-primary"
-                                        onclick="location.href='/shopme/{{item.1 }}'">
+                                    onclick="location.href='/shopme/{{item.1 }}'">
                                     <i class="far fa-search-plus"></i>
                                 </button>
                                 {% endif %}

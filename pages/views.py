@@ -63,10 +63,16 @@ def index(request):
     context = {}
     if search != None:
         location = locator.geocode(search, timeout=5)
+        
         if not hasattr(location, 'longitude'):
             location = locator.geocode('Hamburg', timeout=5)
-            if search != None and searchCat == '4':
-                searchCat = 'NOT NULL'
+
+        # get result for 'All' (Category 4)
+        if searchCat == '4':
+            sql_q = 'SELECT * FROM users_customuser'
+        else:
+            sql_q = 'SELECT * FROM users_customuser WHERE group_membership like ' + searchCat
+        print(sql_q)
             #query = 'SELECT * FROM users_customuser'
             #if search != None and searchCat == '4':
                 #df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.zip_code, u.description, u.map_show_location,  u.username, u.help_type] for u in CustomUser.objects.raw('SELECT * FROM users_customuser') )
@@ -77,13 +83,14 @@ def index(request):
                 #        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.zip_code, u.description, u.map_show_location,  u.username, u.help_type, u.userImg_Url] for u in CustomUser.objects.raw('SELECT * FROM users_customuser WHERE group_membership IN(SELECT group_membership FROM users_customuser WHERE (%s<>'' AND group_membership IN('0','1','3')) OR (%s<>'' AND group_membership=group_membership))', [searchCat]) )
 
         #df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.zip_code, u.description, u.map_show_location,  u.username, u.help_type, u.userImg_Url] for u in CustomUser.objects.raw('SELECT * FROM users_customuser WHERE group_membership IN(SELECT group_membership FROM users_customuser WHERE (%s <> NULL AND group_membership IN('0','1','3')) OR (group_membership = group_membership))', [searchCat]) )
-        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.zip_code, u.description, u.map_show_location,  u.username, u.help_type, u.userImg_Url] for u in CustomUser.objects.raw('SELECT * FROM users_customuser WHERE group_membership like %s', [searchCat]) )
-        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'zip_code', 'description', 'map_show_location', 'username', 'help_type', 'userImg_Url'] # 
+        df = pd.DataFrame([u.id, u.group_membership, u.longitude, u.latitude, u.slogan, u.zip_code, u.description, u.map_show_location,  u.username, u.help_type, u.userImg_Url, u.shop_type] for u in CustomUser.objects.raw(sql_q) )
+        df.columns = ['id','group_membership', 'longitude', 'latitude', 'slogan', 'zip_code', 'description', 'map_show_location', 'username', 'help_type', 'userImg_Url', 'shop_type'] 
+        
         df['distance'] = [geodesic((location.longitude, location.latitude), (x, y)).miles for x,y in zip(df['longitude'], df['latitude'])]
         
         # filter for distance max 20km (12.4miles)
         df_filt = df[df['distance'] < 12.4]
-        
+        print(df_filt)
     
         # pass the data to the template
         group_membership = df_filt['group_membership'].values.tolist()

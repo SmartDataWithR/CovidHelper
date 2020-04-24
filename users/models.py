@@ -41,7 +41,7 @@ class CustomUser(AbstractUser):
     description = models.CharField(max_length=255, blank=True, help_text='The detailed description of your post (will be shown on map)', validators=[allowed_chars], null=True)
 
     # specific properties for shops
-    #shop_type = models.CharField(max_length=255, choices=SHOP_GROUPS, blank=True)
+    shop_type = models.CharField(max_length=255, choices=SHOP_GROUPS, blank=True)
     shop_title = models.CharField(max_length=100, blank=True)
     shop_open = models.BooleanField(default=False, null=True)
     shop_closed = models.BooleanField(default=False, null=True)

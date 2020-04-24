@@ -11,65 +11,66 @@
 <div id="mapid" class="mx-auto mt-4"></div>
 
 <script>
-// Marker with numbers
-(function (){
-  "use strict";
-  L.AwesomeNumberMarkers = L.Icon.extend({
-    options: {
-      iconSize: [35, 45],
-      iconAnchor:   [17, 42],
-      popupAnchor: [1, -32],
-      className: 'awesome-number-marker',
-      icon: 'home',
-      markerColor: 'blue',
-      numberColor: 'white',
-      number: ''
-    },
-    
-    createIcon: function () {
-      
-      var div = document.createElement('div'),
+  // Marker with numbers
+  (function () {
+    "use strict";
+    L.AwesomeNumberMarkers = L.Icon.extend({
+      options: {
+        iconSize: [35, 45],
+        iconAnchor: [17, 42],
+        popupAnchor: [1, -32],
+        className: 'awesome-number-marker',
+        icon: 'home',
+        markerColor: 'blue',
+        numberColor: 'white',
+        number: ''
+      },
+
+      createIcon: function () {
+
+        var div = document.createElement('div'),
           options = this.options;
 
-      div.innerHTML = this._createInner();
-      this._setIconStyles(div, 'icon-' + options.markerColor);
+        div.innerHTML = this._createInner();
+        this._setIconStyles(div, 'icon-' + options.markerColor);
 
-      return div;
-    },
+        return div;
+      },
 
-    _createInner: function() {
-        var iconColorStyle = "", options = this.options;
-            
-        if(options.numberColor) {
-            iconColorStyle = "style='color: " + options.numberColor + "' ";          
+      _createInner: function () {
+        var iconColorStyle = "",
+          options = this.options;
+
+        if (options.numberColor) {
+          iconColorStyle = "style='color: " + options.numberColor + "' ";
         }
 
-      return "<i " + iconColorStyle + "><b>" + options.number + "</b></i>";
-    },
+        return "<i " + iconColorStyle + "><b>" + options.number + "</b></i>";
+      },
 
-    _setIconStyles: function (img, name) {
+      _setIconStyles: function (img, name) {
         var options = this.options,
-            size = L.point(options['iconSize']),
-            anchor = L.point(options.iconAnchor);
-        
+          size = L.point(options['iconSize']),
+          anchor = L.point(options.iconAnchor);
+
         img.className = 'awesome-number-marker-' + name + ' ' + options.className;
-        
+
         if (anchor) {
           img.style.marginLeft = (-anchor.x) + 'px';
-          img.style.marginTop  = (-anchor.y) + 'px';
+          img.style.marginTop = (-anchor.y) + 'px';
         }
 
         if (size) {
-          img.style.width  = size.x + 'px';
+          img.style.width = size.x + 'px';
           img.style.height = size.y + 'px';
         }
-    }
-  });
+      }
+    });
 
-}());
+  }());
 
   // icons
-   var greenIcon = L.icon({
+  var greenIcon = L.icon({
     iconUrl: '/static/images/pin_green.svg',
     shadowUrl: '',
     iconSize: [38, 95], // size of the icon
@@ -108,7 +109,7 @@
     iconSize: [38, 95], // size of the icon
     iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
     popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
+  });
 
   var blueQuestion = L.icon({
     iconUrl: '/static/images/question_red.svg',
@@ -130,9 +131,9 @@
   var center_lon = "{{ longitude }}"
   var center_lat = "{{ latitude }}"
   var username = "{{ username }}"
-  
+
   username = username.replace('[', '').replace(';]', '').replace(/[&#39]/g, '').split(';, ')
-  
+
   if (isNaN(parseFloat(center_lon))) {
     center_lon = 10
   } else {
@@ -165,44 +166,44 @@
   var slogan = '{{ slogan }}'
   
   slogan = slogan.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(', ')
-  
+
   var description = '{{ description }}'
   description = description.replace('[', '').replace(']', '').replace(/[&#39]/g, '').split(', ')
-  
+
   var ids = '{{ id }}'
   ids = ids.replace('[', '').replace(']', '').split(',')
   // Longitudes
   var longitudes = '{{ longitudes }}'
   longitudes = longitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
   var sum = 0;
-  for(var i=0; i<longitudes.length;i++) {
+  for (var i = 0; i < longitudes.length; i++) {
     longitudes[i] = parseFloat(longitudes[i]);
     sum += longitudes[i]
   }
   var long_mean = sum / longitudes.length;
-  
-  
+
+
   // Latitudes
   var latitudes = '{{ latitudes }}'
   latitudes = latitudes.replace('[', '').replace(']', '').replace(' ', '').split(',')
-  
+
   var sum = 0;
-  for(var i=0; i<latitudes.length;i++) {
+  for (var i = 0; i < latitudes.length; i++) {
     latitudes[i] = parseFloat(latitudes[i]);
     sum += latitudes[i]
   }
-  
+
   var lat_mean = sum / latitudes.length;
   var longitude_center = '{{ longitude }}'
   var latitude_center = '{{ latitude }}'
-  
+
   longitude_center = parseFloat(longitude_center.replace(',', '.'))
   latitude_center = parseFloat(latitude_center.replace(',', '.'))
-  
-    var userImg_Url = '{{ user.userImg_Url }}'
-    console.log(userImg_Url);
-    var srcImgUrl = "src='/../images/images/" + userImg_Url +"'"
-    console.log(srcImgUrl);
+
+  var userImg_Url = '{{ user.userImg_Url }}'
+  console.log(userImg_Url);
+  var srcImgUrl = "src='/../images/images/" + userImg_Url + "'"
+  console.log(srcImgUrl);
   var map_show_location = '{{ map_show_location }}'
   map_show_location = map_show_location.replace('[', '').replace(']', '').replace(/ /g, '').split(',')
 
@@ -214,29 +215,30 @@
 
   var is_authenticated = '{{ user.is_authenticated }}'
   var contact_link
-  
-  
+
+
   // iterate through all filtered results  
   var i;
   for (i = 0; i < longitudes.length; i++) {
     lon_i = longitudes[i]
     lat_i = latitudes[i]
     slogan_i = slogan[i].replace('x', '').replace(';', '')
-    if (slogan_i == 'None' && group_membership[i]== 0) {
+    if (slogan_i == 'None' && group_membership[i] == 0) {
       slogan_i = 'I want to help.'
-    } 
-    if (slogan_i == 'None' && group_membership[i]== 1) {
+    }
+    if (slogan_i == 'None' && group_membership[i] == 1) {
       slogan_i = 'I need some help.'
     }
     //slogan_i = slogan_i.slice(1, -1);
     description_i = description[i].replace('x', '').replace(/;/g, "");
-    
+
     shop_type_i = shop_type[i]
-    shop_type_i = shop_type_i.replace(/;/g, "");
+    console.log(shop_type_i)
+    //shop_type_i = shop_type_i.replace(/;/g, "");
 
     id_i = ids[i].replace(/ /g, '')
     username_i = username[i].replace(';', '')
-    
+
     // show contact link or not
     if (is_authenticated == 'True') {
       contact_link = "<br><a href='/compose/" + id_i + "'>Contact me</a>"
@@ -270,52 +272,83 @@
     // shop shopping basket for group membership "shop"
     if (group_membership[i] == 3) {
       var icon = shopIcon;
-      
+
       var mymarker = L.marker([lat_i, lon_i], {
-                    icon: shopIcon}).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" + "<span class='badge badge-secondary'>" + shop_type_i + "</span></font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {closeOnClick: false, autoClose: true,}).openPopup();
-    
-    // for all other types show marker
+        icon: shopIcon
+      }).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" +
+        "<span class='badge badge-secondary'>" + shop_type_i + "</span></font></b><hr><font size='2'>" +
+        description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {
+          closeOnClick: false,
+          autoClose: true,
+        }).openPopup();
+
+      // for all other types show marker
     } else {
       var mymarker = L.marker([lat_i, lon_i], {
-                    icon: new L.AwesomeNumberMarkers({
-                      number: i, 
-                      markerColor: color
-                  })}).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" + slogan_i + "</font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {closeOnClick: false, autoClose: true,}).openPopup();
-// shop shopping basket for group membership "shop"
-    if (group_membership[i] == 3) {
-      var icon = shopIcon;
-      
-      var mymarker = L.marker([lat_i, lon_i], {
-                    icon: shopIcon}).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" + "<span class='badge badge-secondary'>" + shop_type_i + "</span></font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {closeOnClick: false, autoClose: true,}).openPopup();
-    
-    // for all other types show marker
-    } else {
-      var mymarker = L.marker([lat_i, lon_i], {
-                    icon: new L.AwesomeNumberMarkers({
-                      number: i, 
-                        markerColor: color
+        icon: new L.AwesomeNumberMarkers({
+          number: i,
+          markerColor: color
+        })
+      }).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" +
+        slogan_i + "</font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" +
+        contact_link + "</font></center>", {
+          closeOnClick: false,
+          autoClose: true,
+        }).openPopup();
+      // shop shopping basket for group membership "shop"
+      if (group_membership[i] == 3) {
+        var icon = shopIcon;
+
+        var mymarker = L.marker([lat_i, lon_i], {
+          icon: shopIcon
+        }).addTo(mymap).bindPopup("<font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" +
+          "<span class='badge badge-secondary'>" + shop_type_i + "</span></font></b><hr><font size='2'>" +
+          description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {
+            closeOnClick: false,
+            autoClose: true,
+          }).openPopup();
+
+        // for all other types show marker
+      } else {
+        var mymarker = L.marker([lat_i, lon_i], {
+          icon: new L.AwesomeNumberMarkers({
+            number: i,
+            markerColor: color
           })
-      }).addTo(mymap).bindPopup("<center><img width='40' height='40' " + srcImgUrl +"></img></center><hr><font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" + slogan_i + "</font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" + contact_link + "</font></center>", {closeOnClick: false, autoClose: true,}).openPopup();
-   
+        }).addTo(mymap).bindPopup("<center><img width='40' height='40' " + srcImgUrl +
+          "></img></center><hr><font color='#45C1BE'><center>" + i + " </center></font><hr><b><font size='2'>" +
+          slogan_i + "</font></b><hr><font size='2'>" + description_i + "</font><hr><center><font size='2'>" +
+          contact_link + "</font></center>", {
+            closeOnClick: false,
+            autoClose: true,
+          }).openPopup();
+
+      }
+
     }
+    // Create a center circle
+    L.circle([latitude_center, longitude_center], {
+      color: 'green',
+      fillColor: 'green',
+      fillOpacity: 0.1,
+      radius: 20000,
+      stroke: false,
+      bubblingMouseEvents: false
+    }).addTo(mymap);
 
+
+
+
+
+
+    function categorySelected(cb) {
+      var s1 = document.getElementById('defaultChecked').checked;
+      var s2 = document.getElementById('defaultChecked2').checked;
+      var s3 = document.getElementById('defaultChecked3').checked;
+      //console.log([s1, s2, s3])
+      // remove the complete map
+
+    } // end categorySelected
   }
-  // Create a center circle
-  L.circle([latitude_center, longitude_center], {color: 'green', fillColor: 'green', fillOpacity: 0.1, radius: 20000, stroke: false, bubblingMouseEvents: false}).addTo(mymap);
-
-
-
   
-  
-
-function categorySelected(cb) {
-  var s1 = document.getElementById('defaultChecked').checked;
-  var s2 = document.getElementById('defaultChecked2').checked;
-  var s3 = document.getElementById('defaultChecked3').checked;
-  //console.log([s1, s2, s3])
-// remove the complete map
-  
-} // end categorySelected
-
-    
 </script>
