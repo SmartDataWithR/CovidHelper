@@ -12,7 +12,7 @@ Django==2.1.15
 django-allauth==0.41.0
 django-autocomplete-light==3.5.1
 django-classy-tags==1.0.0
-django-cms==3.7.1
+django-cms==3.7.4
 django-crispy-forms==1.8.1
 django-debug-toolbar==2.2
 django-filer==1.7.0
