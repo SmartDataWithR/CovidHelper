@@ -40,7 +40,7 @@ pandas==1.0.2
 Pillow==7.0.0
 pipenv==2018.11.26
 pycparser==2.19
-PyJWT==1.7.1
+PyJWT==2.4.0
 PyMySQL==0.9.3
 pyodbc==4.0.30
 pyOpenSSL==19.1.0
